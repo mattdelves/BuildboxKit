@@ -18,6 +18,7 @@
 		C973EA8019BA88130076B3B8 /* BuildboxKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildboxKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973EA8319BA88130076B3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C973EA8419BA88130076B3B8 /* BuildboxKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildboxKitTests.swift; sourceTree = "<group>"; };
+		C973EA8F19BAA72E0076B3B8 /* build_and_test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build_and_test.sh; path = ../build_and_test.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		C973EA7819BA88130076B3B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C973EA8F19BAA72E0076B3B8 /* build_and_test.sh */,
 				C973EA7919BA88130076B3B8 /* Info.plist */,
 			);
 			name = "Supporting Files";
