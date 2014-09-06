@@ -1,0 +1,9 @@
+[submodule "quick"]
+	path = quick
+	url = https://github.com/Quick/Quick.git
+[submodule "nimble"]
+	path = nimble
+	url = https://github.com/Quick/Nimble.git
+[submodule "dummyspit"]
+	path = dummyspit
+	url = git@github.com:mattdelves/DummySpit.git
