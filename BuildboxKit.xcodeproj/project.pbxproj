@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C973EA7B19BA88130076B3B8 /* BuildboxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C973EA7A19BA88130076B3B8 /* BuildboxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C973EA8519BA88130076B3B8 /* BuildboxKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973EA8419BA88130076B3B8 /* BuildboxKitTests.swift */; };
+		C973EA9319BAAF1B0076B3B8 /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */; };
+		C973EA9419BAAF1B0076B3B8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9119BAAF1B0076B3B8 /* Nimble.framework */; };
+		C973EA9519BAAF1B0076B3B8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9219BAAF1B0076B3B8 /* Quick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		C973EA8319BA88130076B3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C973EA8419BA88130076B3B8 /* BuildboxKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildboxKitTests.swift; sourceTree = "<group>"; };
 		C973EA8F19BAA72E0076B3B8 /* build_and_test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build_and_test.sh; path = ../build_and_test.sh; sourceTree = "<group>"; };
+		C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos/DummySpit.framework"; sourceTree = "<group>"; };
+		C973EA9119BAAF1B0076B3B8 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
+		C973EA9219BAAF1B0076B3B8 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug/Quick.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C973EA9319BAAF1B0076B3B8 /* DummySpit.framework in Frameworks */,
+				C973EA9419BAAF1B0076B3B8 /* Nimble.framework in Frameworks */,
+				C973EA9519BAAF1B0076B3B8 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +96,9 @@
 		C973EA8219BA88130076B3B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */,
+				C973EA9119BAAF1B0076B3B8 /* Nimble.framework */,
+				C973EA9219BAAF1B0076B3B8 /* Quick.framework */,
 				C973EA8319BA88130076B3B8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -333,6 +345,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -350,6 +364,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug",
 				);
 				INFOPLIST_FILE = BuildboxKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
