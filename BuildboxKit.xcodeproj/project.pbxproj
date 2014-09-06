@@ -27,7 +27,6 @@
 		C973EA9219BAAF1B0076B3B8 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug/Quick.framework"; sourceTree = "<group>"; };
 		C987360F19BAC69000980237 /* BuildboxURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxURL.swift; sourceTree = "<group>"; };
 		C987361319BAD23300980237 /* BuildboxURLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxURLSpec.swift; sourceTree = "<group>"; };
-		C987361519BAD31D00980237 /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +53,6 @@
 		C973EA6B19BA88130076B3B8 = {
 			isa = PBXGroup;
 			children = (
-				C987361519BAD31D00980237 /* api_test.playground */,
 				C973EA7719BA88130076B3B8 /* BuildboxKit */,
 				C973EA8119BA88130076B3B8 /* BuildboxKitTests */,
 				C973EA7619BA88130076B3B8 /* Products */,

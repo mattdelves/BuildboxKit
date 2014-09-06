@@ -19,7 +19,7 @@ public enum BuildboxURL {
 }
 
 public protocol Path {
-  var baseURL: NSURL { get }
+  var host: String { get }
   var apiVersion: String { get }
   var path:String { get }
 }
@@ -28,8 +28,8 @@ extension BuildboxURL:Path {
   public var apiVersion: String {
     return "v1"
   }
-  public var baseURL:NSURL {
-    return NSURL(string: "api.buildbox.io")
+  public var host:String {
+    return "api.buildbox.io"
   }
   public var path:String {
     switch self {
@@ -44,8 +44,11 @@ extension BuildboxURL:Path {
   }
 }
 
-public func buildboxEndpoint(route:BuildboxURL) -> NSURL {
-  var computedURL:NSURL = route.baseURL.URLByAppendingPathComponent(route.path)
+public func buildboxEndpoint(route:BuildboxURL, apiKey:String, scheme:String = "https") -> NSURL {
+  let components:NSURLComponents = NSURLComponents()
+  components.scheme = scheme
+  components.host = route.host
+  components.path = "\(route.path)?api_key=\(apiKey)"
   // computedURL.setQuery(route.apiKey)
-  return computedURL
+  return components.URL!
 }
