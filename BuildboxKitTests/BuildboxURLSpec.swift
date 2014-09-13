@@ -8,7 +8,6 @@
 
 import Quick
 import Nimble
-import DummySpit
 import BuildboxKit
 
 class BuildboxURLSpec: QuickSpec {

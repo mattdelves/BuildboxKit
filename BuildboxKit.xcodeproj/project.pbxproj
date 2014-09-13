@@ -11,8 +11,13 @@
 		C973EA9319BAAF1B0076B3B8 /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */; };
 		C973EA9419BAAF1B0076B3B8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9119BAAF1B0076B3B8 /* Nimble.framework */; };
 		C973EA9519BAAF1B0076B3B8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9219BAAF1B0076B3B8 /* Quick.framework */; };
+		C98696D419C40D3D00164926 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98696D319C40D3D00164926 /* Account.swift */; };
+		C98696D719C4152400164926 /* foobar_account.json in Resources */ = {isa = PBXBuildFile; fileRef = C98696D619C4152400164926 /* foobar_account.json */; };
 		C987361019BAC69000980237 /* BuildboxURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987360F19BAC69000980237 /* BuildboxURL.swift */; };
 		C987361419BAD23300980237 /* BuildboxURLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987361319BAD23300980237 /* BuildboxURLSpec.swift */; };
+		C9FE5BF919BB2575008B8746 /* BuildboxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BF819BB2575008B8746 /* BuildboxApi.swift */; };
+		C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = C9FE5BFC19BB28A7008B8746 /* accounts.json */; };
+		C9FE5BFF19BB2938008B8746 /* BuildboxApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BFE19BB2938008B8746 /* BuildboxApiSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +30,13 @@
 		C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos/DummySpit.framework"; sourceTree = "<group>"; };
 		C973EA9119BAAF1B0076B3B8 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
 		C973EA9219BAAF1B0076B3B8 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug/Quick.framework"; sourceTree = "<group>"; };
+		C98696D319C40D3D00164926 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		C98696D619C4152400164926 /* foobar_account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foobar_account.json; sourceTree = "<group>"; };
 		C987360F19BAC69000980237 /* BuildboxURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxURL.swift; sourceTree = "<group>"; };
 		C987361319BAD23300980237 /* BuildboxURLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxURLSpec.swift; sourceTree = "<group>"; };
+		C9FE5BF819BB2575008B8746 /* BuildboxApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxApi.swift; sourceTree = "<group>"; };
+		C9FE5BFC19BB28A7008B8746 /* accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = accounts.json; sourceTree = "<group>"; };
+		C9FE5BFE19BB2938008B8746 /* BuildboxApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxApiSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +81,8 @@
 		C973EA7719BA88130076B3B8 /* BuildboxKit */ = {
 			isa = PBXGroup;
 			children = (
-				C987360F19BAC69000980237 /* BuildboxURL.swift */,
+				C98696D219C40D1400164926 /* Models */,
+				C98696D119C40D0A00164926 /* API */,
 				C973EA7A19BA88130076B3B8 /* BuildboxKit.h */,
 				C973EA7819BA88130076B3B8 /* Supporting Files */,
 			);
@@ -90,8 +101,9 @@
 		C973EA8119BA88130076B3B8 /* BuildboxKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				C973EA8219BA88130076B3B8 /* Supporting Files */,
+				C9FE5BFE19BB2938008B8746 /* BuildboxApiSpec.swift */,
 				C987361319BAD23300980237 /* BuildboxURLSpec.swift */,
+				C973EA8219BA88130076B3B8 /* Supporting Files */,
 			);
 			path = BuildboxKitTests;
 			sourceTree = "<group>";
@@ -99,12 +111,39 @@
 		C973EA8219BA88130076B3B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE5BFB19BB288B008B8746 /* JSON Responses */,
 				C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */,
 				C973EA9119BAAF1B0076B3B8 /* Nimble.framework */,
 				C973EA9219BAAF1B0076B3B8 /* Quick.framework */,
 				C973EA8319BA88130076B3B8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C98696D119C40D0A00164926 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE5BF819BB2575008B8746 /* BuildboxApi.swift */,
+				C987360F19BAC69000980237 /* BuildboxURL.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		C98696D219C40D1400164926 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C98696D319C40D3D00164926 /* Account.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C9FE5BFB19BB288B008B8746 /* JSON Responses */ = {
+			isa = PBXGroup;
+			children = (
+				C98696D619C4152400164926 /* foobar_account.json */,
+				C9FE5BFC19BB28A7008B8746 /* accounts.json */,
+			);
+			name = "JSON Responses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +242,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98696D719C4152400164926 /* foobar_account.json in Resources */,
+				C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C987361019BAC69000980237 /* BuildboxURL.swift in Sources */,
+				C9FE5BF919BB2575008B8746 /* BuildboxApi.swift in Sources */,
+				C98696D419C40D3D00164926 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE5BFF19BB2938008B8746 /* BuildboxApiSpec.swift in Sources */,
 				C987361419BAD23300980237 /* BuildboxURLSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
