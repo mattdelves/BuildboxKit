@@ -5,12 +5,12 @@
       location = "container:BuildboxKit.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:quick/Quick/Quick.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:nimble/Nimble.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:dummyspit/DummySpit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:quick/Quick.xcodeproj">
    </FileRef>
 </Workspace>
