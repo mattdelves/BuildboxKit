@@ -23,7 +23,7 @@ class BuildboxApiSpec: QuickSpec {
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
         
         let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("accounts", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "accounts?api_key=123abc")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "accounts")
         DummySpitURLProtocol.cannedResponse(response)
       }
       
@@ -50,7 +50,7 @@ class BuildboxApiSpec: QuickSpec {
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
         
         let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_account", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar?api_key=123abc")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar")
         DummySpitURLProtocol.cannedResponse(response)
       }
       
@@ -78,7 +78,7 @@ class BuildboxApiSpec: QuickSpec {
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
         
         let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("projects", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "projects?api_key=123abc")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "projects")
         DummySpitURLProtocol.cannedResponse(response)
       }
       
@@ -106,7 +106,7 @@ class BuildboxApiSpec: QuickSpec {
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
         
         let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_project", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar?api_key=123abc")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar")
         DummySpitURLProtocol.cannedResponse(response)
       }
       
@@ -134,7 +134,7 @@ class BuildboxApiSpec: QuickSpec {
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
         
         let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("builds", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds?api_key=123abc")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
         DummySpitURLProtocol.cannedResponse(response)
       }
       
@@ -162,7 +162,7 @@ class BuildboxApiSpec: QuickSpec {
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
         
         let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("single_build", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "1?api_key=123abc")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "1")
         DummySpitURLProtocol.cannedResponse(response)
       }
       
@@ -191,7 +191,7 @@ class BuildboxApiSpec: QuickSpec {
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
         
         let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("agents", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "agents?api_key=123abc")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "agents")
         DummySpitURLProtocol.cannedResponse(response)
       }
       

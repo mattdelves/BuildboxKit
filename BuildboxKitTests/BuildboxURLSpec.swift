@@ -48,13 +48,13 @@ class BuildboxURLSpec: QuickSpec {
       it("when using default https scheme") {
         var endpoint = BuildboxURL.Accounts
         var url = buildboxEndpoint(endpoint, "123abc")
-        expect(url.absoluteString).to(equal("https://api.buildbox.io/v1/accounts%3Fapi_key=123abc"))
+        expect(url.absoluteString).to(equal("https://api.buildbox.io/v1/accounts?api_key=123abc"))
       }
       
       it("when specifying a scheme") {
         var endpoint = BuildboxURL.Accounts
         var url = buildboxEndpoint(endpoint, "123abc", scheme: "mock")
-        expect(url.absoluteString).to(equal("mock://api.buildbox.io/v1/accounts%3Fapi_key=123abc"))
+        expect(url.absoluteString).to(equal("mock://api.buildbox.io/v1/accounts?api_key=123abc"))
       }
     }
   }
