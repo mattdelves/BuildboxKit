@@ -13,6 +13,8 @@
 		8D8E50031A16E7860049C5D5 /* builds.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50021A16E7860049C5D5 /* builds.json */; };
 		8D8E50051A16F2760049C5D5 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E50041A16F2760049C5D5 /* Build.swift */; };
 		8D8E50071A16F92A0049C5D5 /* single_build.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50061A16F92A0049C5D5 /* single_build.json */; };
+		8D8E50091A16FFB40049C5D5 /* agents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50081A16FFB40049C5D5 /* agents.json */; };
+		8D8E500B1A1700200049C5D5 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E500A1A1700200049C5D5 /* Agent.swift */; };
 		C973EA7B19BA88130076B3B8 /* BuildboxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C973EA7A19BA88130076B3B8 /* BuildboxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C973EA9319BAAF1B0076B3B8 /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */; };
 		C973EA9419BAAF1B0076B3B8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9119BAAF1B0076B3B8 /* Nimble.framework */; };
@@ -33,6 +35,8 @@
 		8D8E50021A16E7860049C5D5 /* builds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = builds.json; sourceTree = "<group>"; };
 		8D8E50041A16F2760049C5D5 /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		8D8E50061A16F92A0049C5D5 /* single_build.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = single_build.json; sourceTree = "<group>"; };
+		8D8E50081A16FFB40049C5D5 /* agents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = agents.json; sourceTree = "<group>"; };
+		8D8E500A1A1700200049C5D5 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		C973EA7519BA88130076B3B8 /* BuildboxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildboxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973EA7919BA88130076B3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C973EA7A19BA88130076B3B8 /* BuildboxKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildboxKit.h; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				C98696D319C40D3D00164926 /* Account.swift */,
 				8D8E4FFE1A16D7A40049C5D5 /* Project.swift */,
 				8D8E50041A16F2760049C5D5 /* Build.swift */,
+				8D8E500A1A1700200049C5D5 /* Agent.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 		C9FE5BFB19BB288B008B8746 /* JSON Responses */ = {
 			isa = PBXGroup;
 			children = (
+				8D8E50081A16FFB40049C5D5 /* agents.json */,
 				8D8E50021A16E7860049C5D5 /* builds.json */,
 				8D8E4FFC1A16D5A00049C5D5 /* projects.json */,
 				C98696D619C4152400164926 /* foobar_account.json */,
@@ -264,6 +270,7 @@
 				8D8E50031A16E7860049C5D5 /* builds.json in Resources */,
 				C98696D719C4152400164926 /* foobar_account.json in Resources */,
 				8D8E4FFD1A16D5A00049C5D5 /* projects.json in Resources */,
+				8D8E50091A16FFB40049C5D5 /* agents.json in Resources */,
 				8D8E50011A16E5330049C5D5 /* foobar_project.json in Resources */,
 				8D8E50071A16F92A0049C5D5 /* single_build.json in Resources */,
 				C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */,
@@ -280,6 +287,7 @@
 				C987361019BAC69000980237 /* BuildboxURL.swift in Sources */,
 				C9FE5BF919BB2575008B8746 /* BuildboxApi.swift in Sources */,
 				8D8E50051A16F2760049C5D5 /* Build.swift in Sources */,
+				8D8E500B1A1700200049C5D5 /* Agent.swift in Sources */,
 				C98696D419C40D3D00164926 /* Account.swift in Sources */,
 				8D8E4FFF1A16D7A40049C5D5 /* Project.swift in Sources */,
 			);

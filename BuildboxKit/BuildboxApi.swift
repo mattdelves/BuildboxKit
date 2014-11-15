@@ -127,6 +127,34 @@ public class BuildboxApi {
     )
   }
   
+  public func getAgents(username: String, completion: (agents: [Agent]) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Agents(username: username), apiKey, scheme: scheme)
+    
+    ArrayOfJSONDataForEndpoint(url) { jsonArray in
+      var agents: [Agent] = [Agent]()
+      
+      for agentData: NSDictionary in jsonArray {
+        agents.append(self.extractAgent(agentData))
+      }
+      
+      completion(agents: agents)
+    }
+  }
+  
+  func extractAgent(jsonData: NSDictionary) -> Agent {
+    return Agent(
+      id: jsonData["id"] as String,
+      url: jsonData["url"] as String,
+      name: jsonData["name"] as String,
+      connection_state: jsonData["connection_state"] as String,
+      ip_address: jsonData["ip_address"] as String,
+      access_token: jsonData["access_token"] as String,
+      hostname: jsonData["hostname"] as String,
+      creator: jsonData["creator"] as Dictionary<String, String>,
+      created_at: jsonData["created_at"] as String
+    )
+  }
+  
   func ArrayOfJSONDataForEndpoint(url: NSURL, completion: [NSDictionary] -> Void) {
     println("We got a url of: \(url)")
     let task = session.dataTaskWithURL(url) { data, response, error in
