@@ -21,10 +21,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("accounts", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "accounts")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -32,11 +28,34 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("accounts", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "accounts")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getAccounts({ accounts in
+        api?.getAccounts({ accounts, error in
           called = true
         })
+        
+        expect{called}.toEventually(beTruthy())
+      }
+      
+      it("receives a 401 response") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "accounts",
+          statusCode: 401
+        )
+        
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+        
+        api?.getAccounts { accounts, error in
+          called = true
+          expect(error).notTo(beNil())
+        }
         
         expect{called}.toEventually(beTruthy())
       }
@@ -48,10 +67,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_account", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -59,11 +74,35 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_account", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getAccount("foobar") { account in
+        api?.getAccount("foobar") { account, error in
           called = true
-          expect(account.name).to(equal("foobar"))
+          expect(account?.name).to(equal("foobar"))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+
+      it("receives a 401 response") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "foobar",
+          statusCode: 401
+        )
+        
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+        
+        api?.getAccount("foobar") { account, error in
+          called = true
+          expect(error).notTo(beNil())
+          expect(account).to(beNil())
         }
         
         expect{called}.toEventually(beTruthy())
@@ -76,10 +115,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("projects", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "projects")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -87,13 +122,36 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("projects", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "projects")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getProjects("dummyspit") { projects in
+        api?.getProjects("dummyspit") { projects, error in
           called = true
           expect(projects.count).to(equal(3))
         }
 
+        expect{called}.toEventually(beTruthy())
+      }
+      
+      it("receives a 401 response") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "projects",
+          statusCode: 401
+        )
+        
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+        
+        api?.getProjects("dummyspit") { projects, error in
+          called = true
+          expect(error).notTo(beNil())
+        }
+        
         expect{called}.toEventually(beTruthy())
       }
     }
@@ -104,10 +162,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_project", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -115,13 +169,37 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_project", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getProject("dummyspit", projectName: "foobar") { project in
+        api?.getProject("dummyspit", projectName: "foobar") { project, error in
           called = true
-          expect(project.name).to(equal("Project3"))
+          expect(project?.name).to(equal("Project3"))
         }
 
+        expect{called}.toEventually(beTruthy())
+      }
+
+      it("receives a 401 response") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "foobar",
+          statusCode: 401
+        )
+        
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+        
+        api?.getProject("dummyspit", projectName: "foobar") { project, error in
+          called = true
+          expect(error).notTo(beNil())
+          expect(project).to(beNil())
+        }
+        
         expect{called}.toEventually(beTruthy())
       }
     }
@@ -132,10 +210,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("builds", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -143,11 +217,34 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("builds", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuilds("foobar", projectName: "Project1") { builds in
+        api?.getBuilds("foobar", projectName: "Project1") { builds, error in
           called = true
           expect(builds.count).to(equal(7))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+
+      it("receives a 401 response") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "builds",
+          statusCode: 401
+        )
+        
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+        
+        api?.getBuilds("foobar", projectName: "Project1") { builds, error in
+          called = true
+          expect(error).notTo(beNil())
         }
         
         expect{called}.toEventually(beTruthy())
@@ -160,10 +257,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("all_builds", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -171,11 +264,34 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("all_builds", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuilds { builds in
+        api?.getBuilds { builds, error in
           called = true
           expect(builds.count).to(equal(30))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+
+      it("receives a 401 response") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "builds",
+          statusCode: 401
+        )
+        
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+        
+        api?.getBuilds("foobar", projectName: "Project1") { builds, error in
+          called = true
+          expect(error).notTo(beNil())
         }
         
         expect{called}.toEventually(beTruthy())
@@ -188,10 +304,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("single_build", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "1")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -199,12 +311,36 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("single_build", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "1")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuild("foobar", projectName: "Project1", number: 1) { build in
+        api?.getBuild("foobar", projectName: "Project1", number: 1) { build, error in
           called = true
-          expect(build.number).to(equal(1))
-          expect(build.message).to(equal("add in buildbox script"))
+          expect(build?.number).to(equal(1))
+          expect(build?.message).to(equal("add in buildbox script"))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+
+      it("receives a 401 response") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "1",
+          statusCode: 401
+        )
+        
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+        
+        api?.getBuild("foobar", projectName: "Project1", number: 1) { build, error in
+          called = true
+          expect(error).notTo(beNil())
+          expect(build).to(beNil())
         }
         
         expect{called}.toEventually(beTruthy())
@@ -217,10 +353,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("agents", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "agents")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -228,9 +360,12 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("agents", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "agents")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getAgents("foobar") { agents in
+        api?.getAgents("foobar") { agents, error in
           called = true
           expect(agents.count).to(equal(1))
         }
@@ -245,10 +380,6 @@ class BuildboxApiSpec: QuickSpec {
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
         api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
-        
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("user", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "user")
-        DummySpitURLProtocol.cannedResponse(response)
       }
       
       afterEach {
@@ -256,11 +387,35 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("user", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "user")
+        DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getUser { user in
+        api?.getUser { user, error in
           called = true
-          expect(user.name).to(equal("Foo Bar"))
+          expect(user?.name).to(equal("Foo Bar"))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+
+      it("receives a 401 response") {
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "user",
+          statusCode: 401
+        )
+        
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+        
+        api?.getUser { user, error in
+          called = true
+          expect(error).notTo(beNil())
+          expect(user).to(beNil())
         }
         
         expect{called}.toEventually(beTruthy())
