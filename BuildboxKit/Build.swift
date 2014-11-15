@@ -24,4 +24,5 @@ public struct Build {
   public var started_at: String
   public var finished_at: String
   public var meta_data: NSDictionary
+  public var project: Dictionary<String, String>
 }

@@ -35,6 +35,14 @@
     "started_at": "2014-10-05 05:40:32 UTC",
     "finished_at": "2014-10-05 05:41:18 UTC",
     "meta_data": {
+    },
+    "project": {
+      "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
+      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "name": "project1",
+      "repository": "git@github.com:foobar/project1.git",
+      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
@@ -73,6 +81,14 @@
     "started_at": "2014-10-04 13:08:48 UTC",
     "finished_at": "2014-10-04 13:09:09 UTC",
     "meta_data": {
+    },
+    "project": {
+      "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
+      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "name": "project1",
+      "repository": "git@github.com:foobar/project1.git",
+      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
@@ -111,6 +127,14 @@
     "started_at": "2014-10-04 13:06:24 UTC",
     "finished_at": "2014-10-04 13:06:44 UTC",
     "meta_data": {
+    },
+    "project": {
+      "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
+      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "name": "project1",
+      "repository": "git@github.com:foobar/project1.git",
+      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
@@ -149,6 +173,14 @@
     "started_at": "2014-09-06 03:02:13 UTC",
     "finished_at": "2014-09-06 03:04:11 UTC",
     "meta_data": {
+    },
+    "project": {
+      "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
+      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "name": "project1",
+      "repository": "git@github.com:foobar/project1.git",
+      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
@@ -187,6 +219,14 @@
     "started_at": "2014-08-23 09:52:19 UTC",
     "finished_at": "2014-08-23 09:53:59 UTC",
     "meta_data": {
+    },
+    "project": {
+      "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
+      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "name": "project1",
+      "repository": "git@github.com:foobar/project1.git",
+      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
@@ -221,6 +261,14 @@
     "started_at": null,
     "finished_at": "2014-08-23 09:51:14 UTC",
     "meta_data": {
+    },
+    "project": {
+      "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
+      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "name": "project1",
+      "repository": "git@github.com:foobar/project1.git",
+      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
@@ -241,6 +289,14 @@
     "started_at": null,
     "finished_at": "2014-08-23 07:06:45 UTC",
     "meta_data": {
+    },
+    "project": {
+      "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
+      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "name": "project1",
+      "repository": "git@github.com:foobar/project1.git",
+      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "created_at": "2014-08-23 06:53:05 UTC"
     }
   }
 ]

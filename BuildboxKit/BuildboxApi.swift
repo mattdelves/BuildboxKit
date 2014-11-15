@@ -143,7 +143,8 @@ public class BuildboxApi {
       scheduled_at: jsonObject["scheduled_at"] as String,
       started_at: started_at,
       finished_at: jsonObject["finished_at"] as String,
-      meta_data: jsonObject["meta_data"] as NSDictionary
+      meta_data: jsonObject["meta_data"] as NSDictionary,
+      project: jsonObject["project"] as Dictionary<String, String>
     )
   }
   
