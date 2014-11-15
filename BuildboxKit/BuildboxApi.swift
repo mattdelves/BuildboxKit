@@ -85,6 +85,48 @@ public class BuildboxApi {
     )
   }
   
+  public func getBuilds(username: String, projectName: String, completion: (builds: [Build]) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Builds(username: username, project: projectName), apiKey, scheme: scheme)
+    
+    ArrayOfJSONDataForEndpoint(url) { jsonArray in
+      var builds: [Build] = [Build]()
+      
+      for buildData : NSDictionary in jsonArray {
+        let build = self.extractBuild(buildData)
+        builds.append(build)
+      }
+      
+      completion(builds: builds)
+    }
+  }
+  
+  public func getBuild(username: String, projectName: String, number: Int, completion: (build: Build) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Build(username: username, project: projectName, build: number), apiKey, scheme: scheme)
+    
+    JSONDataForEndpoint(url) { json in
+      completion(build: self.extractBuild(json))
+    }
+  }
+  
+  func extractBuild(jsonObject: NSDictionary) -> Build {
+    return Build(
+      id: jsonObject["id"] as String,
+      url: jsonObject["url"] as String,
+      number: jsonObject["number"] as Int,
+      branch: jsonObject["branch"] as String,
+      state: jsonObject["state"] as String,
+      message: jsonObject["message"] as String,
+      commit: jsonObject["commit"] as String,
+      env: jsonObject["env"] as NSDictionary,
+      jobs: jsonObject["jobs"] as [NSDictionary],
+      created_at: jsonObject["created_at"] as String,
+      scheduled_at: jsonObject["scheduled_at"] as String,
+      started_at: jsonObject["started_at"] as String,
+      finished_at: jsonObject["finished_at"] as String,
+      meta_data: jsonObject["meta_data"] as NSDictionary
+    )
+  }
+  
   func ArrayOfJSONDataForEndpoint(url: NSURL, completion: [NSDictionary] -> Void) {
     println("We got a url of: \(url)")
     let task = session.dataTaskWithURL(url) { data, response, error in

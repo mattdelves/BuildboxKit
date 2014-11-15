@@ -1,0 +1,20 @@
+{
+  "id": "225c32bd-fe2d-48cb-be5b-e84452e9f60b",
+  "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/1",
+  "number": 1,
+  "state": "not_run",
+  "message": "add in buildbox script",
+  "commit": "cd3043afc459d571f6fc5aefe3fca9babe8fac58",
+  "branch": "master",
+  "env": {
+  },
+  "jobs": [
+  
+  ],
+  "created_at": "2014-08-23 07:06:45 UTC",
+  "scheduled_at": "2014-08-23 07:06:45 UTC",
+  "started_at": "",
+  "finished_at": "2014-08-23 07:06:45 UTC",
+  "meta_data": {
+  }
+}

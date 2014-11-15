@@ -125,5 +125,62 @@ class BuildboxApiSpec: QuickSpec {
         expect{called}.toEventually(beTruthy())
       }
     }
+    
+    describe("All Builds") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("builds", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds?api_key=123abc")
+        DummySpitURLProtocol.cannedResponse(response)
+      }
+      
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+      
+      it("can be retrieved") {
+        var called = false
+        
+        api?.getBuilds("foobar", projectName: "Project1") { builds in
+          called = true
+          expect(builds.count).to(equal(7))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+    }
+    
+    describe("A single Build") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("single_build", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "1?api_key=123abc")
+        DummySpitURLProtocol.cannedResponse(response)
+      }
+      
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+      
+      it("can be retrieved") {
+        var called = false
+        
+        api?.getBuild("foobar", projectName: "Project1", number: 1) { build in
+          called = true
+          expect(build.number).to(equal(1))
+          expect(build.message).to(equal("add in buildbox script"))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+    }
   }
 }

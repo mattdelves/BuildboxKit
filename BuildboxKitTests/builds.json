@@ -1,0 +1,246 @@
+[
+  {
+    "id": "e34dd1bf-5fe0-4868-aae4-8f3410699aa0",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/7",
+    "number": 7,
+    "state": "passed",
+    "message": "use most up to date version of quick",
+    "commit": "33d6cc441f77506c102357196c7fe2b1b5e96191",
+    "branch": "master",
+    "env": {
+    },
+    "jobs": [
+      {
+        "id": "a2c7b59b-8f83-4c1f-a1fe-33936aa18e5c",
+        "type": "script",
+        "name": "Build and Test",
+        "state": "passed",
+        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/7/jobs/a2c7b59b-8f83-4c1f-a1fe-33936aa18e5c/log",
+        "script_path": "build_and_test.sh",
+        "exit_status": 0,
+        "artifact_paths": "",
+        "agent": {
+          "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "name": "osx-build-agent"
+        },
+        "created_at": "2014-10-05 05:40:29 UTC",
+        "scheduled_at": "2014-10-05 05:40:29 UTC",
+        "started_at": "2014-10-05 05:40:32 UTC",
+        "finished_at": "2014-10-05 05:41:18 UTC"
+      }
+    ],
+    "created_at": "2014-10-05 05:40:29 UTC",
+    "scheduled_at": "2014-10-05 05:40:29 UTC",
+    "started_at": "2014-10-05 05:40:32 UTC",
+    "finished_at": "2014-10-05 05:41:18 UTC",
+    "meta_data": {
+    }
+  },
+  {
+    "id": "d8a89002-f453-4d2c-a45a-d1bb5d05bf14",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/6",
+    "number": 6,
+    "state": "passed",
+    "message": "update build and test script",
+    "commit": "f95a3411ca79bff2ae66786a0f5b927e36416c3f",
+    "branch": "master",
+    "env": {
+    },
+    "jobs": [
+      {
+        "id": "aa6555aa-7c2b-4097-b6c5-8991c711fdd4",
+        "type": "script",
+        "name": "Build and Test",
+        "state": "passed",
+        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/6/jobs/aa6555aa-7c2b-4097-b6c5-8991c711fdd4/log",
+        "script_path": "build_and_test.sh",
+        "exit_status": 0,
+        "artifact_paths": "",
+        "agent": {
+          "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "name": "osx-build-agent"
+        },
+        "created_at": "2014-10-04 13:08:46 UTC",
+        "scheduled_at": "2014-10-04 13:08:46 UTC",
+        "started_at": "2014-10-04 13:08:48 UTC",
+        "finished_at": "2014-10-04 13:09:09 UTC"
+      }
+    ],
+    "created_at": "2014-10-04 13:08:46 UTC",
+    "scheduled_at": "2014-10-04 13:08:46 UTC",
+    "started_at": "2014-10-04 13:08:48 UTC",
+    "finished_at": "2014-10-04 13:09:09 UTC",
+    "meta_data": {
+    }
+  },
+  {
+    "id": "23e292a6-2efb-4079-ae65-00e886c7c5ef",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/5",
+    "number": 5,
+    "state": "passed",
+    "message": "update for swift 1.1",
+    "commit": "d34489267fb6b9fc4d35e053173f2a89d621c0fb",
+    "branch": "master",
+    "env": {
+    },
+    "jobs": [
+      {
+        "id": "e22c8dfe-e12b-477c-ba46-a191e96532c9",
+        "type": "script",
+        "name": "Build and Test",
+        "state": "passed",
+        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/5/jobs/e22c8dfe-e12b-477c-ba46-a191e96532c9/log",
+        "script_path": "build_and_test.sh",
+        "exit_status": 0,
+        "artifact_paths": "",
+        "agent": {
+          "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "name": "osx-build-agent"
+        },
+        "created_at": "2014-10-04 13:06:22 UTC",
+        "scheduled_at": "2014-10-04 13:06:22 UTC",
+        "started_at": "2014-10-04 13:06:24 UTC",
+        "finished_at": "2014-10-04 13:06:44 UTC"
+      }
+    ],
+    "created_at": "2014-10-04 13:06:22 UTC",
+    "scheduled_at": "2014-10-04 13:06:22 UTC",
+    "started_at": "2014-10-04 13:06:24 UTC",
+    "finished_at": "2014-10-04 13:06:44 UTC",
+    "meta_data": {
+    }
+  },
+  {
+    "id": "8a2a44ec-feff-4579-a855-370d145fca75",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/4",
+    "number": 4,
+    "state": "passed",
+    "message": "update to xcode6beta7",
+    "commit": "1de9c68b2c05bfd39504583f55c60e75f2f2e11c",
+    "branch": "master",
+    "env": {
+    },
+    "jobs": [
+      {
+        "id": "a568f672-fcb9-498a-b199-02ab6fb217de",
+        "type": "script",
+        "name": "Build and Test",
+        "state": "passed",
+        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/4/jobs/a568f672-fcb9-498a-b199-02ab6fb217de/log",
+        "script_path": "build_and_test.sh",
+        "exit_status": 0,
+        "artifact_paths": "",
+        "agent": {
+          "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "name": "osx-build-agent"
+        },
+        "created_at": "2014-09-06 03:02:02 UTC",
+        "scheduled_at": "2014-09-06 03:02:02 UTC",
+        "started_at": "2014-09-06 03:02:13 UTC",
+        "finished_at": "2014-09-06 03:04:11 UTC"
+      }
+    ],
+    "created_at": "2014-09-06 03:02:02 UTC",
+    "scheduled_at": "2014-09-06 03:02:02 UTC",
+    "started_at": "2014-09-06 03:02:13 UTC",
+    "finished_at": "2014-09-06 03:04:11 UTC",
+    "meta_data": {
+    }
+  },
+  {
+    "id": "e99be5f9-91ea-4f1e-8246-964bfdbc58c4",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/3",
+    "number": 3,
+    "state": "passed",
+    "message": "Testing all the things :rocket:",
+    "commit": "master",
+    "branch": "master",
+    "env": {
+    },
+    "jobs": [
+      {
+        "id": "24f10c16-a8a6-4371-b631-d1af030e0169",
+        "type": "script",
+        "name": "Build and Test",
+        "state": "passed",
+        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/3/jobs/24f10c16-a8a6-4371-b631-d1af030e0169/log",
+        "script_path": "build_and_test.sh",
+        "exit_status": 0,
+        "artifact_paths": "",
+        "agent": {
+          "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "name": "osx-build-agent"
+        },
+        "created_at": "2014-08-23 09:52:15 UTC",
+        "scheduled_at": "2014-08-23 09:52:15 UTC",
+        "started_at": "2014-08-23 09:52:19 UTC",
+        "finished_at": "2014-08-23 09:53:59 UTC"
+      }
+    ],
+    "created_at": "2014-08-23 09:52:15 UTC",
+    "scheduled_at": "2014-08-23 09:52:15 UTC",
+    "started_at": "2014-08-23 09:52:19 UTC",
+    "finished_at": "2014-08-23 09:53:59 UTC",
+    "meta_data": {
+    }
+  },
+  {
+    "id": "867c3b08-2df7-4d8e-8d87-8247f01a9df1",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/2",
+    "number": 2,
+    "state": "not_run",
+    "message": "add in buildbox script",
+    "commit": "cd3043afc459d571f6fc5aefe3fca9babe8fac58",
+    "branch": "master",
+    "env": {
+    },
+    "jobs": [
+      {
+        "id": "1ef7a7e8-7a90-401a-abe6-139ebfca4ad6",
+        "type": "script",
+        "name": "Build and Test",
+        "state": "broken",
+        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/2/jobs/1ef7a7e8-7a90-401a-abe6-139ebfca4ad6/log",
+        "script_path": "build_and_test.sh",
+        "exit_status": null,
+        "artifact_paths": "",
+        "agent": null,
+        "created_at": "2014-08-23 09:51:14 UTC",
+        "scheduled_at": "2014-08-23 09:51:14 UTC",
+        "started_at": null,
+        "finished_at": null
+      }
+    ],
+    "created_at": "2014-08-23 09:51:14 UTC",
+    "scheduled_at": "2014-08-23 09:51:14 UTC",
+    "started_at": "",
+    "finished_at": "2014-08-23 09:51:14 UTC",
+    "meta_data": {
+    }
+  },
+  {
+    "id": "225c32bd-fe2d-48cb-be5b-e84452e9f60b",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/1",
+    "number": 1,
+    "state": "not_run",
+    "message": "add in buildbox script",
+    "commit": "cd3043afc459d571f6fc5aefe3fca9babe8fac58",
+    "branch": "master",
+    "env": {
+    },
+    "jobs": [
+
+    ],
+    "created_at": "2014-08-23 07:06:45 UTC",
+    "scheduled_at": "2014-08-23 07:06:45 UTC",
+    "started_at": "",
+    "finished_at": "2014-08-23 07:06:45 UTC",
+    "meta_data": {
+    }
+  }
+]
