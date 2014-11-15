@@ -1,0 +1,26 @@
+[
+  {
+    "id": "abc111",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+    "name": "Project1",
+    "repository": "git@github.com:foobar/Project1.git",
+    "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+    "created_at": "2014-09-06 02:17:38 UTC"
+  },
+  {
+    "id": "abc222",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2",
+    "name": "Project2",
+    "repository": "git@github.com:foobar/Project2.git",
+    "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds",
+    "created_at": "2014-08-23 09:58:03 UTC"
+  },
+  {
+    "id": "abc333",
+    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/dummyspit",
+    "name": "Project3",
+    "repository": "git@github.com:foobar/project2.git",
+    "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds",
+    "created_at": "2014-08-23 06:53:05 UTC"
+  }
+]

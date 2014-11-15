@@ -53,18 +53,53 @@ public class BuildboxApi {
       created_at: jsonObject["created_at"] as String)
   }
   
-  func ArrayOfJSONDataForEndpoint(url: NSURL, completion: [NSDictionary] -> Void) {
-    let task = session.dataTaskWithURL(url) { data, response, error in
-      var code = (response as NSHTTPURLResponse).statusCode
-      if(code != 200) {
-        println("I didn't get a valid response back. Instead I got \(code)")
-        return
-      }
-      var error: NSError?
-      // Need to be able to distinguish between array and dict returns
-      var jsonArray: [NSDictionary] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as [NSDictionary]
+  public func getProjects(username: String, completion: (projects: [Project]) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Projects(username: username), apiKey, scheme: scheme)
+    ArrayOfJSONDataForEndpoint(url) { json in
+      var projects: [Project] = [Project]()
       
-      completion(jsonArray)
+      for projectData: NSDictionary in json {
+        projects.append(self.extractProject(projectData))
+      }
+      
+      completion(projects: projects)
+    }
+  }
+  
+  public func getProject(username: String, projectName: String, completion: (project: Project) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Project(username: username, project: projectName), apiKey, scheme: scheme)
+    
+    JSONDataForEndpoint(url) { json in
+      completion(project: self.extractProject(json))
+    }
+  }
+  
+  func extractProject(jsonObject: NSDictionary) -> Project {
+    return Project(
+      id: jsonObject["id"] as String,
+      url: jsonObject["url"] as String,
+      name: jsonObject["name"] as String,
+      repository: jsonObject["repository"] as String,
+      builds_url: jsonObject["builds_url"] as String,
+      created_at: jsonObject["created_at"] as String
+    )
+  }
+  
+  func ArrayOfJSONDataForEndpoint(url: NSURL, completion: [NSDictionary] -> Void) {
+    println("We got a url of: \(url)")
+    let task = session.dataTaskWithURL(url) { data, response, error in
+      if let theResponse : NSHTTPURLResponse = response as? NSHTTPURLResponse {
+        let code = theResponse.statusCode
+        if(code != 200) {
+          println("I didn't get a valid response back. Instead I got \(code)")
+          return
+        }
+        var error: NSError?
+        // Need to be able to distinguish between array and dict returns
+        var jsonArray: [NSDictionary] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as [NSDictionary]
+        
+        completion(jsonArray)
+      }
     }
     
     task.resume()
@@ -72,16 +107,18 @@ public class BuildboxApi {
   
   func JSONDataForEndpoint(url: NSURL, completion: NSDictionary -> Void) {
     let task = session.dataTaskWithURL(url) { data, response, error in
-      var code = (response as NSHTTPURLResponse).statusCode
-      if(code != 200) {
-        println("I didn't get a valid response back. Instead I got \(code)")
-        return
+      if let theResponse : NSHTTPURLResponse = response as? NSHTTPURLResponse {
+        var code = theResponse.statusCode
+        if(code != 200) {
+          println("I didn't get a valid response back. Instead I got \(code)")
+          return
+        }
+        var error: NSError?
+        // Need to be able to distinguish between array and dict returns
+        var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+        
+        completion(json)
       }
-      var error: NSError?
-      // Need to be able to distinguish between array and dict returns
-      var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
-      
-      completion(json)
     }
     
     task.resume()

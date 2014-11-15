@@ -14,7 +14,7 @@ import BuildboxKit
 class BuildboxApiSpec: QuickSpec {
   override func spec() {
     var api: BuildboxApi?
-
+    
     describe("All Accounts") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -41,7 +41,7 @@ class BuildboxApiSpec: QuickSpec {
         expect{called}.toEventually(beTruthy())
       }
     }
-
+    
     describe("An Account") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -66,6 +66,62 @@ class BuildboxApiSpec: QuickSpec {
           expect(account.name).to(equal("foobar"))
         }
         
+        expect{called}.toEventually(beTruthy())
+      }
+    }
+    
+    describe("All Projects") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("projects", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "projects?api_key=123abc")
+        DummySpitURLProtocol.cannedResponse(response)
+      }
+      
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+      
+      it("can be retrieved") {
+        var called = false
+        
+        api?.getProjects("dummyspit") { projects in
+          called = true
+          expect(projects.count).to(equal(3))
+        }
+
+        expect{called}.toEventually(beTruthy())
+      }
+    }
+    
+    describe("A single Project") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_project", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar?api_key=123abc")
+        DummySpitURLProtocol.cannedResponse(response)
+      }
+      
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+      
+      it("can be retrieved") {
+        var called = false
+        
+        api?.getProject("dummyspit", projectName: "foobar") { project in
+          called = true
+          expect(project.name).to(equal("Project3"))
+        }
+
         expect{called}.toEventually(beTruthy())
       }
     }
