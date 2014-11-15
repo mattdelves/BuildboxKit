@@ -85,6 +85,21 @@ public class BuildboxApi {
     )
   }
   
+  public func getBuilds(completion: (builds: [Build]) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.AllBuilds, apiKey, scheme: scheme)
+    
+    ArrayOfJSONDataForEndpoint(url) { jsonArray in
+      var builds: [Build] = [Build]()
+      
+      for buildData : NSDictionary in jsonArray {
+        let build = self.extractBuild(buildData)
+        builds.append(build)
+      }
+      
+      completion(builds: builds)
+    }
+  }
+  
   public func getBuilds(username: String, projectName: String, completion: (builds: [Build]) -> Void) {
     let url = buildboxEndpoint(BuildboxURL.Builds(username: username, project: projectName), apiKey, scheme: scheme)
     

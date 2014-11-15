@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D5E9F2B1A1753FE00FB77AE /* all_builds.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D5E9F2A1A1753FE00FB77AE /* all_builds.json */; };
 		8D8E4FFD1A16D5A00049C5D5 /* projects.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E4FFC1A16D5A00049C5D5 /* projects.json */; };
 		8D8E4FFF1A16D7A40049C5D5 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E4FFE1A16D7A40049C5D5 /* Project.swift */; };
 		8D8E50011A16E5330049C5D5 /* foobar_project.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50001A16E5330049C5D5 /* foobar_project.json */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D5E9F2A1A1753FE00FB77AE /* all_builds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all_builds.json; sourceTree = "<group>"; };
 		8D8E4FFC1A16D5A00049C5D5 /* projects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = projects.json; sourceTree = "<group>"; };
 		8D8E4FFE1A16D7A40049C5D5 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		8D8E50001A16E5330049C5D5 /* foobar_project.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foobar_project.json; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		C9FE5BFB19BB288B008B8746 /* JSON Responses */ = {
 			isa = PBXGroup;
 			children = (
+				8D5E9F2A1A1753FE00FB77AE /* all_builds.json */,
 				8D8E50081A16FFB40049C5D5 /* agents.json */,
 				8D8E50021A16E7860049C5D5 /* builds.json */,
 				8D8E4FFC1A16D5A00049C5D5 /* projects.json */,
@@ -269,6 +272,7 @@
 			files = (
 				8D8E50031A16E7860049C5D5 /* builds.json in Resources */,
 				C98696D719C4152400164926 /* foobar_account.json in Resources */,
+				8D5E9F2B1A1753FE00FB77AE /* all_builds.json in Resources */,
 				8D8E4FFD1A16D5A00049C5D5 /* projects.json in Resources */,
 				8D8E50091A16FFB40049C5D5 /* agents.json in Resources */,
 				8D8E50011A16E5330049C5D5 /* foobar_project.json in Resources */,

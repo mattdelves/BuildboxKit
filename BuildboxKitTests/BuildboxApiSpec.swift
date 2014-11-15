@@ -126,7 +126,7 @@ class BuildboxApiSpec: QuickSpec {
       }
     }
     
-    describe("All Builds") {
+    describe("All Builds for a project") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
@@ -148,6 +148,34 @@ class BuildboxApiSpec: QuickSpec {
         api?.getBuilds("foobar", projectName: "Project1") { builds in
           called = true
           expect(builds.count).to(equal(7))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+    }
+    
+    describe("All Builds for a user") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("all_builds", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
+        DummySpitURLProtocol.cannedResponse(response)
+      }
+      
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+      
+      it("can be retrieved") {
+        var called = false
+        
+        api?.getBuilds { builds in
+          called = true
+          expect(builds.count).to(equal(30))
         }
         
         expect{called}.toEventually(beTruthy())
