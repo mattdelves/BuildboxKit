@@ -17,6 +17,7 @@ public enum BuildboxURL {
   case Builds(username:String, project:String)
   case AllBuilds
   case Agents(username:String)
+  case User
 }
 
 public protocol Path {
@@ -42,6 +43,7 @@ extension BuildboxURL:Path {
     case .Builds(let username, let project): return "/\(apiVersion)/accounts/\(username)/projects/\(project)/builds"
     case .AllBuilds: return "/\(apiVersion)/builds"
     case .Agents(let username): return "/\(apiVersion)/accounts/\(username)/agents"
+    case .User: return "/\(apiVersion)/user"
       }
   }
 }

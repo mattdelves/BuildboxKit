@@ -176,6 +176,23 @@ public class BuildboxApi {
     )
   }
   
+  public func getUser(completion: (user: User) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.User, apiKey, scheme: scheme)
+    
+    JSONDataForEndpoint(url) { json in
+      completion(user: self.extractUser(json))
+    }
+  }
+  
+  func extractUser(jsonData: NSDictionary) -> User {
+    return User(
+      id: jsonData["id"] as String,
+      name: jsonData["name"] as String,
+      email: jsonData["email"] as String,
+      created_at: jsonData["created_at"] as String
+    )
+  }
+  
   func ArrayOfJSONDataForEndpoint(url: NSURL, completion: [NSDictionary] -> Void) {
     let task = session.dataTaskWithURL(url) { data, response, error in
       if let theResponse : NSHTTPURLResponse = response as? NSHTTPURLResponse {

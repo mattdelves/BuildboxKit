@@ -238,5 +238,33 @@ class BuildboxApiSpec: QuickSpec {
         expect{called}.toEventually(beTruthy())
       }
     }
+    
+    describe("The current User") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        
+        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("user", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "user")
+        DummySpitURLProtocol.cannedResponse(response)
+      }
+      
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+      
+      it("can be retrieved") {
+        var called = false
+        
+        api?.getUser { user in
+          called = true
+          expect(user.name).to(equal("Foo Bar"))
+        }
+        
+        expect{called}.toEventually(beTruthy())
+      }
+    }
   }
 }

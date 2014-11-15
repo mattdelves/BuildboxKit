@@ -29,11 +29,11 @@ class BuildboxURLSpec: QuickSpec {
         var endpoint = BuildboxURL.Project(username: "foo", project: "bar")
         expect(endpoint.path).to(equal("/v1/accounts/foo/projects/bar"))
       }
-      it("for all builds") {
+      it("for all builds in a project") {
         var endpoint = BuildboxURL.Builds(username: "foo", project: "bar")
         expect(endpoint.path).to(equal("/v1/accounts/foo/projects/bar/builds"))
       }
-      it("for a specified build") {
+      it("for a specified build in a project") {
         var endpoint = BuildboxURL.Build(username: "foo", project: "bar", build: 1)
         expect(endpoint.path).to(equal("/v1/accounts/foo/projects/bar/builds/1"))
       }
@@ -41,6 +41,16 @@ class BuildboxURLSpec: QuickSpec {
       it("for all agents") {
         var endpoint = BuildboxURL.Agents(username: "foo")
         expect(endpoint.path).to(equal("/v1/accounts/foo/agents"))
+      }
+      
+      it("for all builds") {
+        var endpoint = BuildboxURL.AllBuilds
+        expect(endpoint.path).to(equal("/v1/builds"))
+      }
+      
+      it("for the current user") {
+        var endpoint = BuildboxURL.User
+        expect(endpoint.path).to(equal("/v1/user"))
       }
     }
     
