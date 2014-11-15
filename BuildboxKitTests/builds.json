@@ -218,7 +218,7 @@
     ],
     "created_at": "2014-08-23 09:51:14 UTC",
     "scheduled_at": "2014-08-23 09:51:14 UTC",
-    "started_at": "",
+    "started_at": null,
     "finished_at": "2014-08-23 09:51:14 UTC",
     "meta_data": {
     }
@@ -238,7 +238,7 @@
     ],
     "created_at": "2014-08-23 07:06:45 UTC",
     "scheduled_at": "2014-08-23 07:06:45 UTC",
-    "started_at": "",
+    "started_at": null,
     "finished_at": "2014-08-23 07:06:45 UTC",
     "meta_data": {
     }

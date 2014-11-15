@@ -109,6 +109,11 @@ public class BuildboxApi {
   }
   
   func extractBuild(jsonObject: NSDictionary) -> Build {
+    var started_at = ""
+    if let started_at_value : String = jsonObject["started_at"] as? String {
+      started_at = started_at_value
+    }
+    
     return Build(
       id: jsonObject["id"] as String,
       url: jsonObject["url"] as String,
@@ -121,7 +126,7 @@ public class BuildboxApi {
       jobs: jsonObject["jobs"] as [NSDictionary],
       created_at: jsonObject["created_at"] as String,
       scheduled_at: jsonObject["scheduled_at"] as String,
-      started_at: jsonObject["started_at"] as String,
+      started_at: started_at,
       finished_at: jsonObject["finished_at"] as String,
       meta_data: jsonObject["meta_data"] as NSDictionary
     )
