@@ -48,7 +48,8 @@ public func buildboxEndpoint(route:BuildboxURL, apiKey:String, scheme:String = "
   let components:NSURLComponents = NSURLComponents()
   components.scheme = scheme
   components.host = route.host
-  components.path = "\(route.path)?api_key=\(apiKey)"
+  components.path = "\(route.path)"
+  components.query = "api_key=\(apiKey)"
   // computedURL.setQuery(route.apiKey)
   return components.URL!
 }
