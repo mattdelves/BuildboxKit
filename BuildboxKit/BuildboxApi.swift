@@ -176,7 +176,6 @@ public class BuildboxApi {
   }
   
   func ArrayOfJSONDataForEndpoint(url: NSURL, completion: [NSDictionary] -> Void) {
-    println("We got a url of: \(url)")
     let task = session.dataTaskWithURL(url) { data, response, error in
       if let theResponse : NSHTTPURLResponse = response as? NSHTTPURLResponse {
         let code = theResponse.statusCode
