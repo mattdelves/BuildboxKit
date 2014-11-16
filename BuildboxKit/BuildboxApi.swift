@@ -168,6 +168,11 @@ public class BuildboxApi {
       started_at = started_at_value
     }
     
+    var finished_at = ""
+    if let finished_at_value : String = jsonObject["finished_at"] as? String {
+      finished_at = finished_at_value
+    }
+    
     return Build(
       id: jsonObject["id"] as String,
       url: jsonObject["url"] as String,
@@ -181,7 +186,7 @@ public class BuildboxApi {
       created_at: jsonObject["created_at"] as String,
       scheduled_at: jsonObject["scheduled_at"] as String,
       started_at: started_at,
-      finished_at: jsonObject["finished_at"] as String,
+      finished_at: finished_at,
       meta_data: jsonObject["meta_data"] as NSDictionary,
       project: jsonObject["project"] as Dictionary<String, String>
     )
