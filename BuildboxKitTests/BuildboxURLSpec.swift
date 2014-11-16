@@ -18,28 +18,28 @@ class BuildboxURLSpec: QuickSpec {
         expect(endpoint.path).to(equal("/v1/accounts"))
       }
       it("for a specified account") {
-        var endpoint = BuildboxURL.Account(username: "foo")
+        var endpoint = BuildboxURL.Account(account: "foo")
         expect(endpoint.path).to(equal("/v1/accounts/foo"))
       }
       it("for all projects on an account") {
-        var endpoint = BuildboxURL.Projects(username: "foo")
+        var endpoint = BuildboxURL.Projects(account: "foo")
         expect(endpoint.path).to(equal("/v1/accounts/foo/projects"))
       }
       it("for a specified project") {
-        var endpoint = BuildboxURL.Project(username: "foo", project: "bar")
+        var endpoint = BuildboxURL.Project(account: "foo", project: "bar")
         expect(endpoint.path).to(equal("/v1/accounts/foo/projects/bar"))
       }
       it("for all builds in a project") {
-        var endpoint = BuildboxURL.Builds(username: "foo", project: "bar")
+        var endpoint = BuildboxURL.Builds(account: "foo", project: "bar")
         expect(endpoint.path).to(equal("/v1/accounts/foo/projects/bar/builds"))
       }
       it("for a specified build in a project") {
-        var endpoint = BuildboxURL.Build(username: "foo", project: "bar", build: 1)
+        var endpoint = BuildboxURL.Build(account: "foo", project: "bar", build: 1)
         expect(endpoint.path).to(equal("/v1/accounts/foo/projects/bar/builds/1"))
       }
       
       it("for all agents") {
-        var endpoint = BuildboxURL.Agents(username: "foo")
+        var endpoint = BuildboxURL.Agents(account: "foo")
         expect(endpoint.path).to(equal("/v1/accounts/foo/agents"))
       }
       

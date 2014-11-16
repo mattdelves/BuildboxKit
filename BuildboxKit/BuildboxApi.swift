@@ -44,7 +44,7 @@ public class BuildboxApi {
   }
   
   public func getAccount(name: String, completion: (account: Account?, error: BuildboxApiError?) -> Void) {
-    let url = buildboxEndpoint(BuildboxURL.Account(username: name), apiKey, scheme: scheme)
+    let url = buildboxEndpoint(BuildboxURL.Account(account: name), apiKey, scheme: scheme)
     
     JSONDataForEndpoint(url) { json, error in
       var account : Account?
@@ -68,8 +68,8 @@ public class BuildboxApi {
       created_at: jsonObject["created_at"] as String)
   }
   
-  public func getProjects(username: String, completion: (projects: [Project], error: BuildboxApiError?) -> Void) {
-    let url = buildboxEndpoint(BuildboxURL.Projects(username: username), apiKey, scheme: scheme)
+  public func getProjects(account: String, completion: (projects: [Project], error: BuildboxApiError?) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Projects(account: account), apiKey, scheme: scheme)
     ArrayOfJSONDataForEndpoint(url) { json, error in
       var projects: [Project] = [Project]()
       
@@ -85,8 +85,8 @@ public class BuildboxApi {
     }
   }
   
-  public func getProject(username: String, projectName: String, completion: (project: Project?, error: BuildboxApiError?) -> Void) {
-    let url = buildboxEndpoint(BuildboxURL.Project(username: username, project: projectName), apiKey, scheme: scheme)
+  public func getProject(account: String, projectName: String, completion: (project: Project?, error: BuildboxApiError?) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Project(account: account, project: projectName), apiKey, scheme: scheme)
     
     JSONDataForEndpoint(url) { json, error in
       var project : Project?
@@ -129,8 +129,8 @@ public class BuildboxApi {
     }
   }
   
-  public func getBuilds(username: String, projectName: String, completion: (builds: [Build], error: BuildboxApiError?) -> Void) {
-    let url = buildboxEndpoint(BuildboxURL.Builds(username: username, project: projectName), apiKey, scheme: scheme)
+  public func getBuilds(account: String, projectName: String, completion: (builds: [Build], error: BuildboxApiError?) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Builds(account: account, project: projectName), apiKey, scheme: scheme)
     
     ArrayOfJSONDataForEndpoint(url) { jsonArray, error in
       var builds: [Build] = [Build]()
@@ -148,8 +148,8 @@ public class BuildboxApi {
     }
   }
   
-  public func getBuild(username: String, projectName: String, number: Int, completion: (build: Build?, error: BuildboxApiError?) -> Void) {
-    let url = buildboxEndpoint(BuildboxURL.Build(username: username, project: projectName, build: number), apiKey, scheme: scheme)
+  public func getBuild(account: String, projectName: String, number: Int, completion: (build: Build?, error: BuildboxApiError?) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Build(account: account, project: projectName, build: number), apiKey, scheme: scheme)
     
     JSONDataForEndpoint(url) { json, error in
       var build : Build?
@@ -187,8 +187,8 @@ public class BuildboxApi {
     )
   }
   
-  public func getAgents(username: String, completion: (agents: [Agent], error: BuildboxApiError?) -> Void) {
-    let url = buildboxEndpoint(BuildboxURL.Agents(username: username), apiKey, scheme: scheme)
+  public func getAgents(account: String, completion: (agents: [Agent], error: BuildboxApiError?) -> Void) {
+    let url = buildboxEndpoint(BuildboxURL.Agents(account: account), apiKey, scheme: scheme)
     
     ArrayOfJSONDataForEndpoint(url) { jsonArray, error in
       var agents: [Agent] = [Agent]()

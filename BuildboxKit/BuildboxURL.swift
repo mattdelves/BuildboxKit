@@ -9,14 +9,14 @@
 import Foundation
 
 public enum BuildboxURL {
-  case Account(username:String)
+  case Account(account:String)
   case Accounts
-  case Project(username:String, project:String)
-  case Projects(username:String)
-  case Build(username:String, project:String, build:Int)
-  case Builds(username:String, project:String)
+  case Project(account:String, project:String)
+  case Projects(account:String)
+  case Build(account:String, project:String, build:Int)
+  case Builds(account:String, project:String)
   case AllBuilds
-  case Agents(username:String)
+  case Agents(account:String)
   case User
 }
 
@@ -35,14 +35,14 @@ extension BuildboxURL:Path {
   }
   public var path:String {
     switch self {
-    case .Account(let username): return "/\(apiVersion)/accounts/\(username)"
+    case .Account(let account): return "/\(apiVersion)/accounts/\(account)"
     case .Accounts: return "/\(apiVersion)/accounts"
-    case .Project(let username, let project): return "/\(apiVersion)/accounts/\(username)/projects/\(project)"
-    case .Projects(let username): return "/\(apiVersion)/accounts/\(username)/projects"
-    case .Build(let username, let project, let build): return "/\(apiVersion)/accounts/\(username)/projects/\(project)/builds/\(build)"
-    case .Builds(let username, let project): return "/\(apiVersion)/accounts/\(username)/projects/\(project)/builds"
+    case .Project(let account, let project): return "/\(apiVersion)/accounts/\(account)/projects/\(project)"
+    case .Projects(let account): return "/\(apiVersion)/accounts/\(account)/projects"
+    case .Build(let account, let project, let build): return "/\(apiVersion)/accounts/\(account)/projects/\(project)/builds/\(build)"
+    case .Builds(let account, let project): return "/\(apiVersion)/accounts/\(account)/projects/\(project)/builds"
     case .AllBuilds: return "/\(apiVersion)/builds"
-    case .Agents(let username): return "/\(apiVersion)/accounts/\(username)/agents"
+    case .Agents(let account): return "/\(apiVersion)/accounts/\(account)/agents"
     case .User: return "/\(apiVersion)/user"
       }
   }
