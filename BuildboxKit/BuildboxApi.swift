@@ -35,7 +35,7 @@ public class BuildboxApi {
         completion(accounts: accounts, error: error)
       } else {
         for accountData:NSDictionary in json! {
-          accounts.append(self.extractAccount(accountData))
+          accounts.append(Account(accountData))
         }
         
         completion(accounts: accounts, error: nil)
@@ -50,22 +50,11 @@ public class BuildboxApi {
       var account : Account?
       
       if error == nil {
-        account = self.extractAccount(json!)
+        account = Account(json!)
       }
       
       completion(account: account, error: error)
     }
-  }
-  
-  func extractAccount(jsonObject: NSDictionary) -> Account {
-    return Account(
-      id: jsonObject["id"] as String,
-      url: jsonObject["url"] as String,
-      name: jsonObject["name"] as String,
-      projects_url: jsonObject["projects_url"] as String,
-      agents_url: jsonObject["agents_url"] as String,
-      users_url: jsonObject["users_url"] as String,
-      created_at: jsonObject["created_at"] as String)
   }
   
   public func getProjects(account: String, completion: (projects: [Project], error: BuildboxApiError?) -> Void) {
@@ -77,7 +66,7 @@ public class BuildboxApi {
         completion(projects: projects, error: error)
       } else {
         for projectData: NSDictionary in json! {
-          projects.append(self.extractProject(projectData))
+          projects.append(Project(projectData))
         }
         
         completion(projects: projects, error: nil)
@@ -92,23 +81,11 @@ public class BuildboxApi {
       var project : Project?
       
       if error == nil {
-        project = self.extractProject(json!)
+        project = Project(json!)
       }
       
       completion(project: project, error: error)
     }
-  }
-  
-  func extractProject(jsonObject: NSDictionary) -> Project {
-    return Project(
-      id: jsonObject["id"] as String,
-      url: jsonObject["url"] as String,
-      name: jsonObject["name"] as String,
-      repository: jsonObject["repository"] as String,
-      builds_url: jsonObject["builds_url"] as String,
-      created_at: jsonObject["created_at"] as String,
-      builds: [Build]()
-    )
   }
   
   public func getBuilds(completion: (builds: [Build], error: BuildboxApiError?) -> Void) {
@@ -121,8 +98,7 @@ public class BuildboxApi {
         completion(builds: builds, error: error)
       } else {
         for buildData : NSDictionary in jsonArray! {
-          let build = self.extractBuild(buildData)
-          builds.append(build)
+          builds.append(Build(buildData))
         }
         
         completion(builds: builds, error: nil)
@@ -140,8 +116,7 @@ public class BuildboxApi {
         completion(builds: builds, error: error)
       } else {
         for buildData : NSDictionary in jsonArray! {
-          let build = self.extractBuild(buildData)
-          builds.append(build)
+          builds.append(Build(buildData))
         }
         
         completion(builds: builds, error: nil)
@@ -156,41 +131,11 @@ public class BuildboxApi {
       var build : Build?
       
       if error == nil {
-        build = self.extractBuild(json!)
+        build = Build(json!)
       }
       
       completion(build: build, error: error)
     }
-  }
-  
-  func extractBuild(jsonObject: NSDictionary) -> Build {
-    var started_at = ""
-    if let started_at_value : String = jsonObject["started_at"] as? String {
-      started_at = started_at_value
-    }
-    
-    var finished_at = ""
-    if let finished_at_value : String = jsonObject["finished_at"] as? String {
-      finished_at = finished_at_value
-    }
-    
-    return Build(
-      id: jsonObject["id"] as String,
-      url: jsonObject["url"] as String,
-      number: jsonObject["number"] as Int,
-      branch: jsonObject["branch"] as String,
-      state: jsonObject["state"] as String,
-      message: jsonObject["message"] as String,
-      commit: jsonObject["commit"] as String,
-      env: jsonObject["env"] as NSDictionary,
-      jobs: jsonObject["jobs"] as [NSDictionary],
-      created_at: jsonObject["created_at"] as String,
-      scheduled_at: jsonObject["scheduled_at"] as String,
-      started_at: started_at,
-      finished_at: finished_at,
-      meta_data: jsonObject["meta_data"] as NSDictionary,
-      project: jsonObject["project"] as Dictionary<String, String>
-    )
   }
   
   public func getAgents(account: String, completion: (agents: [Agent], error: BuildboxApiError?) -> Void) {
@@ -203,26 +148,12 @@ public class BuildboxApi {
         completion(agents: agents, error: error)
       } else {
         for agentData: NSDictionary in jsonArray! {
-          agents.append(self.extractAgent(agentData))
+          agents.append(Agent(agentData))
         }
         
         completion(agents: agents, error: nil)
       }
     }
-  }
-  
-  func extractAgent(jsonData: NSDictionary) -> Agent {
-    return Agent(
-      id: jsonData["id"] as String,
-      url: jsonData["url"] as String,
-      name: jsonData["name"] as String,
-      connection_state: jsonData["connection_state"] as String,
-      ip_address: jsonData["ip_address"] as String,
-      access_token: jsonData["access_token"] as String,
-      hostname: jsonData["hostname"] as String,
-      creator: jsonData["creator"] as Dictionary<String, String>,
-      created_at: jsonData["created_at"] as String
-    )
   }
   
   public func getUser(completion: (user: User?, error: BuildboxApiError?) -> Void) {
@@ -232,20 +163,11 @@ public class BuildboxApi {
       var user : User?
       
       if error == nil {
-        user = self.extractUser(json!)
+        user = User(json!)
       }
       
       completion(user: user, error: error)
     }
-  }
-  
-  func extractUser(jsonData: NSDictionary) -> User {
-    return User(
-      id: jsonData["id"] as String,
-      name: jsonData["name"] as String,
-      email: jsonData["email"] as String,
-      created_at: jsonData["created_at"] as String
-    )
   }
   
   func ArrayOfJSONDataForEndpoint(url: NSURL, completion: ([NSDictionary]?, BuildboxApiError?) -> Void) {
@@ -257,7 +179,6 @@ public class BuildboxApi {
         var jsonArray: [NSDictionary]?
         
         if(code != 200) {
-          println("I didn't get a valid response back. Instead I got \(code)")
           var body : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as NSDictionary
           error = BuildboxApiError(code: code, reason: body["message"] as String)
         } else {
@@ -281,7 +202,6 @@ public class BuildboxApi {
         var nserror : NSError?
         var json : NSDictionary?
         if(code != 200) {
-          println("I didn't get a valid response back. Instead I got \(code)")
           var body : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as NSDictionary
           error = BuildboxApiError(code: code, reason: body["message"] as String)
         } else {

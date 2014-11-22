@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Account {
+public class Account {
   public var id: String
   public var url: String
   public var name: String
@@ -16,4 +16,14 @@ public struct Account {
   public var agents_url: String
   public var users_url: String
   public var created_at: String
+  
+  init(_ jsonObject: NSDictionary) {
+    self.id = jsonObject["id"] as String
+    self.url = jsonObject["url"] as String
+    self.name = jsonObject["name"] as String
+    self.projects_url = jsonObject["projects_url"] as String
+    self.agents_url = jsonObject["agents_url"] as String
+    self.users_url = jsonObject["users_url"] as String
+    self.created_at = jsonObject["created_at"] as String
+  }
 }

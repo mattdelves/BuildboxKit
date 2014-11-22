@@ -8,9 +8,16 @@
 
 import Foundation
 
-public struct User {
+public class User {
   public var id : String
   public var name : String
   public var email : String
   public var created_at : String
+  
+  init(_ jsonObject: NSDictionary) {
+    self.id = jsonObject["id"] as String
+    self.name = jsonObject["name"] as String
+    self.email = jsonObject["email"] as String
+    self.created_at = jsonObject["created_at"] as String
+  }
 }
