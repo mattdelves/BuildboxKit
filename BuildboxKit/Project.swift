@@ -15,4 +15,5 @@ public struct Project {
   public var repository: String
   public var builds_url: String
   public var created_at: String
+  public var builds: [Build]?
 }

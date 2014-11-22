@@ -106,7 +106,8 @@ public class BuildboxApi {
       name: jsonObject["name"] as String,
       repository: jsonObject["repository"] as String,
       builds_url: jsonObject["builds_url"] as String,
-      created_at: jsonObject["created_at"] as String
+      created_at: jsonObject["created_at"] as String,
+      builds: [Build]()
     )
   }
   
