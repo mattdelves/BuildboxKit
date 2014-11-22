@@ -31,4 +31,4 @@ git checkout -qf "$BUILDBOX_COMMIT"
 git submodule init
 git submodule update
 
-xcodebuild -workspace BuildboxKit.xcworkspace -scheme BuildboxKit -sdk iphonesimulator8.1 -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' clean build test
+xcodebuild -workspace BuildboxKit.xcworkspace -scheme BuildboxKit -sdk iphonesimulator8.2 -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.2' clean build test | xcpretty
