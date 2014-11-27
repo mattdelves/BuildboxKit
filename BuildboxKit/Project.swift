@@ -15,6 +15,7 @@ public class Project {
   public var repository: String
   public var builds_url: String
   public var created_at: String
+  public var featured_build: Build
   public var builds: [Build]?
   
   init(_ jsonObject: NSDictionary) {
@@ -24,6 +25,7 @@ public class Project {
     self.repository = jsonObject["repository"] as String
     self.builds_url = jsonObject["builds_url"] as String
     self.created_at = jsonObject["created_at"] as String
+    self.featured_build = Build(jsonObject["featured_build"] as NSDictionary)
     self.builds = [Build]()
   }
 }

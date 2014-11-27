@@ -5,7 +5,22 @@
     "name": "Project1",
     "repository": "git@github.com:foobar/Project1.git",
     "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
-    "created_at": "2014-09-06 02:17:38 UTC"
+ "created_at": "2014-09-06 02:17:38 UTC",
+ "featured_build": {
+ "id": "f62a1b4d-10f9-4790-bc1c-e2c3a0c80983",
+ "url": "https://api.buildbox.io/v1/accounts/my-great-account/projects/my-project/builds/1",
+ "number": 1,
+ "state": "passed",
+ "message": "Bumping to version 0.2-beta.6",
+ "commit": "abcd0b72a1e580e90712cdd9eb26d3fb41cd09c8",
+ "branch": "master",
+ "env": { },
+ "created_at": "2014-06-14 05:36:37 UTC",
+ "scheduled_at": "2014-06-14 05:36:37 UTC",
+ "started_at": "2014-06-14 05:36:41 UTC",
+ "finished_at": "2014-06-14 05:36:49 UTC",
+ "meta_data": { }
+ }
   },
   {
     "id": "abc222",
@@ -13,7 +28,22 @@
     "name": "Project2",
     "repository": "git@github.com:foobar/Project2.git",
     "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds",
-    "created_at": "2014-08-23 09:58:03 UTC"
+ "created_at": "2014-08-23 09:58:03 UTC",
+ "featured_build": {
+ "id": "f62a1b4d-10f9-4790-bc1c-e2c3a0c80983",
+ "url": "https://api.buildbox.io/v1/accounts/my-great-account/projects/my-project/builds/1",
+ "number": 1,
+ "state": "passed",
+ "message": "Bumping to version 0.2-beta.6",
+ "commit": "abcd0b72a1e580e90712cdd9eb26d3fb41cd09c8",
+ "branch": "master",
+ "env": { },
+ "created_at": "2014-06-14 05:36:37 UTC",
+ "scheduled_at": "2014-06-14 05:36:37 UTC",
+ "started_at": "2014-06-14 05:36:41 UTC",
+ "finished_at": "2014-06-14 05:36:49 UTC",
+ "meta_data": { }
+ }
   },
   {
     "id": "abc333",
@@ -21,6 +51,21 @@
     "name": "Project3",
     "repository": "git@github.com:foobar/project2.git",
     "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds",
-    "created_at": "2014-08-23 06:53:05 UTC"
+    "created_at": "2014-08-23 06:53:05 UTC",
+    "featured_build": {
+     "id": "f62a1b4d-10f9-4790-bc1c-e2c3a0c80983",
+     "url": "https://api.buildbox.io/v1/accounts/my-great-account/projects/my-project/builds/1",
+     "number": 1,
+     "state": "passed",
+     "message": "Bumping to version 0.2-beta.6",
+     "commit": "abcd0b72a1e580e90712cdd9eb26d3fb41cd09c8",
+     "branch": "master",
+     "env": { },
+     "created_at": "2014-06-14 05:36:37 UTC",
+     "scheduled_at": "2014-06-14 05:36:37 UTC",
+     "started_at": "2014-06-14 05:36:41 UTC",
+     "finished_at": "2014-06-14 05:36:49 UTC",
+     "meta_data": { }
+   }
   }
 ]
