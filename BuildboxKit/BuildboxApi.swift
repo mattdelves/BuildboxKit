@@ -34,7 +34,7 @@ public class BuildboxApi {
       if let error : BuildboxApiError = error {
         completion(accounts: accounts, error: error)
       } else {
-        for accountData:NSDictionary in json! {
+        for accountData:[String: AnyObject] in json! as [[String: AnyObject]]{
           accounts.append(Account(accountData))
         }
         
@@ -50,7 +50,7 @@ public class BuildboxApi {
       var account : Account?
       
       if error == nil {
-        account = Account(json!)
+        account = Account(json! as [String: AnyObject])
       }
       
       completion(account: account, error: error)
@@ -65,7 +65,7 @@ public class BuildboxApi {
       if let error : BuildboxApiError = error {
         completion(projects: projects, error: error)
       } else {
-        for projectData: NSDictionary in json! {
+        for projectData: [String: AnyObject] in json! as [[String: AnyObject]]{
           projects.append(Project(projectData))
         }
         
@@ -81,7 +81,7 @@ public class BuildboxApi {
       var project : Project?
       
       if error == nil {
-        project = Project(json!)
+        project = Project(json! as [String: AnyObject])
       }
       
       completion(project: project, error: error)
@@ -97,7 +97,7 @@ public class BuildboxApi {
       if let error : BuildboxApiError = error {
         completion(builds: builds, error: error)
       } else {
-        for buildData : NSDictionary in jsonArray! {
+        for buildData : [String: AnyObject] in jsonArray! as [[String: AnyObject]] {
           builds.append(Build(buildData))
         }
         
@@ -115,7 +115,7 @@ public class BuildboxApi {
       if let error : BuildboxApiError = error {
         completion(builds: builds, error: error)
       } else {
-        for buildData : NSDictionary in jsonArray! {
+        for buildData : [String: AnyObject] in jsonArray! as [[String: AnyObject]] {
           builds.append(Build(buildData))
         }
         
@@ -131,7 +131,7 @@ public class BuildboxApi {
       var build : Build?
       
       if error == nil {
-        build = Build(json!)
+        build = Build(json! as [String: AnyObject])
       }
       
       completion(build: build, error: error)
@@ -147,7 +147,7 @@ public class BuildboxApi {
       if let error : BuildboxApiError = error {
         completion(agents: agents, error: error)
       } else {
-        for agentData: NSDictionary in jsonArray! {
+        for agentData: [String: AnyObject] in jsonArray! as [[String: AnyObject]] {
           agents.append(Agent(agentData))
         }
         
@@ -163,7 +163,7 @@ public class BuildboxApi {
       var user : User?
       
       if error == nil {
-        user = User(json!)
+        user = User(json! as [String: AnyObject])
       }
       
       completion(user: user, error: error)
@@ -176,14 +176,14 @@ public class BuildboxApi {
         let code = theResponse.statusCode
         var error : BuildboxApiError?
         var nserror: NSError?
-        var jsonArray: [NSDictionary]?
+        var jsonArray: [[String: AnyObject]]?
         
         if(code != 200) {
-          var body : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as NSDictionary
+          var body : [String: AnyObject] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as [String: AnyObject]
           error = BuildboxApiError(code: code, reason: body["message"] as String)
         } else {
           // Need to be able to distinguish between array and dict returns
-          jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as [NSDictionary]?
+          jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as [[String: AnyObject]]?
           
         }
         
@@ -200,13 +200,13 @@ public class BuildboxApi {
         let code = theResponse.statusCode
         var error : BuildboxApiError?
         var nserror : NSError?
-        var json : NSDictionary?
+        var json : [String: AnyObject]?
         if(code != 200) {
-          var body : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as NSDictionary
+          var body : [String: AnyObject] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as [String: AnyObject]
           error = BuildboxApiError(code: code, reason: body["message"] as String)
         } else {
           // Need to be able to distinguish between array and dict returns
-          json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as NSDictionary?
+          json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &nserror) as [String: AnyObject]?
         }
         
         completion(json, error)

@@ -18,14 +18,14 @@ public class Project {
   public var featured_build: Build
   public var builds: [Build]?
   
-  init(_ jsonObject: NSDictionary) {
+  init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
     self.url = jsonObject["url"] as String
     self.name = jsonObject["name"] as String
     self.repository = jsonObject["repository"] as String
     self.builds_url = jsonObject["builds_url"] as String
     self.created_at = jsonObject["created_at"] as String
-    self.featured_build = Build(jsonObject["featured_build"] as NSDictionary)
+    self.featured_build = Build(jsonObject["featured_build"] as [String: AnyObject])
     self.builds = [Build]()
   }
 }

@@ -39,16 +39,16 @@ public class Build {
   public var state: BuildStatus?
   public var message: String
   public var commit: String
-  public var env: NSDictionary
-  public var jobs: [NSDictionary]?
+  public var env: [String: AnyObject]
+  public var jobs: [[String: AnyObject]]?
   public var created_at: String
   public var scheduled_at: String
   public var started_at: String
   public var finished_at: String
-  public var meta_data: NSDictionary
-  public var project: NSDictionary?
+  public var meta_data: [String: AnyObject]
+  public var project: [String: AnyObject]?
   
-  init(_ jsonObject: NSDictionary) {
+  init(_ jsonObject: [String: AnyObject]) {
     var started_at = ""
     if let started_at_value : String = jsonObject["started_at"] as? String {
       started_at = started_at_value
@@ -66,18 +66,18 @@ public class Build {
     self.branch = jsonObject["branch"] as String
     self.message = jsonObject["message"] as String
     self.commit = jsonObject["commit"] as String
-    self.env = jsonObject["env"] as NSDictionary
+    self.env = jsonObject["env"] as [String: AnyObject]
     self.created_at = jsonObject["created_at"] as String
     self.scheduled_at = jsonObject["scheduled_at"] as String
     self.started_at = started_at
     self.finished_at = finished_at
-    self.meta_data = jsonObject["meta_data"] as NSDictionary
+    self.meta_data = jsonObject["meta_data"] as [String: AnyObject]
 
-    if let jobs : [NSDictionary] = jsonObject["jobs"] as? [NSDictionary] {
+    if let jobs : [[String: AnyObject]] = jsonObject["jobs"] as? [[String: AnyObject]] {
       self.jobs = jobs
     }
 
-    if let project : NSDictionary = jsonObject["project"] as? NSDictionary {
+    if let project : [String: AnyObject] = jsonObject["project"] as? [String: AnyObject] {
       self.project = project
     }
 

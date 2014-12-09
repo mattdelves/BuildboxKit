@@ -14,7 +14,7 @@ public class User {
   public var email : String
   public var created_at : String
   
-  init(_ jsonObject: NSDictionary) {
+  init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
     self.name = jsonObject["name"] as String
     self.email = jsonObject["email"] as String

@@ -16,10 +16,10 @@ public class Agent {
   public var ip_address: String
   public var access_token: String
   public var hostname: String
-  public var creator: Dictionary<String, String>
+  public var creator: [String: AnyObject]
   public var created_at: String
   
-  init(_ jsonObject: NSDictionary) {
+  init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
     self.url = jsonObject["url"] as String
     self.name = jsonObject["name"] as String
@@ -27,7 +27,7 @@ public class Agent {
     self.ip_address = jsonObject["ip_address"] as String
     self.access_token = jsonObject["access_token"] as String
     self.hostname = jsonObject["hostname"] as String
-    self.creator = jsonObject["creator"] as Dictionary<String, String>
+    self.creator = jsonObject["creator"] as [String: AnyObject]
     self.created_at = jsonObject["created_at"] as String
   }
 }
