@@ -1,5 +1,5 @@
 //
-//  BuildboxURL.swift
+//  BuildkiteURL.swift
 //  BuildboxKit
 //
 //  Created by Matthew Delves on 6/09/2014.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum BuildboxURL {
+public enum BuildkiteURL {
   case Account(account:String)
   case Accounts
   case Project(account:String, project:String)
@@ -26,12 +26,12 @@ public protocol Path {
   var path:String { get }
 }
 
-extension BuildboxURL:Path {
+extension BuildkiteURL:Path {
   public var apiVersion: String {
     return "v1"
   }
   public var host:String {
-    return "api.buildbox.io"
+    return "api.buildkite.com"
   }
   public var path:String {
     switch self {
@@ -48,7 +48,7 @@ extension BuildboxURL:Path {
   }
 }
 
-public func buildboxEndpoint(route:BuildboxURL, apiKey:String, scheme:String = "https") -> NSURL {
+public func buildkiteEndpoint(route:BuildkiteURL, apiKey:String, scheme:String = "https") -> NSURL {
   let components:NSURLComponents = NSURLComponents()
   components.scheme = scheme
   components.host = route.host

@@ -1,7 +1,7 @@
 [
   {
     "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
     "name": "osx-build-agent",
     "connection_state": "connected",
     "ip_address": "1.126.48.251",

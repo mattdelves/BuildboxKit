@@ -1,6 +1,6 @@
 {
   "id": "225c32bd-fe2d-48cb-be5b-e84452e9f60b",
-  "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/1",
+  "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/1",
   "number": 1,
   "state": "not_run",
   "message": "add in buildbox script",

@@ -25,11 +25,11 @@
 		C973EA9519BAAF1B0076B3B8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9219BAAF1B0076B3B8 /* Quick.framework */; };
 		C98696D419C40D3D00164926 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98696D319C40D3D00164926 /* Account.swift */; };
 		C98696D719C4152400164926 /* foobar_account.json in Resources */ = {isa = PBXBuildFile; fileRef = C98696D619C4152400164926 /* foobar_account.json */; };
-		C987361019BAC69000980237 /* BuildboxURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987360F19BAC69000980237 /* BuildboxURL.swift */; };
-		C987361419BAD23300980237 /* BuildboxURLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987361319BAD23300980237 /* BuildboxURLSpec.swift */; };
-		C9FE5BF919BB2575008B8746 /* BuildboxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BF819BB2575008B8746 /* BuildboxApi.swift */; };
+		C987361019BAC69000980237 /* BuildkiteURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987360F19BAC69000980237 /* BuildkiteURL.swift */; };
+		C987361419BAD23300980237 /* BuildkiteURLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987361319BAD23300980237 /* BuildkiteURLSpec.swift */; };
+		C9FE5BF919BB2575008B8746 /* BuildkiteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */; };
 		C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = C9FE5BFC19BB28A7008B8746 /* accounts.json */; };
-		C9FE5BFF19BB2938008B8746 /* BuildboxApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BFE19BB2938008B8746 /* BuildboxApiSpec.swift */; };
+		C9FE5BFF19BB2938008B8746 /* BuildkiteApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,11 +56,11 @@
 		C973EA9219BAAF1B0076B3B8 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug/Quick.framework"; sourceTree = "<group>"; };
 		C98696D319C40D3D00164926 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		C98696D619C4152400164926 /* foobar_account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foobar_account.json; sourceTree = "<group>"; };
-		C987360F19BAC69000980237 /* BuildboxURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxURL.swift; sourceTree = "<group>"; };
-		C987361319BAD23300980237 /* BuildboxURLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxURLSpec.swift; sourceTree = "<group>"; };
-		C9FE5BF819BB2575008B8746 /* BuildboxApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxApi.swift; sourceTree = "<group>"; };
+		C987360F19BAC69000980237 /* BuildkiteURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURL.swift; sourceTree = "<group>"; };
+		C987361319BAD23300980237 /* BuildkiteURLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURLSpec.swift; sourceTree = "<group>"; };
+		C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BuildkiteApi.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C9FE5BFC19BB28A7008B8746 /* accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = accounts.json; sourceTree = "<group>"; };
-		C9FE5BFE19BB2938008B8746 /* BuildboxApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildboxApiSpec.swift; sourceTree = "<group>"; };
+		C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BuildkiteApiSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +125,8 @@
 		C973EA8119BA88130076B3B8 /* BuildboxKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9FE5BFE19BB2938008B8746 /* BuildboxApiSpec.swift */,
-				C987361319BAD23300980237 /* BuildboxURLSpec.swift */,
+				C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */,
+				C987361319BAD23300980237 /* BuildkiteURLSpec.swift */,
 				C973EA8219BA88130076B3B8 /* Supporting Files */,
 			);
 			path = BuildboxKitTests;
@@ -147,8 +147,8 @@
 		C98696D119C40D0A00164926 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				C9FE5BF819BB2575008B8746 /* BuildboxApi.swift */,
-				C987360F19BAC69000980237 /* BuildboxURL.swift */,
+				C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */,
+				C987360F19BAC69000980237 /* BuildkiteURL.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -299,8 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C987361019BAC69000980237 /* BuildboxURL.swift in Sources */,
-				C9FE5BF919BB2575008B8746 /* BuildboxApi.swift in Sources */,
+				C987361019BAC69000980237 /* BuildkiteURL.swift in Sources */,
+				C9FE5BF919BB2575008B8746 /* BuildkiteApi.swift in Sources */,
 				8D8E50051A16F2760049C5D5 /* Build.swift in Sources */,
 				8D8E500B1A1700200049C5D5 /* Agent.swift in Sources */,
 				C98696D419C40D3D00164926 /* Account.swift in Sources */,
@@ -313,8 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9FE5BFF19BB2938008B8746 /* BuildboxApiSpec.swift in Sources */,
-				C987361419BAD23300980237 /* BuildboxURLSpec.swift in Sources */,
+				C9FE5BFF19BB2938008B8746 /* BuildkiteApiSpec.swift in Sources */,
+				C987361419BAD23300980237 /* BuildkiteURLSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

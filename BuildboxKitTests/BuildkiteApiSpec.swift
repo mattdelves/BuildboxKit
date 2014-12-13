@@ -1,5 +1,5 @@
 //
-//  BuildboxApiSpec.swift
+//  BuildkiteApiSpec.swift
 //  BuildboxKit
 //
 //  Created by Matthew Delves on 6/09/2014.
@@ -11,16 +11,16 @@ import Nimble
 import DummySpit
 import BuildboxKit
 
-class BuildboxApiSpec: QuickSpec {
+class BuildkiteApiSpec: QuickSpec {
   override func spec() {
-    var api: BuildboxApi?
+    var api: BuildkiteApi?
     
     describe("All Accounts") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -28,7 +28,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("accounts", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("accounts", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "accounts")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -41,7 +41,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("receives a 401 response") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],
@@ -66,7 +66,7 @@ class BuildboxApiSpec: QuickSpec {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -74,7 +74,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_account", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("foobar_account", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -88,7 +88,7 @@ class BuildboxApiSpec: QuickSpec {
       }
 
       it("receives a 401 response") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],
@@ -114,7 +114,7 @@ class BuildboxApiSpec: QuickSpec {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -122,7 +122,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("projects", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("projects", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "projects")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -136,7 +136,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("receives a 401 response") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],
@@ -161,7 +161,7 @@ class BuildboxApiSpec: QuickSpec {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -169,7 +169,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("foobar_project", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("foobar_project", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "foobar")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -183,7 +183,7 @@ class BuildboxApiSpec: QuickSpec {
       }
 
       it("receives a 401 response") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],
@@ -209,7 +209,7 @@ class BuildboxApiSpec: QuickSpec {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -217,7 +217,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("builds", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("builds", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -231,7 +231,7 @@ class BuildboxApiSpec: QuickSpec {
       }
 
       it("receives a 401 response") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],
@@ -256,7 +256,7 @@ class BuildboxApiSpec: QuickSpec {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -264,7 +264,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("all_builds", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("all_builds", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -278,7 +278,7 @@ class BuildboxApiSpec: QuickSpec {
       }
 
       it("receives a 401 response") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],
@@ -303,7 +303,7 @@ class BuildboxApiSpec: QuickSpec {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -311,7 +311,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("single_build", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("single_build", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "1")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -326,7 +326,7 @@ class BuildboxApiSpec: QuickSpec {
       }
 
       it("receives a 401 response") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],
@@ -352,7 +352,7 @@ class BuildboxApiSpec: QuickSpec {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -360,7 +360,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("agents", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("agents", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "agents")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -379,7 +379,7 @@ class BuildboxApiSpec: QuickSpec {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
         configuration.protocolClasses = [urlProtocolClass]
-        api = BuildboxApi("123abc", scheme: "mock", configuration: configuration)
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
       
       afterEach {
@@ -387,7 +387,7 @@ class BuildboxApiSpec: QuickSpec {
       }
       
       it("can be retrieved") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("user", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("user", ofType: "json")
         let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "user")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
@@ -401,7 +401,7 @@ class BuildboxApiSpec: QuickSpec {
       }
 
       it("receives a 401 response") {
-        let filePath = NSBundle(forClass: BuildboxApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],

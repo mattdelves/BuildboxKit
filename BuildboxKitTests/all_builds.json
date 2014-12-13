@@ -1,7 +1,7 @@
 [
   {
     "id": "56ba3ca8-8708-484b-8e9b-10022f806605",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/18",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/18",
     "number": 18,
     "state": "passed",
     "message": "Handle the situation where no started_at date is provided for a build.",
@@ -15,13 +15,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/18/jobs/6db3a41b-2e98-4c36-8c71-ba95b53af256/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/18/jobs/6db3a41b-2e98-4c36-8c71-ba95b53af256/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-15 07:28:35 UTC",
@@ -38,16 +38,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "33c0a9b2-c4e8-47d1-ad6c-b4dd435afc31",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/17",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/17",
     "number": 17,
     "state": "failed",
     "message": "Fix up tests so that URL is correctly identified by project3",
@@ -61,13 +61,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/17/jobs/541b36df-5161-4c18-bd45-8a5c471d816f/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/17/jobs/541b36df-5161-4c18-bd45-8a5c471d816f/log",
         "script_path": "build_and_test.sh",
         "exit_status": 65,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-15 06:21:38 UTC",
@@ -84,16 +84,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "af6725ca-4ffe-4823-9f58-92699efe99fb",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/16",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/16",
     "number": 16,
     "state": "failed",
     "message": "Fix up tests so that URL is correctly identified by project3",
@@ -107,13 +107,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/16/jobs/386dc2d4-d5e6-4386-8c1f-7db3a628526b/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/16/jobs/386dc2d4-d5e6-4386-8c1f-7db3a628526b/log",
         "script_path": "build_and_test.sh",
         "exit_status": 65,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-15 06:18:38 UTC",
@@ -130,16 +130,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "096a1e0f-4b11-4aee-99bc-570e974e41cb",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/15",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/15",
     "number": 15,
     "state": "failed",
     "message": "make sure we set the query instead of having a broken url being set",
@@ -153,13 +153,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/15/jobs/1d3b2d19-7dca-481d-9c78-fb25e9d6268f/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/15/jobs/1d3b2d19-7dca-481d-9c78-fb25e9d6268f/log",
         "script_path": "build_and_test.sh",
         "exit_status": 65,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-15 05:23:26 UTC",
@@ -176,16 +176,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "7fcd1d23-e158-47b7-b8c7-2130d871c7ce",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/14",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/14",
     "number": 14,
     "state": "passed",
     "message": "make sure schemes are shared and what not",
@@ -199,13 +199,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/14/jobs/5f4b0361-06c9-4fef-a8d3-93ae80a4e010/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/14/jobs/5f4b0361-06c9-4fef-a8d3-93ae80a4e010/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-15 03:52:13 UTC",
@@ -222,16 +222,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "c8bb6ea7-c9ab-44dc-8078-84679cd31b31",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/13",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/13",
     "number": 13,
     "state": "failed",
     "message": "Add in fetching of Agents",
@@ -245,13 +245,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/13/jobs/de1bb144-c3f0-4c7b-b808-1f932858221a/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/13/jobs/de1bb144-c3f0-4c7b-b808-1f932858221a/log",
         "script_path": "build_and_test.sh",
         "exit_status": 65,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-15 03:41:01 UTC",
@@ -268,16 +268,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "c7c62c69-5282-44c2-8438-4b5e99d5c9cf",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/12",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/12",
     "number": 12,
     "state": "failed",
     "message": "Introduce Project",
@@ -291,13 +291,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/12/jobs/6c069b81-f736-4e7d-8278-6c0ce2ccd359/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/12/jobs/6c069b81-f736-4e7d-8278-6c0ce2ccd359/log",
         "script_path": "build_and_test.sh",
         "exit_status": 65,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-15 01:39:58 UTC",
@@ -314,16 +314,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "b78ad400-c808-4876-83b0-8afdf8e16a86",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/11",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/11",
     "number": 11,
     "state": "failed",
     "message": "update build_and_test script to use iPhone 6 and iOS 8.1",
@@ -337,13 +337,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/11/jobs/dc31f241-0f6f-409d-bc86-189a1a2dd468/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/11/jobs/dc31f241-0f6f-409d-bc86-189a1a2dd468/log",
         "script_path": "build_and_test.sh",
         "exit_status": 65,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-14 23:07:39 UTC",
@@ -360,16 +360,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "132636d7-11c9-4cdf-a53c-ea70a830c47c",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/10",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/10",
     "number": 10,
     "state": "failed",
     "message": "Update project stuff",
@@ -383,13 +383,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/10/jobs/109d00a5-59a2-4d80-9b70-324d6fa08e78/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/10/jobs/109d00a5-59a2-4d80-9b70-324d6fa08e78/log",
         "script_path": "build_and_test.sh",
         "exit_status": 127,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-14 22:48:01 UTC",
@@ -406,16 +406,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "b06a9b58-bcca-4fde-b700-781e2fd67777",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/6",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/6",
     "number": 6,
     "state": "failed",
     "message": "make sure test fixtures are in the project",
@@ -429,13 +429,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/6/jobs/6ace2239-c910-4108-be34-da89b68c175c/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/6/jobs/6ace2239-c910-4108-be34-da89b68c175c/log",
         "script_path": "build_and_test.sh",
         "exit_status": 127,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-11-01 10:09:46 UTC",
@@ -452,16 +452,16 @@
     },
     "project": {
       "id": "75086305-1796-44c2-ba44-ccbaae963c72",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2",
       "name": "project2",
       "repository": "git@github.com:foobar/project2.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds",
       "created_at": "2014-08-23 09:58:03 UTC"
     }
   },
   {
     "id": "e34dd1bf-5fe0-4868-aae4-8f3410699aa0",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/7",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/7",
     "number": 7,
     "state": "passed",
     "message": "use most up to date version of quick",
@@ -475,13 +475,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/7/jobs/a2c7b59b-8f83-4c1f-a1fe-33936aa18e5c/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/7/jobs/a2c7b59b-8f83-4c1f-a1fe-33936aa18e5c/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-10-05 05:40:29 UTC",
@@ -498,16 +498,16 @@
     },
     "project": {
       "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3",
       "name": "project3",
       "repository": "git@github.com:foobar/project3.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds",
       "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
     "id": "d8a89002-f453-4d2c-a45a-d1bb5d05bf14",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/6",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/6",
     "number": 6,
     "state": "passed",
     "message": "update build and test script",
@@ -521,13 +521,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/6/jobs/aa6555aa-7c2b-4097-b6c5-8991c711fdd4/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/6/jobs/aa6555aa-7c2b-4097-b6c5-8991c711fdd4/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-10-04 13:08:46 UTC",
@@ -544,16 +544,16 @@
     },
     "project": {
       "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3",
       "name": "project3",
       "repository": "git@github.com:foobar/project3.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds",
       "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
     "id": "23e292a6-2efb-4079-ae65-00e886c7c5ef",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/5",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/5",
     "number": 5,
     "state": "passed",
     "message": "update for swift 1.1",
@@ -567,13 +567,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/5/jobs/e22c8dfe-e12b-477c-ba46-a191e96532c9/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/5/jobs/e22c8dfe-e12b-477c-ba46-a191e96532c9/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-10-04 13:06:22 UTC",
@@ -590,16 +590,16 @@
     },
     "project": {
       "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3",
       "name": "project3",
       "repository": "git@github.com:foobar/project3.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds",
       "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
     "id": "38936a95-dd17-4cc3-8a91-a819be9e63d3",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/5",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/5",
     "number": 5,
     "state": "passed",
     "message": "update build_and_test.sh",
@@ -613,13 +613,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/5/jobs/28b6b22d-9df3-4e44-8299-f6a2a9cc904b/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/5/jobs/28b6b22d-9df3-4e44-8299-f6a2a9cc904b/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-10-04 07:44:54 UTC",
@@ -636,16 +636,16 @@
     },
     "project": {
       "id": "75086305-1796-44c2-ba44-ccbaae963c72",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2",
       "name": "project2",
       "repository": "git@github.com:foobar/project2.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds",
       "created_at": "2014-08-23 09:58:03 UTC"
     }
   },
   {
     "id": "426ea225-e8c0-4517-a4d3-fbd17a08be1c",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/4",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/4",
     "number": 4,
     "state": "passed",
     "message": "NSURL should be unwrapped",
@@ -659,13 +659,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/4/jobs/741d5ab9-468c-4ce5-b075-e467a7d6169f/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/4/jobs/741d5ab9-468c-4ce5-b075-e467a7d6169f/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-10-04 07:38:40 UTC",
@@ -682,16 +682,16 @@
     },
     "project": {
       "id": "75086305-1796-44c2-ba44-ccbaae963c72",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2",
       "name": "project2",
       "repository": "git@github.com:foobar/project2.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds",
       "created_at": "2014-08-23 09:58:03 UTC"
     }
   },
   {
     "id": "82fb8d31-57c9-4348-87f0-d200b5f8c4e4",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/9",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/9",
     "number": 9,
     "state": "passed",
     "message": "Update quick to latest",
@@ -705,13 +705,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/9/jobs/131eb94f-19e4-4cb3-a7e1-a5625fbcb7e2/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/9/jobs/131eb94f-19e4-4cb3-a7e1-a5625fbcb7e2/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-13 06:15:40 UTC",
@@ -728,16 +728,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "0f488606-7a50-4497-a52b-140f15d2717a",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/8",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/8",
     "number": 8,
     "state": "passed",
     "message": "Update quick to latest",
@@ -751,13 +751,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/8/jobs/55ef7b23-9f48-4c59-977f-0ecc6f8b7d1a/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/8/jobs/55ef7b23-9f48-4c59-977f-0ecc6f8b7d1a/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-13 06:10:16 UTC",
@@ -774,16 +774,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "3667d98d-f369-4083-b05b-4e3bbfbc8369",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/7",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/7",
     "number": 7,
     "state": "passed",
     "message": "Update quick to latest",
@@ -797,13 +797,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/7/jobs/555e2520-2fbc-4241-abb7-004f862fce77/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/7/jobs/555e2520-2fbc-4241-abb7-004f862fce77/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-13 06:06:32 UTC",
@@ -820,16 +820,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "0b561c99-8882-44c7-8ccb-fb16e5425e0a",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/6",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/6",
     "number": 6,
     "state": "passed",
     "message": "Make sure endpoint can be constructed correctly",
@@ -843,13 +843,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/6/jobs/e04b418b-83e9-484e-b66d-cabcb0488280/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/6/jobs/e04b418b-83e9-484e-b66d-cabcb0488280/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-06 11:15:01 UTC",
@@ -866,16 +866,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "e982118d-fd2c-4345-aa82-0ff6b8c5c333",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/5",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/5",
     "number": 5,
     "state": "passed",
     "message": "Improve the buildbox url enum",
@@ -889,13 +889,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/5/jobs/f0d17359-f94d-4c06-8cdb-6595208bc586/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/5/jobs/f0d17359-f94d-4c06-8cdb-6595208bc586/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-06 10:58:29 UTC",
@@ -912,16 +912,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "0ecf1327-c78a-491f-b23b-43c6870c3ffe",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/4",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/4",
     "number": 4,
     "state": "passed",
     "message": "update project3",
@@ -935,13 +935,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/4/jobs/d1a30fc4-221e-4d8c-bee1-a8fddbd6ed94/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/4/jobs/d1a30fc4-221e-4d8c-bee1-a8fddbd6ed94/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-06 03:13:47 UTC",
@@ -958,16 +958,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "8a2a44ec-feff-4579-a855-370d145fca75",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/4",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/4",
     "number": 4,
     "state": "passed",
     "message": "update to xcode6beta7",
@@ -981,13 +981,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/4/jobs/a568f672-fcb9-498a-b199-02ab6fb217de/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/4/jobs/a568f672-fcb9-498a-b199-02ab6fb217de/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-06 03:02:02 UTC",
@@ -1004,16 +1004,16 @@
     },
     "project": {
       "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3",
       "name": "project3",
       "repository": "git@github.com:foobar/project3.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds",
       "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
     "id": "1ee6ae90-bedc-4dee-b763-9b523eae6ee5",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/3",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/3",
     "number": 3,
     "state": "passed",
     "message": "Add in build_and_test.sh",
@@ -1027,13 +1027,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/3/jobs/1c89219d-87fa-4526-ae75-496472808c76/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/3/jobs/1c89219d-87fa-4526-ae75-496472808c76/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-06 02:35:35 UTC",
@@ -1050,16 +1050,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "21282ad5-0202-44e6-a23a-0688d265f187",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/2",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/2",
     "number": 2,
     "state": "failed",
     "message": "Add in build_and_test.sh",
@@ -1073,13 +1073,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/2/jobs/59002997-cf17-443e-8547-20d29173472b/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/2/jobs/59002997-cf17-443e-8547-20d29173472b/log",
         "script_path": "build_and_test.sh",
         "exit_status": 127,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-09-06 02:32:38 UTC",
@@ -1096,16 +1096,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "416d86a4-6310-4528-a7c4-eb2f51482103",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds/1",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds/1",
     "number": 1,
     "state": "not_run",
     "message": "Testing all the things :rocket:",
@@ -1124,16 +1124,16 @@
     },
     "project": {
       "id": "b4f334ff-f22d-499b-ba87-43d4ee388703",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1",
       "name": "project1",
       "repository": "git@github.com:foobar/project1.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project1/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project1/builds",
       "created_at": "2014-09-06 02:17:38 UTC"
     }
   },
   {
     "id": "f502401c-6cae-4c76-9bc8-a18ddce7030f",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/3",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/3",
     "number": 3,
     "state": "passed",
     "message": "Add in a README file",
@@ -1147,13 +1147,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/3/jobs/1a4aa3f1-97ed-499c-b4fe-b52ac2c93a3a/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/3/jobs/1a4aa3f1-97ed-499c-b4fe-b52ac2c93a3a/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-08-23 10:11:39 UTC",
@@ -1170,16 +1170,16 @@
     },
     "project": {
       "id": "75086305-1796-44c2-ba44-ccbaae963c72",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2",
       "name": "project2",
       "repository": "git@github.com:foobar/project2.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds",
       "created_at": "2014-08-23 09:58:03 UTC"
     }
   },
   {
     "id": "d8c1a718-8bbf-429f-83c0-c7f2776185f3",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/2",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/2",
     "number": 2,
     "state": "passed",
     "message": "Add in build and test script for buildbox",
@@ -1193,13 +1193,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/2/jobs/2d85c127-b14f-40c7-ab8c-1d2f55a7c905/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/2/jobs/2d85c127-b14f-40c7-ab8c-1d2f55a7c905/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-08-23 10:04:08 UTC",
@@ -1216,16 +1216,16 @@
     },
     "project": {
       "id": "75086305-1796-44c2-ba44-ccbaae963c72",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2",
       "name": "project2",
       "repository": "git@github.com:foobar/project2.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds",
       "created_at": "2014-08-23 09:58:03 UTC"
     }
   },
   {
     "id": "c51cbd23-b17f-4774-a722-e8402cf7d3bb",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/1",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/1",
     "number": 1,
     "state": "failed",
     "message": "Add in build and test script for buildbox",
@@ -1239,13 +1239,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "failed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds/1/jobs/ec71be6c-38f4-4869-8008-73a0b858bdf3/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds/1/jobs/ec71be6c-38f4-4869-8008-73a0b858bdf3/log",
         "script_path": "build_and_test.sh",
         "exit_status": 128,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-08-23 10:01:56 UTC",
@@ -1262,16 +1262,16 @@
     },
     "project": {
       "id": "75086305-1796-44c2-ba44-ccbaae963c72",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2",
       "name": "project2",
       "repository": "git@github.com:foobar/project2.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project2/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project2/builds",
       "created_at": "2014-08-23 09:58:03 UTC"
     }
   },
   {
     "id": "e99be5f9-91ea-4f1e-8246-964bfdbc58c4",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/3",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/3",
     "number": 3,
     "state": "passed",
     "message": "Testing all the things :rocket:",
@@ -1285,13 +1285,13 @@
         "type": "script",
         "name": "Build and Test",
         "state": "passed",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/3/jobs/24f10c16-a8a6-4371-b631-d1af030e0169/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/3/jobs/24f10c16-a8a6-4371-b631-d1af030e0169/log",
         "script_path": "build_and_test.sh",
         "exit_status": 0,
         "artifact_paths": "",
         "agent": {
           "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-          "url": "https://api.buildbox.io/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
+          "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
           "name": "osx-build-agent"
         },
         "created_at": "2014-08-23 09:52:15 UTC",
@@ -1308,16 +1308,16 @@
     },
     "project": {
       "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3",
       "name": "project3",
       "repository": "git@github.com:foobar/project3.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds",
       "created_at": "2014-08-23 06:53:05 UTC"
     }
   },
   {
     "id": "867c3b08-2df7-4d8e-8d87-8247f01a9df1",
-    "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/2",
+    "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/2",
     "number": 2,
     "state": "not_run",
     "message": "add in buildbox script",
@@ -1331,7 +1331,7 @@
         "type": "script",
         "name": "Build and Test",
         "state": "broken",
-        "log_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds/2/jobs/1ef7a7e8-7a90-401a-abe6-139ebfca4ad6/log",
+        "log_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds/2/jobs/1ef7a7e8-7a90-401a-abe6-139ebfca4ad6/log",
         "script_path": "build_and_test.sh",
         "exit_status": null,
         "artifact_paths": "",
@@ -1350,10 +1350,10 @@
     },
     "project": {
       "id": "8af778a9-ee52-48a8-ad9d-b06e98bdaf69",
-      "url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3",
+      "url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3",
       "name": "project3",
       "repository": "git@github.com:foobar/project3.git",
-      "builds_url": "https://api.buildbox.io/v1/accounts/foobar/projects/project3/builds",
+      "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds",
       "created_at": "2014-08-23 06:53:05 UTC"
     }
   }
