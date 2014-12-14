@@ -19,7 +19,7 @@
 		8D8E50071A16F92A0049C5D5 /* single_build.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50061A16F92A0049C5D5 /* single_build.json */; };
 		8D8E50091A16FFB40049C5D5 /* agents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50081A16FFB40049C5D5 /* agents.json */; };
 		8D8E500B1A1700200049C5D5 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E500A1A1700200049C5D5 /* Agent.swift */; };
-		C973EA7B19BA88130076B3B8 /* BuildboxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C973EA7A19BA88130076B3B8 /* BuildboxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C973EA7B19BA88130076B3B8 /* BuildkiteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C973EA7A19BA88130076B3B8 /* BuildkiteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C973EA9319BAAF1B0076B3B8 /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */; };
 		C973EA9419BAAF1B0076B3B8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9119BAAF1B0076B3B8 /* Nimble.framework */; };
 		C973EA9519BAAF1B0076B3B8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9219BAAF1B0076B3B8 /* Quick.framework */; };
@@ -45,10 +45,10 @@
 		8D8E50061A16F92A0049C5D5 /* single_build.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = single_build.json; sourceTree = "<group>"; };
 		8D8E50081A16FFB40049C5D5 /* agents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = agents.json; sourceTree = "<group>"; };
 		8D8E500A1A1700200049C5D5 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
-		C973EA7519BA88130076B3B8 /* BuildboxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildboxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C973EA7519BA88130076B3B8 /* BuildkiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildkiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973EA7919BA88130076B3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C973EA7A19BA88130076B3B8 /* BuildboxKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildboxKit.h; sourceTree = "<group>"; };
-		C973EA8019BA88130076B3B8 /* BuildboxKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildboxKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C973EA7A19BA88130076B3B8 /* BuildkiteKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildkiteKit.h; sourceTree = "<group>"; };
+		C973EA8019BA88130076B3B8 /* BuildkiteKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildkiteKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973EA8319BA88130076B3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C973EA8F19BAA72E0076B3B8 /* build_and_test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build_and_test.sh; path = ../build_and_test.sh; sourceTree = "<group>"; };
 		C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos/DummySpit.framework"; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		C973EA7619BA88130076B3B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C973EA7519BA88130076B3B8 /* BuildboxKit.framework */,
-				C973EA8019BA88130076B3B8 /* BuildboxKitTests.xctest */,
+				C973EA7519BA88130076B3B8 /* BuildkiteKit.framework */,
+				C973EA8019BA88130076B3B8 /* BuildkiteKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,7 +107,7 @@
 			children = (
 				C98696D219C40D1400164926 /* Models */,
 				C98696D119C40D0A00164926 /* API */,
-				C973EA7A19BA88130076B3B8 /* BuildboxKit.h */,
+				C973EA7A19BA88130076B3B8 /* BuildkiteKit.h */,
 				C973EA7819BA88130076B3B8 /* Supporting Files */,
 			);
 			path = BuildboxKit;
@@ -189,16 +189,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C973EA7B19BA88130076B3B8 /* BuildboxKit.h in Headers */,
+				C973EA7B19BA88130076B3B8 /* BuildkiteKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C973EA7419BA88130076B3B8 /* BuildboxKit */ = {
+		C973EA7419BA88130076B3B8 /* BuildkiteKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C973EA8819BA88130076B3B8 /* Build configuration list for PBXNativeTarget "BuildboxKit" */;
+			buildConfigurationList = C973EA8819BA88130076B3B8 /* Build configuration list for PBXNativeTarget "BuildkiteKit" */;
 			buildPhases = (
 				C973EA7019BA88130076B3B8 /* Sources */,
 				C973EA7119BA88130076B3B8 /* Frameworks */,
@@ -209,14 +209,14 @@
 			);
 			dependencies = (
 			);
-			name = BuildboxKit;
+			name = BuildkiteKit;
 			productName = BuildboxKit;
-			productReference = C973EA7519BA88130076B3B8 /* BuildboxKit.framework */;
+			productReference = C973EA7519BA88130076B3B8 /* BuildkiteKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C973EA7F19BA88130076B3B8 /* BuildboxKitTests */ = {
+		C973EA7F19BA88130076B3B8 /* BuildkiteKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C973EA8B19BA88130076B3B8 /* Build configuration list for PBXNativeTarget "BuildboxKitTests" */;
+			buildConfigurationList = C973EA8B19BA88130076B3B8 /* Build configuration list for PBXNativeTarget "BuildkiteKitTests" */;
 			buildPhases = (
 				C973EA7C19BA88130076B3B8 /* Sources */,
 				C973EA7D19BA88130076B3B8 /* Frameworks */,
@@ -226,9 +226,9 @@
 			);
 			dependencies = (
 			);
-			name = BuildboxKitTests;
+			name = BuildkiteKitTests;
 			productName = BuildboxKitTests;
-			productReference = C973EA8019BA88130076B3B8 /* BuildboxKitTests.xctest */;
+			productReference = C973EA8019BA88130076B3B8 /* BuildkiteKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +249,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C973EA6F19BA88130076B3B8 /* Build configuration list for PBXProject "BuildboxKit" */;
+			buildConfigurationList = C973EA6F19BA88130076B3B8 /* Build configuration list for PBXProject "BuildkiteKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -261,8 +261,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C973EA7419BA88130076B3B8 /* BuildboxKit */,
-				C973EA7F19BA88130076B3B8 /* BuildboxKitTests */,
+				C973EA7419BA88130076B3B8 /* BuildkiteKit */,
+				C973EA7F19BA88130076B3B8 /* BuildkiteKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -419,7 +419,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "./**";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BuildkiteKit;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -438,7 +438,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "./**";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BuildkiteKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -458,7 +458,7 @@
 				);
 				INFOPLIST_FILE = BuildboxKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BuildkiteKitTests;
 			};
 			name = Debug;
 		};
@@ -473,14 +473,14 @@
 				);
 				INFOPLIST_FILE = BuildboxKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BuildkiteKitTests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C973EA6F19BA88130076B3B8 /* Build configuration list for PBXProject "BuildboxKit" */ = {
+		C973EA6F19BA88130076B3B8 /* Build configuration list for PBXProject "BuildkiteKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C973EA8619BA88130076B3B8 /* Debug */,
@@ -489,7 +489,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C973EA8819BA88130076B3B8 /* Build configuration list for PBXNativeTarget "BuildboxKit" */ = {
+		C973EA8819BA88130076B3B8 /* Build configuration list for PBXNativeTarget "BuildkiteKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C973EA8919BA88130076B3B8 /* Debug */,
@@ -498,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C973EA8B19BA88130076B3B8 /* Build configuration list for PBXNativeTarget "BuildboxKitTests" */ = {
+		C973EA8B19BA88130076B3B8 /* Build configuration list for PBXNativeTarget "BuildkiteKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C973EA8C19BA88130076B3B8 /* Debug */,

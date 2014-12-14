@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:BuildboxKit.xcodeproj">
+      location = "container:BuildkiteKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:nimble/Nimble.xcodeproj">

@@ -1,6 +1,6 @@
 //
 //  Project.swift
-//  BuildboxKit
+//  BuildkiteKit
 //
 //  Created by Matthew Delves on 15/11/2014.
 //  Copyright (c) 2014 Matthew Delves. All rights reserved.

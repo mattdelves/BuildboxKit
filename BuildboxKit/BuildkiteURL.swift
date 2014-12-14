@@ -1,6 +1,6 @@
 //
 //  BuildkiteURL.swift
-//  BuildboxKit
+//  BuildkiteKit
 //
 //  Created by Matthew Delves on 6/09/2014.
 //  Copyright (c) 2014 Matthew Delves. All rights reserved.

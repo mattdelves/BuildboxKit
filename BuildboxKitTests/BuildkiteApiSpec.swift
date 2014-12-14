@@ -1,6 +1,6 @@
 //
 //  BuildkiteApiSpec.swift
-//  BuildboxKit
+//  BuildkiteKit
 //
 //  Created by Matthew Delves on 6/09/2014.
 //  Copyright (c) 2014 Matthew Delves. All rights reserved.
@@ -9,7 +9,7 @@
 import Quick
 import Nimble
 import DummySpit
-import BuildboxKit
+import BuildkiteKit
 
 class BuildkiteApiSpec: QuickSpec {
   override func spec() {

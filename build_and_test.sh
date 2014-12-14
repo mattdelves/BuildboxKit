@@ -6,10 +6,10 @@ set -e
 # Will output commands as the run
 set -x
 
-# Want to know what ENV varibles Buildbox sets during the build?
+# Want to know what ENV varibles Buildkite sets during the build?
 env | grep BUILDBOX
 
-# Buildbox will run your builds by default in:
+# Buildkite will run your builds by default in:
 # ~/.buildbox/account-name/project-name
 # pwd
 
@@ -31,4 +31,4 @@ git checkout -qf "$BUILDBOX_COMMIT"
 git submodule init
 git submodule update
 
-xcodebuild -workspace BuildboxKit.xcworkspace -scheme BuildboxKit -sdk iphonesimulator8.2 -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.2' clean build test | xcpretty
+xcodebuild -workspace BuildkiteKit.xcworkspace -scheme BuildkiteKit -sdk iphonesimulator8.2 -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.2' clean build test | xcpretty
