@@ -320,6 +320,7 @@ class BuildkiteApiSpec: QuickSpec {
           called = true
           expect(build?.number).to(equal(1))
           expect(build?.message).to(equal("add in buildbox script"))
+          expect(build?.jobs?).toNot(beNil())
         }
         
         expect{called}.toEventually(beTruthy())

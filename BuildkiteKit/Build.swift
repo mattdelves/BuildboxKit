@@ -31,7 +31,45 @@ public enum BuildStatus {
   }
 }
 
-public class Build {
+public struct BuildJob {
+  public var id: String
+  public var type: String
+  public var state: BuildStatus
+  public var log_url: String
+  public var script_path: String
+  public var exit_status: Int?
+  public var artifact_paths: String
+  public var agent: [String: AnyObject]?
+  public var created_at: String
+  public var scheduled_at: String
+  public var started_at: String?
+  public var finished_at: String?
+
+  init(_ jsonObject: [String: AnyObject]) {
+    self.id = jsonObject["id"] as String
+    self.type = jsonObject["type"] as String
+    self.state = buildStatusFromString(jsonObject["state"] as String)
+    self.log_url = jsonObject["log_url"] as String
+    self.script_path = jsonObject["script_path"] as String
+    self.artifact_paths = jsonObject["artifact_paths"] as String
+    if let agent = jsonObject["agent"] as? [String: AnyObject] {
+      self.agent = agent
+    }
+    self.created_at = jsonObject["created_at"] as String
+    self.scheduled_at = jsonObject["scheduled_at"] as String
+    if let started_at = jsonObject["started_at"] as? String {
+      self.started_at = started_at
+    }
+    if let finished_at = jsonObject["finished_at"] as? String {
+      self.finished_at = finished_at
+    }
+    if let exit_status = jsonObject["exit_status"] as? Int {
+      self.exit_status = exit_status
+    }
+  }
+}
+
+public struct Build {
   public var id: String
   public var url: String
   public var number: Int
@@ -40,14 +78,14 @@ public class Build {
   public var message: String
   public var commit: String
   public var env: [String: AnyObject]
-  public var jobs: [[String: AnyObject]]?
+  public var jobs: [BuildJob]?
   public var created_at: String
   public var scheduled_at: String
   public var started_at: String
   public var finished_at: String
   public var meta_data: [String: AnyObject]
   public var project: [String: AnyObject]?
-  
+
   init(_ jsonObject: [String: AnyObject]) {
     var started_at = ""
     if let started_at_value : String = jsonObject["started_at"] as? String {
@@ -74,37 +112,41 @@ public class Build {
     self.meta_data = jsonObject["meta_data"] as [String: AnyObject]
 
     if let jobs : [[String: AnyObject]] = jsonObject["jobs"] as? [[String: AnyObject]] {
-      self.jobs = jobs
+      var foundJobs = [BuildJob]()
+      for job in jobs {
+        foundJobs.append(BuildJob(job))
+      }
+      self.jobs = foundJobs
     }
 
     if let project : [String: AnyObject] = jsonObject["project"] as? [String: AnyObject] {
       self.project = project
     }
 
-    self.state = statusFromString(jsonObject["state"] as String)
+    self.state = buildStatusFromString(jsonObject["state"] as String)
+  }
+}
+
+func buildStatusFromString(status: String) -> BuildStatus {
+  var retval : BuildStatus
+  switch status {
+  case "running":
+    retval = .Running
+  case "scheduled":
+    retval = .Scheduled
+  case "passed":
+    retval = .Passed
+  case "failed":
+    retval = .Failed
+  case "canceled":
+    retval = .Canceled
+  case "skipped":
+    retval = .Skipped
+  case "not_run":
+    retval = .NotRun
+  default:
+    retval = .NotRun
   }
 
-  func statusFromString(status: String) -> BuildStatus {
-    var retval : BuildStatus
-    switch status {
-    case "running":
-      retval = .Running
-    case "scheduled":
-      retval = .Scheduled
-    case "passed":
-      retval = .Passed
-    case "failed":
-      retval = .Failed
-    case "canceled":
-      retval = .Canceled
-    case "skipped":
-      retval = .Skipped
-    case "not_run":
-      retval = .NotRun
-    default:
-      retval = .NotRun
-    }
-
-    return retval
-  }
+  return retval
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Agent {
+public struct Agent {
   public var id: String
   public var url: String
   public var name: String

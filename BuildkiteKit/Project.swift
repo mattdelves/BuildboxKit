@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Project {
+public struct Project {
   public var id: String
   public var url: String
   public var name: String
