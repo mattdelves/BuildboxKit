@@ -33,6 +33,7 @@ public enum BuildStatus {
 
 public struct BuildJob {
   public var id: String
+  public var name: String
   public var type: String
   public var state: BuildStatus
   public var log_url: String
@@ -47,6 +48,7 @@ public struct BuildJob {
 
   init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
+    self.name = jsonObject["name"] as String
     self.type = jsonObject["type"] as String
     self.state = buildStatusFromString(jsonObject["state"] as String)
     self.log_url = jsonObject["log_url"] as String
