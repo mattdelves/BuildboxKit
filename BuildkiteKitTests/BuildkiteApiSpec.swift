@@ -375,6 +375,33 @@ class BuildkiteApiSpec: QuickSpec {
       }
     }
     
+    describe("Access Tokens") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
+      }
+
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+
+      it("authenticates correctly") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("access_token", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "access_tokens")
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        api?.getAccessTokens("foobar", password: "password", scopes: ["a", "b"], client_id: "abc123") { token, error in
+          called = true
+        }
+
+        expect{called}.toEventually(beTrue())
+      }
+
+    }
+
     describe("The current User") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()

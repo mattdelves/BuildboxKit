@@ -17,6 +17,7 @@ public enum BuildkiteURL {
   case Builds(account:String, project:String)
   case AllBuilds
   case Agents(account:String)
+  case AccessTokens
   case User
 }
 
@@ -43,6 +44,7 @@ extension BuildkiteURL:Path {
     case .Builds(let account, let project): return "/\(apiVersion)/accounts/\(account)/projects/\(project)/builds"
     case .AllBuilds: return "/\(apiVersion)/builds"
     case .Agents(let account): return "/\(apiVersion)/accounts/\(account)/agents"
+    case .AccessTokens: return "/\(apiVersion)/access_tokens"
     case .User: return "/\(apiVersion)/user"
       }
   }
@@ -53,7 +55,11 @@ public func buildkiteEndpoint(route:BuildkiteURL, apiKey:String, scheme:String =
   components.scheme = scheme
   components.host = route.host
   components.path = "\(route.path)"
-  components.query = "api_key=\(apiKey)"
-  // computedURL.setQuery(route.apiKey)
+  switch route {
+  case .AccessTokens:
+    components.query = nil
+  default:
+    components.query = "api_key=\(apiKey)"
+  }
   return components.URL!
 }

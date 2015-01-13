@@ -156,6 +156,34 @@ public class BuildkiteApi {
     }
   }
   
+  public func getAccessTokens(username: String, password: String, scopes: [String], client_id: String, completion: (token: AccessToken?, error: BuildkiteApiError?) -> Void) {
+    let details = [
+      "client_id": client_id,
+      "scopes": scopes
+    ]
+    let jsonDetails = NSJSONSerialization.dataWithJSONObject(details, options: .PrettyPrinted, error: nil)
+    let url = buildkiteEndpoint(BuildkiteURL.AccessTokens, "", scheme: scheme)
+    let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    request.HTTPMethod = "POST"
+    request.HTTPBody = jsonDetails
+
+    let authStr = "\(username):\(password)"
+    let authData = authStr.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)
+    let authValue = "Basic \(authData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(1)))"
+
+    request.setValue(authValue, forHTTPHeaderField: "Authorization")
+
+    JSONDataForRequest(request) { json, error in
+      var token: AccessToken?
+
+      if error == nil {
+        token = AccessToken(json! as [String: AnyObject])
+      }
+
+      completion(token: token, error: error)
+    }
+  }
+
   public func getUser(completion: (user: User?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.User, apiKey, scheme: scheme)
     
@@ -170,7 +198,7 @@ public class BuildkiteApi {
     }
   }
   
-  func ArrayOfJSONDataForEndpoint(url: NSURL, completion: ([NSDictionary]?, BuildkiteApiError?) -> Void) {
+  func ArrayOfJSONDataForEndpoint(url: NSURL, completion: ([[String: AnyObject]]?, BuildkiteApiError?) -> Void) {
     let task = session.dataTaskWithURL(url) { data, response, error in
       if let theResponse : NSHTTPURLResponse = response as? NSHTTPURLResponse {
         let code = theResponse.statusCode
@@ -194,7 +222,30 @@ public class BuildkiteApi {
     task.resume()
   }
   
-  func JSONDataForEndpoint(url: NSURL, completion: (NSDictionary?, BuildkiteApiError?) -> Void) {
+  func JSONDataForRequest(request: NSURLRequest, completion: ([String: AnyObject]?, BuildkiteApiError?) -> Void) {
+    let task = session.dataTaskWithRequest(request) { data, response, error in
+      if let theResponse: NSHTTPURLResponse = response as? NSHTTPURLResponse {
+        let code = theResponse.statusCode
+        var error: BuildkiteApiError?
+        var nserror: NSError?
+        var json: [String: AnyObject]? = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &nserror) as [String: AnyObject]?
+
+        if (code != 200) {
+          if let json = json {
+            error = BuildkiteApiError(code: code, reason: json["message"] as String)
+          } else {
+            error = BuildkiteApiError(code: code, reason: "unknown error")
+          }
+        }
+
+        completion(json, error)
+      }
+    }
+
+    task.resume()
+  }
+
+  func JSONDataForEndpoint(url: NSURL, completion: ([String: AnyObject]?, BuildkiteApiError?) -> Void) {
     let task = session.dataTaskWithURL(url) { data, response, error in
       if let theResponse : NSHTTPURLResponse = response as? NSHTTPURLResponse {
         let code = theResponse.statusCode

@@ -47,6 +47,11 @@ class BuildkiteURLSpec: QuickSpec {
         var endpoint = BuildkiteURL.AllBuilds
         expect(endpoint.path).to(equal("/v1/builds"))
       }
+
+      it("for access tokens") {
+        var endpoint = BuildkiteURL.AccessTokens
+        expect(endpoint.path).to(equal("/v1/access_tokens"))
+      }
       
       it("for the current user") {
         var endpoint = BuildkiteURL.User

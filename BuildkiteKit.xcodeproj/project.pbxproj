@@ -23,6 +23,8 @@
 		C973EA9319BAAF1B0076B3B8 /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */; };
 		C973EA9419BAAF1B0076B3B8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9119BAAF1B0076B3B8 /* Nimble.framework */; };
 		C973EA9519BAAF1B0076B3B8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C973EA9219BAAF1B0076B3B8 /* Quick.framework */; };
+		C97738061A65A2E900472DCA /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97738051A65A2E900472DCA /* AccessToken.swift */; };
+		C97738081A65B41800472DCA /* access_token.json in Resources */ = {isa = PBXBuildFile; fileRef = C97738071A65B41800472DCA /* access_token.json */; };
 		C98696D419C40D3D00164926 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98696D319C40D3D00164926 /* Account.swift */; };
 		C98696D719C4152400164926 /* foobar_account.json in Resources */ = {isa = PBXBuildFile; fileRef = C98696D619C4152400164926 /* foobar_account.json */; };
 		C987361019BAC69000980237 /* BuildkiteURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987360F19BAC69000980237 /* BuildkiteURL.swift */; };
@@ -54,6 +56,8 @@
 		C973EA9019BAAF1B0076B3B8 /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos/DummySpit.framework"; sourceTree = "<group>"; };
 		C973EA9119BAAF1B0076B3B8 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
 		C973EA9219BAAF1B0076B3B8 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BuildboxKit-gyvekrnrhgzyfrcbciatxchkpnls/Build/Products/Debug/Quick.framework"; sourceTree = "<group>"; };
+		C97738051A65A2E900472DCA /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		C97738071A65B41800472DCA /* access_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = access_token.json; sourceTree = "<group>"; };
 		C98696D319C40D3D00164926 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		C98696D619C4152400164926 /* foobar_account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foobar_account.json; sourceTree = "<group>"; };
 		C987360F19BAC69000980237 /* BuildkiteURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURL.swift; sourceTree = "<group>"; };
@@ -156,10 +160,11 @@
 		C98696D219C40D1400164926 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C97738051A65A2E900472DCA /* AccessToken.swift */,
 				C98696D319C40D3D00164926 /* Account.swift */,
-				8D8E4FFE1A16D7A40049C5D5 /* Project.swift */,
-				8D8E50041A16F2760049C5D5 /* Build.swift */,
 				8D8E500A1A1700200049C5D5 /* Agent.swift */,
+				8D8E50041A16F2760049C5D5 /* Build.swift */,
+				8D8E4FFE1A16D7A40049C5D5 /* Project.swift */,
 				8D5E9F461A176B1800FB77AE /* User.swift */,
 			);
 			name = Models;
@@ -168,6 +173,7 @@
 		C9FE5BFB19BB288B008B8746 /* JSON Responses */ = {
 			isa = PBXGroup;
 			children = (
+				C97738071A65B41800472DCA /* access_token.json */,
 				8D146A331A1783BF0061AD0A /* unauthorized.json */,
 				8D5E9F481A176C4B00FB77AE /* user.json */,
 				8D5E9F2A1A1753FE00FB77AE /* all_builds.json */,
@@ -283,6 +289,7 @@
 				C98696D719C4152400164926 /* foobar_account.json in Resources */,
 				8D5E9F2B1A1753FE00FB77AE /* all_builds.json in Resources */,
 				8D146A341A1783BF0061AD0A /* unauthorized.json in Resources */,
+				C97738081A65B41800472DCA /* access_token.json in Resources */,
 				8D8E4FFD1A16D5A00049C5D5 /* projects.json in Resources */,
 				8D8E50091A16FFB40049C5D5 /* agents.json in Resources */,
 				8D8E50011A16E5330049C5D5 /* foobar_project.json in Resources */,
@@ -306,6 +313,7 @@
 				C98696D419C40D3D00164926 /* Account.swift in Sources */,
 				8D8E4FFF1A16D7A40049C5D5 /* Project.swift in Sources */,
 				8D5E9F471A176B1800FB77AE /* User.swift in Sources */,
+				C97738061A65A2E900472DCA /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
