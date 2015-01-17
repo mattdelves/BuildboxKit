@@ -31,4 +31,4 @@ git checkout -qf "$BUILDBOX_COMMIT"
 git submodule init
 git submodule update
 
-set -o pipefail && xcodebuild -workspace BuildkiteKit.xcworkspace -scheme BuildkiteKit -sdk iphonesimulator8.2 -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.2' clean build test | xcpretty -c
+set -o pipefail && xcrun xcodebuild -workspace BuildkiteKit.xcworkspace -scheme BuildkiteKit -sdk iphonesimulator8.2 -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.2' clean build test
