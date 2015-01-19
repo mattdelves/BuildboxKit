@@ -5,15 +5,9 @@
     "name": "osx-build-agent",
     "connection_state": "connected",
     "ip_address": "1.126.48.251",
-    "access_token": "f0cc56fb71b1bceccdd0e3caa741188f6000d70f8ac18c8d0a",
+    "access_token": "abcdefghijklmnopqrstuvwxyz",
     "hostname": "somebox",
     "user_agent": "buildbox-agent/0.2 (darwin; 386)",
-    "creator": {
-      "id": "4b7c90a5-ca8c-4a96-843f-42ee13d61549",
-      "name": "Some Person",
-      "email": "person@example.org",
-      "created_at": "2013-12-30 03:42:07 UTC"
-    },
     "created_at": "2014-08-23 09:49:39 UTC"
   }
 ]

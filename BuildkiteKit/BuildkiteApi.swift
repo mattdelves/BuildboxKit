@@ -168,10 +168,11 @@ public class BuildkiteApi {
     request.HTTPBody = jsonDetails
 
     let authStr = "\(username):\(password)"
-    let authData = authStr.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)
-    let authValue = "Basic \(authData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(1)))"
-
-    request.setValue(authValue, forHTTPHeaderField: "Authorization")
+    if let data = authStr.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false) {
+      let authData: NSData = data
+      let encodedAuth = authData.base64EncodedStringWithOptions(nil)
+      request.setValue("Basic \(encodedAuth)", forHTTPHeaderField: "Authorization")
+    }
 
     JSONDataForRequest(request) { json, error in
       var token: AccessToken?

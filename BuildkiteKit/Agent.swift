@@ -16,7 +16,7 @@ public struct Agent {
   public var ip_address: String
   public var access_token: String
   public var hostname: String
-  public var creator: [String: AnyObject]
+  public var user_agent: String
   public var created_at: String
   
   init(_ jsonObject: [String: AnyObject]) {
@@ -27,7 +27,7 @@ public struct Agent {
     self.ip_address = jsonObject["ip_address"] as String
     self.access_token = jsonObject["access_token"] as String
     self.hostname = jsonObject["hostname"] as String
-    self.creator = jsonObject["creator"] as [String: AnyObject]
+    self.user_agent = jsonObject["user_agent"] as String
     self.created_at = jsonObject["created_at"] as String
   }
 }
