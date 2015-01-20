@@ -1,6 +1,6 @@
 [submodule "quick"]
 	path = quick
-	url = https://github.com/mattdelves/Quick.git
+	url = https://github.com/Quick/Quick.git
 [submodule "nimble"]
 	path = nimble
 	url = https://github.com/Quick/Nimble.git
