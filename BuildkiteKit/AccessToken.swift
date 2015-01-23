@@ -12,7 +12,7 @@ import Foundation
 
 public enum AccessScope {
   case ReadUser
-  case ReadAccounts
+  case ReadOrganizations
   case ReadProjects
   case ReadBuilds
   case WriteBuilds
@@ -23,7 +23,7 @@ public enum AccessScope {
   public var text:String {
     switch self {
     case ReadUser: return "read_user"
-    case ReadAccounts: return "read_accounts"
+    case ReadOrganizations: return "read_organizations"
     case ReadProjects: return "read_projects"
     case ReadBuilds: return "read_builds"
     case WriteBuilds: return "write_builds"
