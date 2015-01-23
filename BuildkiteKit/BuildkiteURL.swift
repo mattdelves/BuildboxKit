@@ -9,14 +9,14 @@
 import Foundation
 
 public enum BuildkiteURL {
-  case Account(account:String)
-  case Accounts
-  case Project(account:String, project:String)
-  case Projects(account:String)
-  case Build(account:String, project:String, build:Int)
-  case Builds(account:String, project:String)
+  case Organization(organization:String)
+  case Organizations
+  case Project(organization:String, project:String)
+  case Projects(organization:String)
+  case Build(organization:String, project:String, build:Int)
+  case Builds(organization:String, project:String)
   case AllBuilds
-  case Agents(account:String)
+  case Agents(organization:String)
   case AccessTokens
   case User
 }
@@ -36,14 +36,14 @@ extension BuildkiteURL:Path {
   }
   public var path:String {
     switch self {
-    case .Account(let account): return "/\(apiVersion)/accounts/\(account)"
-    case .Accounts: return "/\(apiVersion)/accounts"
-    case .Project(let account, let project): return "/\(apiVersion)/accounts/\(account)/projects/\(project)"
-    case .Projects(let account): return "/\(apiVersion)/accounts/\(account)/projects"
-    case .Build(let account, let project, let build): return "/\(apiVersion)/accounts/\(account)/projects/\(project)/builds/\(build)"
-    case .Builds(let account, let project): return "/\(apiVersion)/accounts/\(account)/projects/\(project)/builds"
+    case .Organization(let organization): return "/\(apiVersion)/organizations/\(organization)"
+    case .Organizations: return "/\(apiVersion)/organizations"
+    case .Project(let organization, let project): return "/\(apiVersion)/organizations/\(organization)/projects/\(project)"
+    case .Projects(let organization): return "/\(apiVersion)/organizations/\(organization)/projects"
+    case .Build(let organization, let project, let build): return "/\(apiVersion)/organizations/\(organization)/projects/\(project)/builds/\(build)"
+    case .Builds(let organization, let project): return "/\(apiVersion)/organizations/\(organization)/projects/\(project)/builds"
     case .AllBuilds: return "/\(apiVersion)/builds"
-    case .Agents(let account): return "/\(apiVersion)/accounts/\(account)/agents"
+    case .Agents(let organization): return "/\(apiVersion)/organizations/\(organization)/agents"
     case .AccessTokens: return "/\(apiVersion)/access_tokens"
     case .User: return "/\(apiVersion)/user"
       }

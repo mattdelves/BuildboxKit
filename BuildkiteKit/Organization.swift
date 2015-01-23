@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Account {
+public struct Organization {
   public var id: String
   public var url: String
   public var name: String

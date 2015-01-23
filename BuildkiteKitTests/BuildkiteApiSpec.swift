@@ -15,7 +15,7 @@ class BuildkiteApiSpec: QuickSpec {
   override func spec() {
     var api: BuildkiteApi?
     
-    describe("All Accounts") {
+    describe("All Organizations") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
@@ -29,11 +29,11 @@ class BuildkiteApiSpec: QuickSpec {
       
       it("can be retrieved") {
         let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("accounts", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "accounts")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "organizations")
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getAccounts({ accounts, error in
+        api?.getOrganizations({ accounts, error in
           called = true
         })
         
@@ -45,14 +45,14 @@ class BuildkiteApiSpec: QuickSpec {
         let response = DummySpitServiceResponse(
           filePath: filePath!,
           header: ["Content-type": "application/json"],
-          urlComponentToMatch: "accounts",
+          urlComponentToMatch: "organizations",
           statusCode: 401
         )
         
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getAccounts { accounts, error in
+        api?.getOrganizations { accounts, error in
           called = true
           expect(error).notTo(beNil())
         }
@@ -61,7 +61,7 @@ class BuildkiteApiSpec: QuickSpec {
       }
     }
     
-    describe("An Account") {
+    describe("An Organization") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
@@ -79,7 +79,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getAccount("foobar") { account, error in
+        api?.getOrganization("foobar") { account, error in
           called = true
           expect(account?.name).to(equal("foobar"))
         }
@@ -99,7 +99,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getAccount("foobar") { account, error in
+        api?.getOrganization("foobar") { account, error in
           called = true
           expect(error).notTo(beNil())
           expect(account).to(beNil())

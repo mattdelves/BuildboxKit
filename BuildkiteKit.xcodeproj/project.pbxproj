@@ -25,7 +25,7 @@
 		C973EA7B19BA88130076B3B8 /* BuildkiteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C973EA7A19BA88130076B3B8 /* BuildkiteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C97738061A65A2E900472DCA /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97738051A65A2E900472DCA /* AccessToken.swift */; };
 		C97738081A65B41800472DCA /* access_token.json in Resources */ = {isa = PBXBuildFile; fileRef = C97738071A65B41800472DCA /* access_token.json */; };
-		C98696D419C40D3D00164926 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98696D319C40D3D00164926 /* Account.swift */; };
+		C98696D419C40D3D00164926 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98696D319C40D3D00164926 /* Organization.swift */; };
 		C98696D719C4152400164926 /* foobar_account.json in Resources */ = {isa = PBXBuildFile; fileRef = C98696D619C4152400164926 /* foobar_account.json */; };
 		C987361019BAC69000980237 /* BuildkiteURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987360F19BAC69000980237 /* BuildkiteURL.swift */; };
 		C987361419BAD23300980237 /* BuildkiteURLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987361319BAD23300980237 /* BuildkiteURLSpec.swift */; };
@@ -58,7 +58,7 @@
 		C973EA8F19BAA72E0076B3B8 /* build_and_test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build_and_test.sh; path = ../build_and_test.sh; sourceTree = "<group>"; };
 		C97738051A65A2E900472DCA /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		C97738071A65B41800472DCA /* access_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = access_token.json; sourceTree = "<group>"; };
-		C98696D319C40D3D00164926 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		C98696D319C40D3D00164926 /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		C98696D619C4152400164926 /* foobar_account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foobar_account.json; sourceTree = "<group>"; };
 		C987360F19BAC69000980237 /* BuildkiteURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURL.swift; sourceTree = "<group>"; };
 		C987361319BAD23300980237 /* BuildkiteURLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURLSpec.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C97738051A65A2E900472DCA /* AccessToken.swift */,
-				C98696D319C40D3D00164926 /* Account.swift */,
+				C98696D319C40D3D00164926 /* Organization.swift */,
 				8D8E500A1A1700200049C5D5 /* Agent.swift */,
 				8D8E50041A16F2760049C5D5 /* Build.swift */,
 				8D8E4FFE1A16D7A40049C5D5 /* Project.swift */,
@@ -310,7 +310,7 @@
 				C9FE5BF919BB2575008B8746 /* BuildkiteApi.swift in Sources */,
 				8D8E50051A16F2760049C5D5 /* Build.swift in Sources */,
 				8D8E500B1A1700200049C5D5 /* Agent.swift in Sources */,
-				C98696D419C40D3D00164926 /* Account.swift in Sources */,
+				C98696D419C40D3D00164926 /* Organization.swift in Sources */,
 				8D8E4FFF1A16D7A40049C5D5 /* Project.swift in Sources */,
 				8D5E9F471A176B1800FB77AE /* User.swift in Sources */,
 				C97738061A65A2E900472DCA /* AccessToken.swift in Sources */,

@@ -25,40 +25,40 @@ public class BuildkiteApi {
     self.session = NSURLSession(configuration: configuration)
   }
   
-  public func getAccounts(completion: (accounts: [Account], error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Accounts, apiKey, scheme: scheme)
+  public func getOrganizations(completion: (organizations: [Organization], error: BuildkiteApiError?) -> Void) {
+    let url = buildkiteEndpoint(BuildkiteURL.Organizations, apiKey, scheme: scheme)
     
     ArrayOfJSONDataForEndpoint(url) { json, error in
-      var accounts: [Account] = [Account]()
+      var organizations: [Organization] = [Organization]()
       
       if let error : BuildkiteApiError = error {
-        completion(accounts: accounts, error: error)
+        completion(organizations: organizations, error: error)
       } else {
         for accountData:[String: AnyObject] in json! as [[String: AnyObject]]{
-          accounts.append(Account(accountData))
+          organizations.append(Organization(accountData))
         }
         
-        completion(accounts: accounts, error: nil)
+        completion(organizations: organizations, error: nil)
       }
     }
   }
   
-  public func getAccount(name: String, completion: (account: Account?, error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Account(account: name), apiKey, scheme: scheme)
+  public func getOrganization(name: String, completion: (organization: Organization?, error: BuildkiteApiError?) -> Void) {
+    let url = buildkiteEndpoint(BuildkiteURL.Organization(organization: name), apiKey, scheme: scheme)
     
     JSONDataForEndpoint(url) { json, error in
-      var account : Account?
+      var organization : Organization?
       
       if error == nil {
-        account = Account(json! as [String: AnyObject])
+        organization = Organization(json! as [String: AnyObject])
       }
       
-      completion(account: account, error: error)
+      completion(organization: organization, error: error)
     }
   }
   
   public func getProjects(account: String, completion: (projects: [Project], error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Projects(account: account), apiKey, scheme: scheme)
+    let url = buildkiteEndpoint(BuildkiteURL.Projects(organization: account), apiKey, scheme: scheme)
     ArrayOfJSONDataForEndpoint(url) { json, error in
       var projects: [Project] = [Project]()
       
@@ -75,7 +75,7 @@ public class BuildkiteApi {
   }
   
   public func getProject(account: String, projectName: String, completion: (project: Project?, error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Project(account: account, project: projectName), apiKey, scheme: scheme)
+    let url = buildkiteEndpoint(BuildkiteURL.Project(organization: account, project: projectName), apiKey, scheme: scheme)
     
     JSONDataForEndpoint(url) { json, error in
       var project : Project?
@@ -107,7 +107,7 @@ public class BuildkiteApi {
   }
   
   public func getBuilds(account: String, projectName: String, completion: (builds: [Build], error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Builds(account: account, project: projectName), apiKey, scheme: scheme)
+    let url = buildkiteEndpoint(BuildkiteURL.Builds(organization: account, project: projectName), apiKey, scheme: scheme)
     
     ArrayOfJSONDataForEndpoint(url) { jsonArray, error in
       var builds: [Build] = [Build]()
@@ -125,7 +125,7 @@ public class BuildkiteApi {
   }
   
   public func getBuild(account: String, projectName: String, number: Int, completion: (build: Build?, error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Build(account: account, project: projectName, build: number), apiKey, scheme: scheme)
+    let url = buildkiteEndpoint(BuildkiteURL.Build(organization: account, project: projectName, build: number), apiKey, scheme: scheme)
     
     JSONDataForEndpoint(url) { json, error in
       var build : Build?
@@ -139,7 +139,7 @@ public class BuildkiteApi {
   }
   
   public func getAgents(account: String, completion: (agents: [Agent], error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Agents(account: account), apiKey, scheme: scheme)
+    let url = buildkiteEndpoint(BuildkiteURL.Agents(organization: account), apiKey, scheme: scheme)
     
     ArrayOfJSONDataForEndpoint(url) { jsonArray, error in
       var agents: [Agent] = [Agent]()
