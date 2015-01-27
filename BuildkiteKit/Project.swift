@@ -18,7 +18,7 @@ public struct Project {
   public var featured_build: Build
   public var builds: [Build]?
   
-  init(_ jsonObject: [String: AnyObject]) {
+  public init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
     self.url = jsonObject["url"] as String
     self.name = jsonObject["name"] as String

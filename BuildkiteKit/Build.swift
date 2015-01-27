@@ -46,7 +46,7 @@ public struct BuildJob {
   public var started_at: String?
   public var finished_at: String?
 
-  init(_ jsonObject: [String: AnyObject]) {
+  public init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
     self.name = jsonObject["name"] as String
     self.type = jsonObject["type"] as String
@@ -88,7 +88,7 @@ public struct Build {
   public var meta_data: [String: AnyObject]
   public var project: [String: AnyObject]?
 
-  init(_ jsonObject: [String: AnyObject]) {
+  public init(_ jsonObject: [String: AnyObject]) {
     var started_at = ""
     if let started_at_value : String = jsonObject["started_at"] as? String {
       started_at = started_at_value

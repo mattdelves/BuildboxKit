@@ -38,7 +38,7 @@ public struct AccessToken {
   public var token : String
   public var type : String
 
-  init(_ jsonObject: [String: AnyObject]) {
+  public init(_ jsonObject: [String: AnyObject]) {
     self.token = jsonObject["access_token"] as String
     self.type  = jsonObject["type"] as String
   }

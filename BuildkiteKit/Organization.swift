@@ -16,7 +16,7 @@ public struct Organization {
   public var agents_url: String
   public var created_at: String
   
-  init(_ jsonObject: [String: AnyObject]) {
+  public init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
     self.url = jsonObject["url"] as String
     self.name = jsonObject["name"] as String
