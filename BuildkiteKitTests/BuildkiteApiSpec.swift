@@ -33,7 +33,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getOrganizations({ accounts, body, error in
+        api?.getOrganizations({ accounts, body, response, error in
           called = true
         })
         
@@ -52,7 +52,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getOrganizations { accounts, body, error in
+        api?.getOrganizations { accounts, body, response, error in
           called = true
           expect(error).notTo(beNil())
         }
@@ -79,7 +79,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getOrganization("foobar") { account, body, error in
+        api?.getOrganization("foobar") { account, body, response, error in
           called = true
           expect(account?.name).to(equal("foobar"))
         }
@@ -99,7 +99,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getOrganization("foobar") { account, body, error in
+        api?.getOrganization("foobar") { account, body, response, error in
           called = true
           expect(error).notTo(beNil())
           expect(account).to(beNil())
@@ -127,7 +127,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getProjects("dummyspit") { projects, body, error in
+        api?.getProjects("dummyspit") { projects, body, response, error in
           called = true
           expect(projects.count).to(equal(3))
         }
@@ -147,7 +147,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getProjects("dummyspit") { projects, body, error in
+        api?.getProjects("dummyspit") { projects, body, response, error in
           called = true
           expect(error).notTo(beNil())
         }
@@ -174,7 +174,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getProject("dummyspit", projectName: "foobar") { project, body, error in
+        api?.getProject("dummyspit", projectName: "foobar") { project, body, response, error in
           called = true
           expect(project?.name).to(equal("Project3"))
         }
@@ -194,7 +194,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getProject("dummyspit", projectName: "foobar") { project, body, error in
+        api?.getProject("dummyspit", projectName: "foobar") { project, body, response, error in
           called = true
           expect(error).notTo(beNil())
           expect(project).to(beNil())
@@ -222,7 +222,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuilds("foobar", projectName: "Project1") { builds, body, error in
+        api?.getBuilds("foobar", projectName: "Project1") { builds, body, response, error in
           called = true
           expect(builds.count).to(equal(7))
         }
@@ -242,7 +242,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuilds("foobar", projectName: "Project1") { builds, body, error in
+        api?.getBuilds("foobar", projectName: "Project1") { builds, body, response, error in
           called = true
           expect(error).notTo(beNil())
         }
@@ -269,7 +269,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuilds { builds, body, error in
+        api?.getBuilds { builds, body, response, error in
           called = true
           expect(builds.count).to(equal(30))
         }
@@ -289,7 +289,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuilds("foobar", projectName: "Project1") { builds, body, error in
+        api?.getBuilds("foobar", projectName: "Project1") { builds, body, response, error in
           called = true
           expect(error).notTo(beNil())
         }
@@ -316,7 +316,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuild("foobar", projectName: "Project1", number: 1) { build, body, error in
+        api?.getBuild("foobar", projectName: "Project1", number: 1) { build, body, response, error in
           called = true
           expect(build?.number).to(equal(1))
           expect(build?.message).to(equal("add in buildbox script"))
@@ -338,7 +338,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuild("foobar", projectName: "Project1", number: 1) { build, body, error in
+        api?.getBuild("foobar", projectName: "Project1", number: 1) { build, body, response, error in
           called = true
           expect(error).notTo(beNil())
           expect(build).to(beNil())
@@ -366,7 +366,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getAgents("foobar") { agents, body, error in
+        api?.getAgents("foobar") { agents, body, response, error in
           called = true
           expect(agents.count).to(equal(1))
         }
@@ -393,7 +393,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
 
-        api?.getAccessTokens("foobar", password: "password", scopes: ["a", "b"], client_id: "abc123") { token, body, error in
+        api?.getAccessTokens("foobar", password: "password", scopes: ["a", "b"], client_id: "abc123") { token, body, response, error in
           called = true
         }
 
@@ -420,7 +420,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getUser { user, body, error in
+        api?.getUser { user, body, response, error in
           called = true
           expect(user?.name).to(equal("Foo Bar"))
         }
@@ -440,7 +440,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getUser { user, body, error in
+        api?.getUser { user, body, response, error in
           called = true
           expect(error).notTo(beNil())
           expect(user).to(beNil())
