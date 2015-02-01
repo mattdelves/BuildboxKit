@@ -16,7 +16,7 @@ public struct BuildkiteApiError {
 public class BuildkiteApi {
   public var apiKey: String
   public var scheme: String
-  var session: NSURLSession
+  public var session: NSURLSession
   
   public init (_ apiKey: String, scheme: String = "https", configuration: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()) {
     self.apiKey = apiKey
