@@ -2,6 +2,7 @@
   "id": "abc333",
   "url": "https://api.buildkite.com/v1/accounts/foobar/projects/dummyspit",
   "name": "Project3",
+  "slug": "project3",
   "repository": "git@github.com:foobar/project2.git",
   "builds_url": "https://api.buildkite.com/v1/accounts/foobar/projects/project3/builds",
   "created_at": "2014-08-23 06:53:05 UTC",

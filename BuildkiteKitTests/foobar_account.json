@@ -1,7 +1,8 @@
 {
   "id": "123456789-abcdefghijk",
   "url": "https://api.buildkite.com/v1/accounts/foobar",
-  "name": "foobar",
+  "name": "Foo and Bar",
+  "slug": "foobar",
   "projects_url": "https://api.buildkite.com/v1/accounts/foobar/projects",
   "agents_url": "https://api.buildkite.com/v1/accounts/foobar/agents",
   "users_url": "https://api.buildkite.com/v1/accounts/foobar/users",

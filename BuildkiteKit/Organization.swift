@@ -15,6 +15,7 @@ public struct Organization {
   public var projects_url: String
   public var agents_url: String
   public var created_at: String
+  public var slug: String
   
   public init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
@@ -23,5 +24,6 @@ public struct Organization {
     self.projects_url = jsonObject["projects_url"] as String
     self.agents_url = jsonObject["agents_url"] as String
     self.created_at = jsonObject["created_at"] as String
+    self.slug = jsonObject["slug"] as String
   }
 }

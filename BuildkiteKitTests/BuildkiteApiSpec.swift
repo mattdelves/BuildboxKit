@@ -81,7 +81,7 @@ class BuildkiteApiSpec: QuickSpec {
         
         api?.getOrganization("foobar") { account, body, response, error in
           called = true
-          expect(account?.name).to(equal("foobar"))
+          expect(account?.name).to(equal("Foo and Bar"))
         }
         
         expect{called}.toEventually(beTruthy())

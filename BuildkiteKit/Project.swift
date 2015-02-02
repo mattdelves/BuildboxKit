@@ -17,6 +17,7 @@ public struct Project {
   public var created_at: String
   public var featured_build: Build
   public var builds: [Build]?
+  public var slug: String
   
   public init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
@@ -26,6 +27,7 @@ public struct Project {
     self.builds_url = jsonObject["builds_url"] as String
     self.created_at = jsonObject["created_at"] as String
     self.featured_build = Build(jsonObject["featured_build"] as [String: AnyObject])
+    self.slug = jsonObject["slug"] as String
     self.builds = [Build]()
   }
 }
