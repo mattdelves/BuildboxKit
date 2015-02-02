@@ -15,7 +15,7 @@ public struct Agent {
   public var connection_state: String
   public var ip_address: String
   public var access_token: String
-  public var hostname: String
+  public var hostname: String?
   public var user_agent: String
   public var created_at: String
   
@@ -26,7 +26,9 @@ public struct Agent {
     self.connection_state = jsonObject["connection_state"] as String
     self.ip_address = jsonObject["ip_address"] as String
     self.access_token = jsonObject["access_token"] as String
-    self.hostname = jsonObject["hostname"] as String
+    if let hostname = jsonObject["hostname"] as? String {
+      self.hostname = hostname as String
+    }
     self.user_agent = jsonObject["user_agent"] as String
     self.created_at = jsonObject["created_at"] as String
   }
