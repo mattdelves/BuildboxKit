@@ -32,33 +32,53 @@ public enum BuildStatus {
 }
 
 public struct BuildJob {
-  public var id: String
-  public var name: String
   public var type: String
-  public var state: BuildStatus
-  public var log_url: String
-  public var script_path: String
+  public var id: String?
+  public var name: String?
+  public var state: BuildStatus?
+  public var log_url: String?
+  public var script_path: String?
   public var exit_status: Int?
-  public var artifact_paths: String
+  public var artifact_paths: String?
   public var agent: [String: AnyObject]?
-  public var created_at: String
-  public var scheduled_at: String
+  public var created_at: String?
+  public var scheduled_at: String?
   public var started_at: String?
   public var finished_at: String?
 
   public init(_ jsonObject: [String: AnyObject]) {
-    self.id = jsonObject["id"] as String
-    self.name = jsonObject["name"] as String
     self.type = jsonObject["type"] as String
-    self.state = buildStatusFromString(jsonObject["state"] as String)
-    self.log_url = jsonObject["log_url"] as String
-    self.script_path = jsonObject["script_path"] as String
-    self.artifact_paths = jsonObject["artifact_paths"] as String
+
+    if self.type == "waiter" {
+      return
+    }
+    if let job_id = jsonObject["id"] as? String {
+      self.id = job_id
+    }
+    if let name = jsonObject["name"] as? String {
+      self.name = name
+    }
+    if let job_state = jsonObject["state"] as? String {
+      self.state = buildStatusFromString(job_state)
+    }
+    if let log_url = jsonObject["log_url"] as? String {
+      self.log_url = log_url
+    }
+    if let script_path = jsonObject["script_path"] as? String {
+      self.script_path = script_path
+    }
+    if let artifact_paths = jsonObject["artifact_paths"] as? String {
+      self.artifact_paths = artifact_paths
+    }
     if let agent = jsonObject["agent"] as? [String: AnyObject] {
       self.agent = agent
     }
-    self.created_at = jsonObject["created_at"] as String
-    self.scheduled_at = jsonObject["scheduled_at"] as String
+    if let created_at = jsonObject["created_at"] as? String {
+      self.created_at = created_at
+    }
+    if let scheduled_at = jsonObject["scheduled_at"] as? String {
+      self.scheduled_at = scheduled_at
+    }
     if let started_at = jsonObject["started_at"] as? String {
       self.started_at = started_at
     }
