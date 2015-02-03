@@ -8,26 +8,58 @@
 
 import Foundation
 
+public enum AgentConnectionState {
+  case Connected
+  case NeverConnected
+  case Disconnected
+  case Unknown
+
+  public var text:String {
+    switch self {
+    case .Connected: return "connected"
+    case .NeverConnected: return "never connected"
+    case .Disconnected: return "disconnected"
+    case .Unknown: return "unknown"
+    }
+  }
+}
+
 public struct Agent {
   public var id: String
   public var url: String
   public var name: String
-  public var connection_state: String
+  public var connection_state: AgentConnectionState
   public var access_token: String
   public var hostname: String?
-  public var user_agent: String
+  public var user_agent: String?
+  public var ip_address: String?
   public var created_at: String
   
   public init(_ jsonObject: [String: AnyObject]) {
     self.id = jsonObject["id"] as String
     self.url = jsonObject["url"] as String
     self.name = jsonObject["name"] as String
-    self.connection_state = jsonObject["connection_state"] as String
+    let connection = jsonObject["connection_state"] as String
+    self.connection_state = agentConnectionStatusFromString(connection)
     self.access_token = jsonObject["access_token"] as String
     if let hostname = jsonObject["hostname"] as? String {
-      self.hostname = hostname as String
+      self.hostname = hostname
     }
-    self.user_agent = jsonObject["user_agent"] as String
+    if let user_agent = jsonObject["user_agent"] as? String {
+      self.user_agent = user_agent
+    }
+    if let ip_address = jsonObject["ip_address"] as? String {
+      self.ip_address = ip_address
+    }
     self.created_at = jsonObject["created_at"] as String
+  }
+}
+
+func agentConnectionStatusFromString(status: String) -> AgentConnectionState {
+  switch status {
+    case "connected": return .Connected
+    case "disconnected": return .Disconnected
+    case "never_connected": return .NeverConnected
+    default: return .Unknown
   }
 }
