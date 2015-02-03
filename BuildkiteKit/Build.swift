@@ -10,13 +10,13 @@
 import Foundation
 
 public enum BuildStatus {
-  case Running;
-  case Scheduled;
-  case Passed;
-  case Failed;
-  case Canceled;
-  case Skipped;
-  case NotRun;
+  case Running
+  case Scheduled
+  case Passed
+  case Failed
+  case Canceled
+  case Skipped
+  case NotRun
 
   public var text:String {
     switch self {
