@@ -150,7 +150,7 @@ public class BuildkiteApi {
     request.HTTPBody = jsonDetails
 
     let authStr = "\(username):\(password)"
-    if let data = authStr.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false) {
+    if let data = authStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
       let authData: NSData = data
       let encodedAuth = authData.base64EncodedStringWithOptions(nil)
       request.setValue("Basic \(encodedAuth)", forHTTPHeaderField: "Authorization")
