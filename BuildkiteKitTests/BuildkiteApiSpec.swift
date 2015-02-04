@@ -399,6 +399,20 @@ class BuildkiteApiSpec: QuickSpec {
 
         expect{called}.toEventually(beTrue())
       }
+      
+      describe("auth header") {
+        it("basic characters") {
+          let encoded = api?.formatAuthHeader("foo", password: "bar")
+          expect(encoded).to(equal("Zm9vOmJhcg=="))
+        }
+        
+        it("special characters") {
+          let password = "xrNiZSWS@q SKXqQ6SodnàéULw"
+          
+          let encoded = api?.formatAuthHeader("foo", password: password)
+          expect(encoded).to(equal("Zm9vOnhyTmlaU1dTQHEgU0tYcVE2U29kbsOgw6lVTHc="))
+        }
+      }
 
     }
 

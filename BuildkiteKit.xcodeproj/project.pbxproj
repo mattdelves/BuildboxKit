@@ -19,6 +19,7 @@
 		8D8E50071A16F92A0049C5D5 /* single_build.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50061A16F92A0049C5D5 /* single_build.json */; };
 		8D8E50091A16FFB40049C5D5 /* agents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50081A16FFB40049C5D5 /* agents.json */; };
 		8D8E500B1A1700200049C5D5 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E500A1A1700200049C5D5 /* Agent.swift */; };
+		C90111371A81CFD500460BD3 /* auth_weird_characters.txt in Resources */ = {isa = PBXBuildFile; fileRef = C90111361A81CFD500460BD3 /* auth_weird_characters.txt */; };
 		C9397BB81A6DEAAF00BF35EA /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9397BB71A6DEAAF00BF35EA /* DummySpit.framework */; };
 		C94AD0C11A6DE0C5003CDC2C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94AD0BF1A6DE0C5003CDC2C /* Quick.framework */; };
 		C94AD0D11A6DE941003CDC2C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94AD0D01A6DE941003CDC2C /* Nimble.framework */; };
@@ -47,6 +48,7 @@
 		8D8E50061A16F92A0049C5D5 /* single_build.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = single_build.json; sourceTree = "<group>"; };
 		8D8E50081A16FFB40049C5D5 /* agents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = agents.json; sourceTree = "<group>"; };
 		8D8E500A1A1700200049C5D5 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		C90111361A81CFD500460BD3 /* auth_weird_characters.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = auth_weird_characters.txt; sourceTree = "<group>"; };
 		C9397BB71A6DEAAF00BF35EA /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = "../dummyspit/build/Debug-iphoneos/DummySpit.framework"; sourceTree = "<group>"; };
 		C94AD0BF1A6DE0C5003CDC2C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../DerivedData/BuildkiteKit/Build/Products/Debug/Quick.framework; sourceTree = "<group>"; };
 		C94AD0D01A6DE941003CDC2C /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../DerivedData/BuildkiteKit/Build/Products/Debug/Nimble.framework; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C90111351A81CFAE00460BD3 /* Test strings */ = {
+			isa = PBXGroup;
+			children = (
+				C90111361A81CFD500460BD3 /* auth_weird_characters.txt */,
+			);
+			name = "Test strings";
+			sourceTree = "<group>";
+		};
 		C973EA6B19BA88130076B3B8 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		C973EA8219BA88130076B3B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C90111351A81CFAE00460BD3 /* Test strings */,
 				C9FE5BFB19BB288B008B8746 /* JSON Responses */,
 				C973EA8319BA88130076B3B8 /* Info.plist */,
 				C9397BB71A6DEAAF00BF35EA /* DummySpit.framework */,
@@ -291,6 +302,7 @@
 				8D146A341A1783BF0061AD0A /* unauthorized.json in Resources */,
 				C97738081A65B41800472DCA /* access_token.json in Resources */,
 				8D8E4FFD1A16D5A00049C5D5 /* projects.json in Resources */,
+				C90111371A81CFD500460BD3 /* auth_weird_characters.txt in Resources */,
 				8D8E50091A16FFB40049C5D5 /* agents.json in Resources */,
 				8D8E50011A16E5330049C5D5 /* foobar_project.json in Resources */,
 				8D5E9F491A176C4B00FB77AE /* user.json in Resources */,

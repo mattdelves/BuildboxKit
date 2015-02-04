@@ -149,12 +149,8 @@ public class BuildkiteApi {
     request.HTTPMethod = "POST"
     request.HTTPBody = jsonDetails
 
-    let authStr = "\(username):\(password)"
-    if let data = authStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-      let authData: NSData = data
-      let encodedAuth = authData.base64EncodedStringWithOptions(nil)
-      request.setValue("Basic \(encodedAuth)", forHTTPHeaderField: "Authorization")
-    }
+    let encodedAuth = formatAuthHeader(username, password: password)
+    request.setValue("Basic \(encodedAuth)", forHTTPHeaderField: "Authorization")
 
     JSONDataForRequest(request) { json, data, response, error in
       var token: AccessToken?
@@ -209,6 +205,16 @@ public class BuildkiteApi {
       }
     }
     task.resume()
+  }
+  
+  public func formatAuthHeader(username: String, password: String) -> String {
+    var encodedAuth = ""
+    let authStr = "\(username):\(password)"
+    if let data = authStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+      let authData: NSData = data
+      encodedAuth = authData.base64EncodedStringWithOptions(nil)
+    }
+    return encodedAuth
   }
 
   func extractError(json: AnyObject?, code: Int) -> BuildkiteApiError? {
