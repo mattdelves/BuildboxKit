@@ -15,7 +15,7 @@ public struct Project {
   public var repository: String
   public var builds_url: String
   public var created_at: String
-  public var featured_build: Build
+  public var featured_build: Build?
   public var builds: [Build]?
   public var slug: String
   
@@ -26,7 +26,9 @@ public struct Project {
     self.repository = jsonObject["repository"] as String
     self.builds_url = jsonObject["builds_url"] as String
     self.created_at = jsonObject["created_at"] as String
-    self.featured_build = Build(jsonObject["featured_build"] as [String: AnyObject])
+    if let featured_build = jsonObject["featured_build"] as? [String: AnyObject] {
+      self.featured_build = Build(featured_build)
+    }
     self.slug = jsonObject["slug"] as String
     self.builds = [Build]()
   }
