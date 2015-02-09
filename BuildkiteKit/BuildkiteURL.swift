@@ -59,7 +59,7 @@ public func buildkiteEndpoint(route:BuildkiteURL, apiKey:String, scheme:String =
   case .AccessTokens:
     components.query = nil
   default:
-    components.query = "api_key=\(apiKey)"
+    components.query = "access_token=\(apiKey)"
   }
   return components.URL!
 }
