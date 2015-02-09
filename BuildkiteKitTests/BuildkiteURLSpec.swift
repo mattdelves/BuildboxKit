@@ -63,13 +63,13 @@ class BuildkiteURLSpec: QuickSpec {
       it("when using default https scheme") {
         var endpoint = BuildkiteURL.Organizations
         var url = buildkiteEndpoint(endpoint, "123abc")
-        expect(url.absoluteString).to(equal("https://api.buildkite.com/v1/organizations?api_key=123abc"))
+        expect(url.absoluteString).to(equal("https://api.buildkite.com/v1/organizations?access_token=123abc"))
       }
       
       it("when specifying a scheme") {
         var endpoint = BuildkiteURL.Organizations
         var url = buildkiteEndpoint(endpoint, "123abc", scheme: "mock")
-        expect(url.absoluteString).to(equal("mock://api.buildkite.com/v1/organizations?api_key=123abc"))
+        expect(url.absoluteString).to(equal("mock://api.buildkite.com/v1/organizations?access_token=123abc"))
       }
     }
   }
