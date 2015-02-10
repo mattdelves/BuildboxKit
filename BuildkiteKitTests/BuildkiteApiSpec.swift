@@ -393,27 +393,13 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
 
-        api?.getAccessTokens("foobar", password: "password", scopes: ["a", "b"], client_id: "abc123") { token, body, response, error in
+        api?.getAccessTokens(["a", "b"], client_id: "abc123") { token, body, response, error in
           called = true
         }
 
         expect{called}.toEventually(beTrue())
       }
       
-      describe("auth header") {
-        it("basic characters") {
-          let encoded = api?.formatAuthHeader("foo", password: "bar")
-          expect(encoded).to(equal("Zm9vOmJhcg=="))
-        }
-        
-        it("special characters") {
-          let password = "xrNiZSWS@q SKXqQ6SodnàéULw"
-          
-          let encoded = api?.formatAuthHeader("foo", password: password)
-          expect(encoded).to(equal("Zm9vOnhyTmlaU1dTQHEgU0tYcVE2U29kbsOgw6lVTHc="))
-        }
-      }
-
     }
 
     describe("The current User") {

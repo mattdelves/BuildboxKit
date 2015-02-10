@@ -138,7 +138,7 @@ public class BuildkiteApi {
     }
   }
   
-  public func getAccessTokens(username: String, password: String, scopes: [String], client_id: String, completion: (token: AccessToken?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
+  public func getAccessTokens(scopes: [String], client_id: String, completion: (token: AccessToken?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let details = [
       "client_id": client_id,
       "scopes": scopes
@@ -148,9 +148,6 @@ public class BuildkiteApi {
     let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
     request.HTTPMethod = "POST"
     request.HTTPBody = jsonDetails
-
-    let encodedAuth = formatAuthHeader(username, password: password)
-    request.setValue("Basic \(encodedAuth)", forHTTPHeaderField: "Authorization")
 
     JSONDataForRequest(request) { json, data, response, error in
       var token: AccessToken?
@@ -207,16 +204,6 @@ public class BuildkiteApi {
     task.resume()
   }
   
-  public func formatAuthHeader(username: String, password: String) -> String {
-    var encodedAuth = ""
-    let authStr = "\(username):\(password)"
-    if let data = authStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-      let authData: NSData = data
-      encodedAuth = authData.base64EncodedStringWithOptions(nil)
-    }
-    return encodedAuth
-  }
-
   func extractError(json: AnyObject?, code: Int) -> BuildkiteApiError? {
     var error: BuildkiteApiError?
     if let json = json as? [String: AnyObject] {
