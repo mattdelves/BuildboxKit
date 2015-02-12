@@ -101,36 +101,37 @@ public struct Build {
   public var commit: String
   public var env: [String: AnyObject]
   public var jobs: [BuildJob]?
-  public var created_at: String
-  public var scheduled_at: String
-  public var started_at: String
-  public var finished_at: String
+  public var created_at: String?
+  public var scheduled_at: String?
+  public var started_at: String?
+  public var finished_at: String?
   public var meta_data: [String: AnyObject]
   public var project: [String: AnyObject]?
 
   public init(_ jsonObject: [String: AnyObject]) {
-    var started_at = ""
-    if let started_at_value : String = jsonObject["started_at"] as? String {
-      started_at = started_at_value
+    if let started_at : String = jsonObject["started_at"] as? String {
+      self.started_at = started_at
     }
 
-    var finished_at = ""
-    if let finished_at_value : String = jsonObject["finished_at"] as? String {
-      finished_at = finished_at_value
+    if let finished_at : String = jsonObject["finished_at"] as? String {
+      self.finished_at = finished_at
+    }
+
+    if let scheduled_at = jsonObject["scheduled_at"] as? String {
+      self.scheduled_at = scheduled_at
+    }
+
+    if let created_at = jsonObject["created_at"] as? String {
+      self.created_at = created_at
     }
 
     self.id = jsonObject["id"] as String
-
     self.url = jsonObject["url"] as String
     self.number = jsonObject["number"] as Int
     self.branch = jsonObject["branch"] as String
     self.message = jsonObject["message"] as String
     self.commit = jsonObject["commit"] as String
     self.env = jsonObject["env"] as [String: AnyObject]
-    self.created_at = jsonObject["created_at"] as String
-    self.scheduled_at = jsonObject["scheduled_at"] as String
-    self.started_at = started_at
-    self.finished_at = finished_at
     self.meta_data = jsonObject["meta_data"] as [String: AnyObject]
 
     if let jobs : [[String: AnyObject]] = jsonObject["jobs"] as? [[String: AnyObject]] {
