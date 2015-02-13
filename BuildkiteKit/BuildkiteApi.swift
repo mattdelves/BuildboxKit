@@ -95,8 +95,8 @@ public class BuildkiteApi {
     }
   }
   
-  public func getBuilds(account: String, projectName: String, completion: (builds: [Build], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Builds(organization: account, project: projectName), apiKey, scheme: scheme)
+  public func getBuilds(organization: String, projectName: String, completion: (builds: [Build], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
+    let url = buildkiteEndpoint(BuildkiteURL.Builds(organization: organization, project: projectName), apiKey, scheme: scheme)
     JSONDataForEndpoint(url) { json, data, response, error in
       var builds: [Build] = [Build]()
       if let json = json as? [[String: AnyObject]] {
@@ -110,8 +110,8 @@ public class BuildkiteApi {
     }
   }
   
-  public func getBuild(account: String, projectName: String, number: Int, completion: (build: Build?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
-    let url = buildkiteEndpoint(BuildkiteURL.Build(organization: account, project: projectName, build: number), apiKey, scheme: scheme)
+  public func getBuild(organization: String, projectName: String, number: Int, completion: (build: Build?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
+    let url = buildkiteEndpoint(BuildkiteURL.Build(organization: organization, project: projectName, build: number), apiKey, scheme: scheme)
     JSONDataForEndpoint(url) { json, data, response, error in
       var build: Build?
       if let json = json as? [String: AnyObject] {
