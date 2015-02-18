@@ -38,6 +38,11 @@ class BuildkiteURLSpec: QuickSpec {
         expect(endpoint.path).to(equal("/v1/organizations/foo/projects/bar/builds/1"))
       }
       
+      it("for a build job log") {
+        var endpoint = BuildkiteURL.BuildJobLog(organization: "foo", project: "bar", build: 123, job: "abc123")
+        expect(endpoint.path).to(equal("/v1/organizations/foo/projects/bar/builds/123/jobs/abc123/log"))
+      }
+
       it("for all agents") {
         var endpoint = BuildkiteURL.Agents(organization: "foo")
         expect(endpoint.path).to(equal("/v1/organizations/foo/agents"))

@@ -449,5 +449,33 @@ class BuildkiteApiSpec: QuickSpec {
         expect{called}.toEventually(beTruthy())
       }
     }
+
+    describe("log output") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
+      }
+
+      it("can be retrieved") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("log", ofType: "txt")
+        let result:NSString = NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)!
+        var dataResponse: NSData?
+        if let resultData = result.dataUsingEncoding(NSUTF8StringEncoding) {
+          dataResponse = resultData
+        }
+        let response = DummySpitServiceResponse(data: dataResponse!, header: ["Content-type": "plain/txt"], urlComponentToMatch: "log")
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        api?.getJobLog("foo", project: "bar", build: 1, job: "123abc") { log, error in
+          called = true
+          expect(log).notTo(beNil())
+        }
+
+        expect{called}.toEventually(beTruthy())
+      }
+    }
   }
 }

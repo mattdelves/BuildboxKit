@@ -173,6 +173,27 @@ public class BuildkiteApi {
     }
   }
 
+  public func getJobLog(organization: String, project: String, build: Int, job: String, completion: (NSAttributedString?, BuildkiteApiError?) -> Void) {
+    let endpoint = BuildkiteURL.BuildJobLog(organization: organization, project: project, build: build, job: job)
+    let url = buildkiteEndpoint(endpoint, apiKey, scheme: scheme)
+    let task = session.dataTaskWithURL(url) { data, response, error in
+      var logString: NSAttributedString?
+      var error: BuildkiteApiError?
+      if let response: NSHTTPURLResponse = response as? NSHTTPURLResponse {
+        if let log = NSAttributedString(data: data, options: nil, documentAttributes: nil, error: nil) {
+          logString = log
+        } else {
+          error = BuildkiteApiError(code: response.statusCode, reason: "Unable to pass log to attributed string")
+        }
+      } else {
+        error = BuildkiteApiError(code: 500, reason: "Bad response from server")
+      }
+      completion(logString, error)
+    }
+
+    task.resume()
+  }
+
   func JSONDataForRequest(request: NSURLRequest, completion: (AnyObject?, NSData?, NSHTTPURLResponse?, BuildkiteApiError?) -> Void) {
     let task = session.dataTaskWithRequest(request) { data, response, error in
       if let theResponse: NSHTTPURLResponse = response as? NSHTTPURLResponse {
