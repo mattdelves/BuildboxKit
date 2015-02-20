@@ -348,6 +348,88 @@ class BuildkiteApiSpec: QuickSpec {
       }
     }
     
+    describe("Create Build") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
+      }
+
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+
+      it("can be created") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("single_build", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        var details = [
+          "commit": "master",
+          "branch": "master",
+          "author": [
+            "name": "Liam Neeson",
+            "email": "liam@evilbatmanvillans.com"
+          ],
+          "env": [
+            "CUSTOM_ENV_VAR": "works"
+          ],
+          "message": "Testing all the things :rocket:",
+          "meta_data": [
+            "personal": true
+          ]
+        ]
+
+        api?.createBuild("foobar", projectName: "barfoo", details: details) { build, data, response, error in
+          called = true
+          expect(build).notTo(beNil())
+          expect(build?.number).to(equal(1))
+          expect(build?.message).to(equal("add in buildbox script"))
+          expect(build?.jobs?).toNot(beNil())
+        }
+
+        expect(called).toEventually(beTrue())
+      }
+
+      it("401") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unauthorized", ofType: "json")
+        let response = DummySpitServiceResponse(
+          filePath: filePath!,
+          header: ["Content-type": "application/json"],
+          urlComponentToMatch: "builds",
+          statusCode: 401
+        )
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        var details = [
+          "commit": "master",
+          "branch": "master",
+          "author": [
+            "name": "Liam Neeson",
+            "email": "liam@evilbatmanvillans.com"
+          ],
+          "env": [
+            "CUSTOM_ENV_VAR": "works"
+          ],
+          "message": "Testing all the things :rocket:",
+          "meta_data": [
+            "personal": true
+          ]
+        ]
+
+        api?.createBuild("foobar", projectName: "barfoo", details: details) { build, data, response, error in
+          called = true
+          expect(error).notTo(beNil())
+          expect(build).to(beNil())
+        }
+
+        expect(called).toEventually(beTrue())
+      }
+    }
+
     describe("All Agents") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()

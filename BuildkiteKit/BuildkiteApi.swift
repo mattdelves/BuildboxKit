@@ -123,6 +123,25 @@ public class BuildkiteApi {
     }
   }
   
+  public func createBuild(organization: String, projectName: String, details: AnyObject, completion: (build: Build?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
+    let jsonDetails = NSJSONSerialization.dataWithJSONObject(details, options: .PrettyPrinted, error: nil)
+    let url = buildkiteEndpoint(BuildkiteURL.Builds(organization: organization, project: projectName), apiKey, scheme: scheme)
+    let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.HTTPMethod = "POST"
+    request.HTTPBody = jsonDetails
+
+    JSONDataForRequest(request) { json, data, response, error in
+      var build: Build?
+      if let json = json as? [String: AnyObject] {
+        if error == nil {
+          build = Build(json)
+        }
+      }
+      completion(build: build, body: data, response: response, error: error)
+    }
+  }
+
   public func getAgents(account: String, completion: (agents: [Agent], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Agents(organization: account), apiKey, scheme: scheme)
     JSONDataForEndpoint(url) { json, data, response, error in
