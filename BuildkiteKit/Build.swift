@@ -91,6 +91,49 @@ public struct BuildJob {
   }
 }
 
+public enum BuildJobState {
+  case Pending
+  case Waiting
+  case WaitingFailed
+  case Blocked
+  case BlockedFailed
+  case Unblocked
+  case UnblockedFailed
+  case Scheduled
+  case Assigned
+  case Accepted
+  case Running
+  case Finished
+  case Cancelling
+  case Canceled
+  case TimingOut
+  case TimedOut
+  case Skipped
+
+  public var text:String {
+    switch self {
+    case .Pending: return "pending"
+    case .Waiting: return "waiting"
+    case .WaitingFailed: return "waiting failed"
+    case .Blocked: return "blocked"
+    case .BlockedFailed: return "blocked failed"
+    case .Unblocked: return "unblocked"
+    case .UnblockedFailed: return "unblocked failed"
+    case .Scheduled: return "scheduled"
+    case .Assigned: return "assigned"
+    case .Accepted: return "accepted"
+    case .Running: return "running"
+    case .Finished: return "finished"
+    case .Cancelling: return "cancelling"
+    case .Canceled: return "canceled"
+    case .TimingOut: return "timing out"
+    case .TimedOut: return "timed out"
+    case .Canceled: return "canceled"
+    case .Skipped: return "skipped"
+    }
+  }
+}
+
 public struct Build {
   public var id: String
   public var url: String
@@ -169,6 +212,33 @@ func buildStatusFromString(status: String) -> BuildStatus {
     retval = .NotRun
   default:
     retval = .NotRun
+  }
+
+  return retval
+}
+
+func buildJobStateFromString(status: String) -> BuildJobState {
+  var retval: BuildJobState
+  switch status {
+  case "pending": retval = .Pending
+  case "waiting": retval = .Waiting
+  case "waiting_failed": retval = .WaitingFailed
+  case "blocked": retval = .Blocked
+  case "blocked_failed": retval = .BlockedFailed
+  case "unblocked": retval = .Unblocked
+  case "unblocked_failed": retval = .UnblockedFailed
+  case "scheduled": retval = .Scheduled
+  case "assigned": retval = .Assigned
+  case "accepted": retval = .Accepted
+  case "running": retval = .Running
+  case "finished": retval = .Finished
+  case "cancelling": retval = .Cancelling
+  case "canceled": retval = .Canceled
+  case "timing out": retval = .TimingOut
+  case "timed out": retval = .TimedOut
+  case "canceled": retval = .Canceled
+  case "skipped": retval = .Skipped
+  default: retval = .Pending
   }
 
   return retval
