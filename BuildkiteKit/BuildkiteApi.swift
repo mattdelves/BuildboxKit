@@ -142,6 +142,23 @@ public class BuildkiteApi {
     }
   }
 
+  public func unlockJob(organization: String, projectName: String, buildNumber: Int, jobID: String, completion: (job: BuildJob?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
+    let url = buildkiteEndpoint(BuildkiteURL.BuildJobUnblock(organization: organization, project: projectName, build: buildNumber, job: jobID), apiKey, scheme: scheme)
+    let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.HTTPMethod = "PUT"
+
+    JSONDataForRequest(request) { json, data, response, error in
+      var buildJob: BuildJob?
+      if let json = json as? [String: AnyObject] {
+        if error == nil {
+          buildJob = BuildJob(json)
+        }
+      }
+      completion(job: buildJob, body: data, response: response, error: error)
+    }
+  }
+
   public func getAgents(account: String, completion: (agents: [Agent], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Agents(organization: account), apiKey, scheme: scheme)
     JSONDataForEndpoint(url) { json, data, response, error in

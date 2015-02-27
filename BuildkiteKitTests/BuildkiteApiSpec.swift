@@ -430,6 +430,67 @@ class BuildkiteApiSpec: QuickSpec {
       }
     }
 
+    describe("Unblock job") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
+      }
+
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+
+      it("unblocks") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("job_unblock", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "unblock", statusCode: 200, error: nil)
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: 123, jobID: "123abc") {job, data, response, error in
+          called = true
+          expect(job).notTo(beNil())
+        }
+
+        expect(called).toEventually(beTrue())
+      }
+
+      it("bad request") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unblock_bad_request", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "unblock", statusCode: 400, error: nil)
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: 123, jobID: "123abc") {job, data, response, error in
+          called = true
+          expect(job).to(beNil())
+          expect(error).notTo(beNil())
+          expect(error?.code).to(equal(400))
+          expect(error?.reason).to(equal("This job type cannot be unblocked"))
+        }
+
+        expect(called).toEventually(beTrue())
+      }
+
+      it("unprocessable") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("unblock_unprocessable", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "unblock", statusCode: 422, error: nil)
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: 123, jobID: "123abc") {job, data, response, error in
+          called = true
+          expect(job).to(beNil())
+          expect(error).notTo(beNil())
+          expect(error?.code).to(equal(422))
+          expect(error?.reason).to(equal("Unblocker is not a valid user id for this account"))
+        }
+
+        expect(called).toEventually(beTrue())
+      }
+    }
+
     describe("All Agents") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()

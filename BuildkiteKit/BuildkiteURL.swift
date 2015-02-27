@@ -15,6 +15,7 @@ public enum BuildkiteURL {
   case Projects(organization:String)
   case Build(organization:String, project:String, build:Int)
   case BuildJobLog(organization:String, project:String, build:Int, job:String)
+  case BuildJobUnblock(organization: String, project: String, build: Int, job: String)
   case Builds(organization:String, project:String)
   case AllBuilds
   case Agents(organization:String)
@@ -43,6 +44,7 @@ extension BuildkiteURL:Path {
     case .Projects(let organization): return "/\(apiVersion)/organizations/\(organization)/projects"
     case .Build(let organization, let project, let build): return "/\(apiVersion)/organizations/\(organization)/projects/\(project)/builds/\(build)"
     case .BuildJobLog(let organization, let project, let build, let job): return "/\(apiVersion)/organizations/\(organization)/projects/\(project)/builds/\(build)/jobs/\(job)/log"
+    case .BuildJobUnblock(let organization, let project, let build, let job): return "/\(apiVersion)/organizations/\(organization)/projects/\(project)/builds/\(build)/jobs/\(job)/unblock"
     case .Builds(let organization, let project): return "/\(apiVersion)/organizations/\(organization)/projects/\(project)/builds"
     case .AllBuilds: return "/\(apiVersion)/builds"
     case .Agents(let organization): return "/\(apiVersion)/organizations/\(organization)/agents"
