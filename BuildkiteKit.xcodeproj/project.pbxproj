@@ -31,6 +31,8 @@
 		C987361019BAC69000980237 /* BuildkiteURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987360F19BAC69000980237 /* BuildkiteURL.swift */; };
 		C987361419BAD23300980237 /* BuildkiteURLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987361319BAD23300980237 /* BuildkiteURLSpec.swift */; };
 		C9F63B961AA08C4C00F85854 /* job_unblock.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B951AA08C4C00F85854 /* job_unblock.json */; };
+		C9F63B981AA08DE700F85854 /* unblock_bad_request.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B971AA08DE700F85854 /* unblock_bad_request.json */; };
+		C9F63B9A1AA08DF900F85854 /* unblock_unprocessable.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B991AA08DF900F85854 /* unblock_unprocessable.json */; };
 		C9FE5BF919BB2575008B8746 /* BuildkiteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */; };
 		C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = C9FE5BFC19BB28A7008B8746 /* accounts.json */; };
 		C9FE5BFF19BB2938008B8746 /* BuildkiteApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */; };
@@ -66,6 +68,8 @@
 		C987360F19BAC69000980237 /* BuildkiteURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURL.swift; sourceTree = "<group>"; };
 		C987361319BAD23300980237 /* BuildkiteURLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURLSpec.swift; sourceTree = "<group>"; };
 		C9F63B951AA08C4C00F85854 /* job_unblock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = job_unblock.json; sourceTree = "<group>"; };
+		C9F63B971AA08DE700F85854 /* unblock_bad_request.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unblock_bad_request.json; sourceTree = "<group>"; };
+		C9F63B991AA08DF900F85854 /* unblock_unprocessable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unblock_unprocessable.json; sourceTree = "<group>"; };
 		C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BuildkiteApi.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C9FE5BFC19BB28A7008B8746 /* accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = accounts.json; sourceTree = "<group>"; };
 		C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BuildkiteApiSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -198,6 +202,8 @@
 				8D8E50001A16E5330049C5D5 /* foobar_project.json */,
 				8D8E50061A16F92A0049C5D5 /* single_build.json */,
 				C9F63B951AA08C4C00F85854 /* job_unblock.json */,
+				C9F63B971AA08DE700F85854 /* unblock_bad_request.json */,
+				C9F63B991AA08DF900F85854 /* unblock_unprocessable.json */,
 			);
 			name = "JSON Responses";
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 				C98696D719C4152400164926 /* foobar_account.json in Resources */,
 				8D5E9F2B1A1753FE00FB77AE /* all_builds.json in Resources */,
 				C970A50E1A942F3F00234CAF /* log.txt in Resources */,
+				C9F63B981AA08DE700F85854 /* unblock_bad_request.json in Resources */,
+				C9F63B9A1AA08DF900F85854 /* unblock_unprocessable.json in Resources */,
 				8D146A341A1783BF0061AD0A /* unauthorized.json in Resources */,
 				C97738081A65B41800472DCA /* access_token.json in Resources */,
 				8D8E4FFD1A16D5A00049C5D5 /* projects.json in Resources */,
