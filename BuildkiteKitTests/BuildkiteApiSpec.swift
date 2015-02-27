@@ -430,6 +430,33 @@ class BuildkiteApiSpec: QuickSpec {
       }
     }
 
+    describe("Unblock job") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
+      }
+
+      afterEach {
+        DummySpitURLProtocol.cannedResponse(nil)
+      }
+
+      it("unblocks") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("job_unblock", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "unblock", statusCode: 200, error: nil)
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: 123, jobID: "123abc") {job, data, response, error in
+          called = true
+          expect(job).notTo(beNil())
+        }
+
+        expect(called).toEventually(beTrue())
+      }
+    }
+
     describe("All Agents") {
       beforeEach {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
