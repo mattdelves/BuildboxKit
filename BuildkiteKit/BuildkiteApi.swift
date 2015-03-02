@@ -236,7 +236,7 @@ public class BuildkiteApi {
         let code = theResponse.statusCode
         var error : BuildkiteApiError?
         var json: AnyObject? = self.extractJSON(data)
-        if(code != 200) {
+        if(code != 200 && code != 201) {
           error = self.extractError(json, code: code)
         }
         completion(json, data, theResponse, error)
@@ -252,7 +252,7 @@ public class BuildkiteApi {
         let code = theResponse.statusCode
         var error : BuildkiteApiError?
         var json: AnyObject? = self.extractJSON(data)
-        if(code != 200) {
+        if(code != 200 && code != 201) {
           error = self.extractError(json, code: code)
         }
         completion(json, data, theResponse, error)
