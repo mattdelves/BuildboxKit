@@ -362,7 +362,7 @@ class BuildkiteApiSpec: QuickSpec {
 
       it("can be created") {
         let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("single_build", ofType: "json")
-        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "builds", statusCode: 201)
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
 

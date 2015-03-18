@@ -26,7 +26,7 @@ public class BuildkiteApi {
   
   public func getOrganizations(completion: (organizations: [Organization], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Organizations, apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var organizations: [Organization] = [Organization]()
       if let json = json as? [[String: AnyObject]] {
         if error == nil {
@@ -41,7 +41,7 @@ public class BuildkiteApi {
   
   public func getOrganization(name: String, completion: (organization: Organization?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Organization(organization: name), apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var organization : Organization?
       if let json = json as? [String: AnyObject] {
         if error == nil {
@@ -54,7 +54,7 @@ public class BuildkiteApi {
   
   public func getProjects(account: String, completion: (projects: [Project], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Projects(organization: account), apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var projects: [Project] = [Project]()
       if let json = json as? [[String: AnyObject]] {
         if error == nil {
@@ -69,7 +69,7 @@ public class BuildkiteApi {
   
   public func getProject(account: String, projectName: String, completion: (project: Project?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Project(organization: account, project: projectName), apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var project : Project?
       if let json = json as? [String: AnyObject] {
         if error == nil {
@@ -82,7 +82,7 @@ public class BuildkiteApi {
   
   public func getBuilds(completion: (builds: [Build], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.AllBuilds, apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var builds: [Build] = [Build]()
       if let json = json as? [[String: AnyObject]] {
         if error == nil {
@@ -97,7 +97,7 @@ public class BuildkiteApi {
   
   public func getBuilds(organization: String, projectName: String, completion: (builds: [Build], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Builds(organization: organization, project: projectName), apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var builds: [Build] = [Build]()
       if let json = json as? [[String: AnyObject]] {
         if error == nil {
@@ -112,7 +112,7 @@ public class BuildkiteApi {
   
   public func getBuild(organization: String, projectName: String, number: Int, completion: (build: Build?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Build(organization: organization, project: projectName, build: number), apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var build: Build?
       if let json = json as? [String: AnyObject] {
         if error == nil {
@@ -131,7 +131,7 @@ public class BuildkiteApi {
     request.HTTPMethod = "POST"
     request.HTTPBody = jsonDetails
 
-    JSONDataForRequest(request) { json, data, response, error in
+    JSONDataForRequest(request, validResponseCodes: [HTTPResponseCodes.Created]) { json, data, response, error in
       var build: Build?
       if let json = json as? [String: AnyObject] {
         if error == nil {
@@ -148,7 +148,7 @@ public class BuildkiteApi {
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     request.HTTPMethod = "PUT"
 
-    JSONDataForRequest(request) { json, data, response, error in
+    JSONDataForRequest(request, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var buildJob: BuildJob?
       if let json = json as? [String: AnyObject] {
         if error == nil {
@@ -161,7 +161,7 @@ public class BuildkiteApi {
 
   public func getAgents(account: String, completion: (agents: [Agent], body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Agents(organization: account), apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var agents: [Agent] = [Agent]()
       if let json = json as? [[String: AnyObject]] {
         if error == nil {
@@ -185,7 +185,7 @@ public class BuildkiteApi {
     request.HTTPMethod = "POST"
     request.HTTPBody = jsonDetails
 
-    JSONDataForRequest(request) { json, data, response, error in
+    JSONDataForRequest(request, validResponseCodes: [HTTPResponseCodes.Created, HTTPResponseCodes.Success]) { json, data, response, error in
       var token: AccessToken?
       if let json = json as? [String: AnyObject] {
         if error == nil {
@@ -198,7 +198,7 @@ public class BuildkiteApi {
 
   public func getUser(completion: (user: User?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.User, apiKey, scheme: scheme)
-    JSONDataForEndpoint(url) { json, data, response, error in
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var user : User?
       if let json = json as? [String: AnyObject] {
         if error == nil {
@@ -222,7 +222,7 @@ public class BuildkiteApi {
           error = BuildkiteApiError(code: response.statusCode, reason: "Unable to pass log to attributed string")
         }
       } else {
-        error = BuildkiteApiError(code: 500, reason: "Bad response from server")
+        error = BuildkiteApiError(code: -1, reason: "Bad response from server")
       }
       completion(logString, error)
     }
@@ -230,13 +230,13 @@ public class BuildkiteApi {
     task.resume()
   }
 
-  func JSONDataForRequest(request: NSURLRequest, completion: (AnyObject?, NSData?, NSHTTPURLResponse?, BuildkiteApiError?) -> Void) {
+  func JSONDataForRequest(request: NSURLRequest, validResponseCodes: [Int], completion: (AnyObject?, NSData?, NSHTTPURLResponse?, BuildkiteApiError?) -> Void) {
     let task = session.dataTaskWithRequest(request) { data, response, error in
       if let theResponse: NSHTTPURLResponse = response as? NSHTTPURLResponse {
         let code = theResponse.statusCode
         var error : BuildkiteApiError?
         var json: AnyObject? = self.extractJSON(data)
-        if(code != 200 && code != 201) {
+        if(!contains(validResponseCodes, code)) {
           error = self.extractError(json, code: code)
         }
         completion(json, data, theResponse, error)
@@ -246,13 +246,13 @@ public class BuildkiteApi {
     task.resume()
   }
 
-  func JSONDataForEndpoint(url: NSURL, completion: (AnyObject?, NSData?, NSHTTPURLResponse?, BuildkiteApiError?) -> Void) {
+  func JSONDataForEndpoint(url: NSURL, validResponseCodes: [Int], completion: (AnyObject?, NSData?, NSHTTPURLResponse?, BuildkiteApiError?) -> Void) {
     let task = session.dataTaskWithURL(url) { data, response, error in
       if let theResponse : NSHTTPURLResponse = response as? NSHTTPURLResponse {
         let code = theResponse.statusCode
         var error : BuildkiteApiError?
         var json: AnyObject? = self.extractJSON(data)
-        if(code != 200 && code != 201) {
+        if(!contains(validResponseCodes, code)) {
           error = self.extractError(json, code: code)
         }
         completion(json, data, theResponse, error)

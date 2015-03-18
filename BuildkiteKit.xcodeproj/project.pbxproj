@@ -22,6 +22,7 @@
 		C9397BB81A6DEAAF00BF35EA /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9397BB71A6DEAAF00BF35EA /* DummySpit.framework */; };
 		C94AD0C11A6DE0C5003CDC2C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94AD0BF1A6DE0C5003CDC2C /* Quick.framework */; };
 		C94AD0D11A6DE941003CDC2C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94AD0D01A6DE941003CDC2C /* Nimble.framework */; };
+		C95557391AB965B000E3CFA8 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557381AB965B000E3CFA8 /* HTTPStatusCodes.swift */; };
 		C970A50E1A942F3F00234CAF /* log.txt in Resources */ = {isa = PBXBuildFile; fileRef = C970A50D1A942F3F00234CAF /* log.txt */; };
 		C973EA7B19BA88130076B3B8 /* BuildkiteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C973EA7A19BA88130076B3B8 /* BuildkiteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C97738061A65A2E900472DCA /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97738051A65A2E900472DCA /* AccessToken.swift */; };
@@ -54,6 +55,7 @@
 		C9397BB71A6DEAAF00BF35EA /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = "../dummyspit/build/Debug-iphoneos/DummySpit.framework"; sourceTree = "<group>"; };
 		C94AD0BF1A6DE0C5003CDC2C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../DerivedData/BuildkiteKit/Build/Products/Debug/Quick.framework; sourceTree = "<group>"; };
 		C94AD0D01A6DE941003CDC2C /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../DerivedData/BuildkiteKit/Build/Products/Debug/Nimble.framework; sourceTree = "<group>"; };
+		C95557381AB965B000E3CFA8 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 		C970A50D1A942F3F00234CAF /* log.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log.txt; sourceTree = "<group>"; };
 		C973EA7519BA88130076B3B8 /* BuildkiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildkiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973EA7919BA88130076B3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */,
 				C987360F19BAC69000980237 /* BuildkiteURL.swift */,
+				C95557381AB965B000E3CFA8 /* HTTPStatusCodes.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				C98696D419C40D3D00164926 /* Organization.swift in Sources */,
 				8D8E4FFF1A16D7A40049C5D5 /* Project.swift in Sources */,
 				8D5E9F471A176B1800FB77AE /* User.swift in Sources */,
+				C95557391AB965B000E3CFA8 /* HTTPStatusCodes.swift in Sources */,
 				C97738061A65A2E900472DCA /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
