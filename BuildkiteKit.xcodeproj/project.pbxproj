@@ -31,6 +31,7 @@
 		C98696D719C4152400164926 /* foobar_account.json in Resources */ = {isa = PBXBuildFile; fileRef = C98696D619C4152400164926 /* foobar_account.json */; };
 		C987361019BAC69000980237 /* BuildkiteURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987360F19BAC69000980237 /* BuildkiteURL.swift */; };
 		C987361419BAD23300980237 /* BuildkiteURLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987361319BAD23300980237 /* BuildkiteURLSpec.swift */; };
+		C9B740701AC809C5009E7E0B /* BuildJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7406F1AC809C5009E7E0B /* BuildJob.swift */; };
 		C9F63B961AA08C4C00F85854 /* job_unblock.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B951AA08C4C00F85854 /* job_unblock.json */; };
 		C9F63B981AA08DE700F85854 /* unblock_bad_request.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B971AA08DE700F85854 /* unblock_bad_request.json */; };
 		C9F63B9A1AA08DF900F85854 /* unblock_unprocessable.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B991AA08DF900F85854 /* unblock_unprocessable.json */; };
@@ -69,6 +70,7 @@
 		C98696D619C4152400164926 /* foobar_account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foobar_account.json; sourceTree = "<group>"; };
 		C987360F19BAC69000980237 /* BuildkiteURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURL.swift; sourceTree = "<group>"; };
 		C987361319BAD23300980237 /* BuildkiteURLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildkiteURLSpec.swift; sourceTree = "<group>"; };
+		C9B7406F1AC809C5009E7E0B /* BuildJob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildJob.swift; sourceTree = "<group>"; };
 		C9F63B951AA08C4C00F85854 /* job_unblock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = job_unblock.json; sourceTree = "<group>"; };
 		C9F63B971AA08DE700F85854 /* unblock_bad_request.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unblock_bad_request.json; sourceTree = "<group>"; };
 		C9F63B991AA08DF900F85854 /* unblock_unprocessable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unblock_unprocessable.json; sourceTree = "<group>"; };
@@ -181,11 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				C97738051A65A2E900472DCA /* AccessToken.swift */,
-				C98696D319C40D3D00164926 /* Organization.swift */,
 				8D8E500A1A1700200049C5D5 /* Agent.swift */,
 				8D8E50041A16F2760049C5D5 /* Build.swift */,
+				C9B7406F1AC809C5009E7E0B /* BuildJob.swift */,
 				8D8E4FFE1A16D7A40049C5D5 /* Project.swift */,
 				8D5E9F461A176B1800FB77AE /* User.swift */,
+				C98696D319C40D3D00164926 /* Organization.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B740701AC809C5009E7E0B /* BuildJob.swift in Sources */,
 				C987361019BAC69000980237 /* BuildkiteURL.swift in Sources */,
 				C9FE5BF919BB2575008B8746 /* BuildkiteApi.swift in Sources */,
 				8D8E50051A16F2760049C5D5 /* Build.swift in Sources */,
