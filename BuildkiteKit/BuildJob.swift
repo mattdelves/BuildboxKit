@@ -22,10 +22,12 @@ public struct BuildJob {
   public var scheduled_at: String?
   public var started_at: String?
   public var finished_at: String?
+  public var unblockable: Bool
   
   public init(_ jsonObject: [String: AnyObject]) {
     self.type = jsonObject["type"] as String
-    
+    self.unblockable = false
+
     if self.type == "waiter" {
       return
     }
@@ -64,6 +66,9 @@ public struct BuildJob {
     }
     if let exit_status = jsonObject["exit_status"] as? Int {
       self.exit_status = exit_status
+    }
+    if let unblockable = jsonObject["unblockable"] as? Bool {
+      self.unblockable = unblockable
     }
   }
 }
