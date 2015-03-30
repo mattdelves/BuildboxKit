@@ -145,6 +145,11 @@ func buildJobStateFromString(status: String) -> BuildJobState {
   case "timed out": retval = .TimedOut
   case "canceled": retval = .Canceled
   case "skipped": retval = .Skipped
+  case "passed": retval = .Passed
+  case "cancelled": retval = .Cancelled
+  case "failed": retval = .Failed
+  case "not run": retval = .NotRun
+
   default: retval = .Pending
   }
 
