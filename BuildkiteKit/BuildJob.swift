@@ -91,6 +91,10 @@ public enum BuildJobState {
   case TimingOut
   case TimedOut
   case Skipped
+  case Passed
+  case Cancelled
+  case Failed
+  case NotRun
   
   public var text:String {
     switch self {
@@ -112,6 +116,10 @@ public enum BuildJobState {
     case .TimedOut: return "timed out"
     case .Canceled: return "canceled"
     case .Skipped: return "skipped"
+    case .Passed: return "passed"
+    case .Cancelled: return "cancelled"
+    case .Failed: return "failed"
+    case .NotRun: return "not run"
     }
   }
 }
