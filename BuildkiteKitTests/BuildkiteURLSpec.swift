@@ -34,18 +34,18 @@ class BuildkiteURLSpec: QuickSpec {
         expect(endpoint.path).to(equal("/v1/organizations/foo/projects/bar/builds"))
       }
       it("for a specified build in a project") {
-        var endpoint = BuildkiteURL.Build(organization: "foo", project: "bar", build: 1)
+        var endpoint = BuildkiteURL.Build(organization: "foo", project: "bar", build: "1")
         expect(endpoint.path).to(equal("/v1/organizations/foo/projects/bar/builds/1"))
       }
       
       it("for a build job log") {
-        var endpoint = BuildkiteURL.BuildJobLog(organization: "foo", project: "bar", build: 123, job: "abc123")
+        var endpoint = BuildkiteURL.BuildJobLog(organization: "foo", project: "bar", build: "123", job: "abc123")
         expect(endpoint.path).to(equal("/v1/organizations/foo/projects/bar/builds/123/jobs/abc123/log"))
       }
 
       it("for a build job unblock") {
-        var endpoint = BuildkiteURL.BuildJobUnblock(organization: "foo", project: "bar", build: 123, job: "abc123")
-        expect(endpoint.path).to(equal("/v1/organizations/foo/projects/bar/builds/123/jobs/abc123/unblock"))
+        var endpoint = BuildkiteURL.BuildJobUnblock(organization: "foo", project: "bar", build: "123-abc", job: "abc123")
+        expect(endpoint.path).to(equal("/v1/organizations/foo/projects/bar/builds/123-abc/jobs/abc123/unblock"))
       }
 
       it("for all agents") {

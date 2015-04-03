@@ -316,7 +316,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuild("foobar", projectName: "Project1", number: 1) { build, body, response, error in
+        api?.getBuild("foobar", projectName: "Project1", number: "1") { build, body, response, error in
           called = true
           expect(build?.number).to(equal(1))
           expect(build?.message).to(equal("add in buildbox script"))
@@ -338,7 +338,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
         
-        api?.getBuild("foobar", projectName: "Project1", number: 1) { build, body, response, error in
+        api?.getBuild("foobar", projectName: "Project1", number: "1") { build, body, response, error in
           called = true
           expect(error).notTo(beNil())
           expect(build).to(beNil())
@@ -448,7 +448,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
 
-        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: 123, jobID: "123abc") {job, data, response, error in
+        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: "123-abc", jobID: "123abc") {job, data, response, error in
           called = true
           expect(job).notTo(beNil())
         }
@@ -462,7 +462,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
 
-        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: 123, jobID: "123abc") {job, data, response, error in
+        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: "123-abc", jobID: "123abc") {job, data, response, error in
           called = true
           expect(job).to(beNil())
           expect(error).notTo(beNil())
@@ -479,7 +479,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
 
-        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: 123, jobID: "123abc") {job, data, response, error in
+        api?.unlockJob("foobar", projectName: "barfoo", buildNumber: "123-abc", jobID: "123abc") {job, data, response, error in
           called = true
           expect(job).to(beNil())
           expect(error).notTo(beNil())
@@ -612,7 +612,7 @@ class BuildkiteApiSpec: QuickSpec {
         DummySpitURLProtocol.cannedResponse(response)
         var called = false
 
-        api?.getJobLog("foo", project: "bar", build: 1, job: "123abc") { log, error in
+        api?.getJobLog("foo", project: "bar", build: "1", job: "123abc") { log, error in
           called = true
           expect(log).notTo(beNil())
         }

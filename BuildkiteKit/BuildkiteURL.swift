@@ -13,9 +13,9 @@ public enum BuildkiteURL {
   case Organizations
   case Project(organization:String, project:String)
   case Projects(organization:String)
-  case Build(organization:String, project:String, build:Int)
-  case BuildJobLog(organization:String, project:String, build:Int, job:String)
-  case BuildJobUnblock(organization: String, project: String, build: Int, job: String)
+  case Build(organization:String, project:String, build:String)
+  case BuildJobLog(organization:String, project:String, build:String, job:String)
+  case BuildJobUnblock(organization: String, project: String, build: String, job: String)
   case Builds(organization:String, project:String)
   case AllBuilds
   case Agents(organization:String)

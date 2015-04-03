@@ -110,7 +110,7 @@ public class BuildkiteApi {
     }
   }
   
-  public func getBuild(organization: String, projectName: String, number: Int, completion: (build: Build?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
+  public func getBuild(organization: String, projectName: String, number: String, completion: (build: Build?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.Build(organization: organization, project: projectName, build: number), apiKey, scheme: scheme)
     JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
       var build: Build?
@@ -142,7 +142,7 @@ public class BuildkiteApi {
     }
   }
 
-  public func unlockJob(organization: String, projectName: String, buildNumber: Int, jobID: String, completion: (job: BuildJob?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
+  public func unlockJob(organization: String, projectName: String, buildNumber: String, jobID: String, completion: (job: BuildJob?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
     let url = buildkiteEndpoint(BuildkiteURL.BuildJobUnblock(organization: organization, project: projectName, build: buildNumber, job: jobID), apiKey, scheme: scheme)
     let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -209,7 +209,7 @@ public class BuildkiteApi {
     }
   }
 
-  public func getJobLog(organization: String, project: String, build: Int, job: String, completion: (NSAttributedString?, BuildkiteApiError?) -> Void) {
+  public func getJobLog(organization: String, project: String, build: String, job: String, completion: (NSAttributedString?, BuildkiteApiError?) -> Void) {
     let endpoint = BuildkiteURL.BuildJobLog(organization: organization, project: project, build: build, job: job)
     let url = buildkiteEndpoint(endpoint, apiKey, scheme: scheme)
     let task = session.dataTaskWithURL(url) { data, response, error in
