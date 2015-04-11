@@ -35,11 +35,15 @@ public enum AccessScope {
 }
 
 public struct AccessToken {
-  public var token : String
-  public var type : String
+  public var token : String = ""
+  public var type : String = ""
 
   public init(_ jsonObject: [String: AnyObject]) {
-    self.token = jsonObject["access_token"] as String
-    self.type  = jsonObject["type"] as String
+    if let token = jsonObject["access_token"] as? String {
+      self.token = token
+    }
+    if let type  = jsonObject["type"] as? String {
+      self.type = type
+    }
   }
 }

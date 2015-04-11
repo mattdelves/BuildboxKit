@@ -9,15 +9,23 @@
 import Foundation
 
 public struct User {
-  public var id : String
-  public var name : String
-  public var email : String
-  public var created_at : String
+  public var id : String = ""
+  public var name : String = ""
+  public var email : String = ""
+  public var created_at : String = ""
   
   public init(_ jsonObject: [String: AnyObject]) {
-    self.id = jsonObject["id"] as String
-    self.name = jsonObject["name"] as String
-    self.email = jsonObject["email"] as String
-    self.created_at = jsonObject["created_at"] as String
+    if let id = jsonObject["id"] as? String {
+      self.id = id
+    }
+    if let name = jsonObject["name"] as? String {
+      self.name = name
+    }
+    if let email = jsonObject["email"] as? String {
+      self.email = email
+    }
+    if let created_at = jsonObject["created_at"] as? String {
+      self.created_at = created_at
+    }
   }
 }

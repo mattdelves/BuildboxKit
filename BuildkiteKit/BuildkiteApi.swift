@@ -264,7 +264,9 @@ public class BuildkiteApi {
   func extractError(json: AnyObject?, code: Int) -> BuildkiteApiError? {
     var error: BuildkiteApiError?
     if let json = json as? [String: AnyObject] {
-      error = BuildkiteApiError(code: code, reason: json["message"] as String)
+      if let reason = json["message"] as? String {
+        error = BuildkiteApiError(code: code, reason: reason)
+      }
     }
     return error
   }

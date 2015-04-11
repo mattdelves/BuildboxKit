@@ -32,48 +32,59 @@ public enum BuildStatus {
 }
 
 public struct Build {
-  public var id: String
-  public var url: String
-  public var number: Int
-  public var branch: String
-  public var state: BuildStatus?
-  public var message: String
-  public var commit: String
-  public var env: [String: AnyObject]
-  public var jobs: [BuildJob]?
-  public var created_at: String?
-  public var scheduled_at: String?
-  public var started_at: String?
-  public var finished_at: String?
-  public var meta_data: [String: AnyObject]
-  public var project: [String: AnyObject]?
+  public var id: String = ""
+  public var url: String = ""
+  public var number: Int = -1
+  public var branch: String = ""
+  public var state: BuildStatus = BuildStatus.NotRun
+  public var message: String = ""
+  public var commit: String = ""
+  public var env: [String: AnyObject] = [String: AnyObject]()
+  public var jobs: [BuildJob]? = nil
+  public var created_at: String? = nil
+  public var scheduled_at: String? = nil
+  public var started_at: String? = nil
+  public var finished_at: String? = nil
+  public var meta_data: [String: AnyObject] = [String: AnyObject]()
+  public var project: [String: AnyObject]? = nil
 
   public init(_ jsonObject: [String: AnyObject]) {
     if let started_at : String = jsonObject["started_at"] as? String {
       self.started_at = started_at
     }
-
     if let finished_at : String = jsonObject["finished_at"] as? String {
       self.finished_at = finished_at
     }
-
     if let scheduled_at = jsonObject["scheduled_at"] as? String {
       self.scheduled_at = scheduled_at
     }
-
     if let created_at = jsonObject["created_at"] as? String {
       self.created_at = created_at
     }
-
-    self.id = jsonObject["id"] as String
-    self.url = jsonObject["url"] as String
-    self.number = jsonObject["number"] as Int
-    self.branch = jsonObject["branch"] as String
-    self.message = jsonObject["message"] as String
-    self.commit = jsonObject["commit"] as String
-    self.env = jsonObject["env"] as [String: AnyObject]
-    self.meta_data = jsonObject["meta_data"] as [String: AnyObject]
-
+    if let buildID = jsonObject["id"] as? String {
+      self.id = buildID
+    }
+    if let url = jsonObject["url"] as? String {
+      self.url = url
+    }
+    if let number = jsonObject["number"] as? Int {
+      self.number = number
+    }
+    if let branch = jsonObject["branch"] as? String {
+      self.branch = branch
+    }
+    if let message = jsonObject["message"] as? String {
+      self.message = message
+    }
+    if let commit = jsonObject["commit"] as? String {
+      self.commit = commit
+    }
+    if let env = jsonObject["env"] as? [String: AnyObject] {
+      self.env = env
+    }
+    if let meta_data = jsonObject["meta_data"] as? [String: AnyObject] {
+      self.meta_data = meta_data
+    }
     if let jobs : [[String: AnyObject]] = jsonObject["jobs"] as? [[String: AnyObject]] {
       var foundJobs = [BuildJob]()
       for job in jobs {
@@ -81,12 +92,12 @@ public struct Build {
       }
       self.jobs = foundJobs
     }
-
     if let project : [String: AnyObject] = jsonObject["project"] as? [String: AnyObject] {
       self.project = project
     }
-
-    self.state = buildStatusFromString(jsonObject["state"] as String)
+    if let state = jsonObject["state"] as? String {
+      self.state = buildStatusFromString(state)
+    }
   }
 }
 

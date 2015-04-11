@@ -25,23 +25,32 @@ public enum AgentConnectionState {
 }
 
 public struct Agent {
-  public var id: String
-  public var url: String
-  public var name: String
-  public var connection_state: AgentConnectionState
-  public var access_token: String
-  public var hostname: String?
-  public var user_agent: String?
-  public var ip_address: String?
-  public var created_at: String
+  public var id: String = ""
+  public var url: String = ""
+  public var name: String = ""
+  public var connection_state: AgentConnectionState = AgentConnectionState.Unknown
+  public var access_token: String = ""
+  public var hostname: String? = nil
+  public var user_agent: String? = nil
+  public var ip_address: String? = nil
+  public var created_at: String = ""
   
   public init(_ jsonObject: [String: AnyObject]) {
-    self.id = jsonObject["id"] as String
-    self.url = jsonObject["url"] as String
-    self.name = jsonObject["name"] as String
-    let connection = jsonObject["connection_state"] as String
-    self.connection_state = agentConnectionStatusFromString(connection)
-    self.access_token = jsonObject["access_token"] as String
+    if let id = jsonObject["id"] as? String {
+      self.id = id
+    }
+    if let url = jsonObject["url"] as? String {
+      self.url = url
+    }
+    if let name = jsonObject["name"] as? String {
+      self.name = name
+    }
+    if let connection = jsonObject["connection_state"] as? String {
+      self.connection_state = agentConnectionStatusFromString(connection)
+    }
+    if let access_token = jsonObject["access_token"] as? String {
+      self.access_token = access_token
+    }
     if let hostname = jsonObject["hostname"] as? String {
       self.hostname = hostname
     }
@@ -51,7 +60,9 @@ public struct Agent {
     if let ip_address = jsonObject["ip_address"] as? String {
       self.ip_address = ip_address
     }
-    self.created_at = jsonObject["created_at"] as String
+    if let created_at = jsonObject["created_at"] as? String {
+      self.created_at = created_at
+    }
   }
 }
 

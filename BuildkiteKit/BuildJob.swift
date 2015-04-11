@@ -10,27 +10,29 @@ import Foundation
 
 public struct BuildJob {
   public var type: String
-  public var id: String?
-  public var name: String?
-  public var state: BuildJobState?
-  public var log_url: String?
-  public var script_path: String?
-  public var exit_status: Int?
-  public var artifact_paths: String?
-  public var agent: [String: AnyObject]?
-  public var created_at: String?
-  public var scheduled_at: String?
-  public var started_at: String?
-  public var finished_at: String?
+  public var id: String? = nil
+  public var name: String? = nil
+  public var state: BuildJobState? = nil
+  public var log_url: String? = nil
+  public var script_path: String? = nil
+  public var exit_status: Int? = nil
+  public var artifact_paths: String? = nil
+  public var agent: [String: AnyObject]? = nil
+  public var created_at: String? = nil
+  public var scheduled_at: String? = nil
+  public var started_at: String? = nil
+  public var finished_at: String? = nil
   public var unblockable: Bool
   
   public init(_ jsonObject: [String: AnyObject]) {
-    self.type = jsonObject["type"] as String
     self.unblockable = false
 
-    if self.type == "waiter" {
-      return
+    if let type = jsonObject["type"] as? String {
+      self.type = type
+    } else {
+      self.type = ""
     }
+
     if let job_id = jsonObject["id"] as? String {
       self.id = job_id
     }
