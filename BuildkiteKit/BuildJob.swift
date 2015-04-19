@@ -89,12 +89,11 @@ public enum BuildJobState {
   case Running
   case Finished
   case Cancelling
-  case Canceled
+  case Cancelled
   case TimingOut
   case TimedOut
   case Skipped
   case Passed
-  case Cancelled
   case Failed
   case NotRun
   
@@ -113,13 +112,11 @@ public enum BuildJobState {
     case .Running: return "running"
     case .Finished: return "finished"
     case .Cancelling: return "cancelling"
-    case .Canceled: return "canceled"
+    case .Cancelled: return "cancelled"
     case .TimingOut: return "timing out"
     case .TimedOut: return "timed out"
-    case .Canceled: return "canceled"
     case .Skipped: return "skipped"
     case .Passed: return "passed"
-    case .Cancelled: return "cancelled"
     case .Failed: return "failed"
     case .NotRun: return "not run"
     }
@@ -142,10 +139,8 @@ func buildJobStateFromString(status: String) -> BuildJobState {
   case "running": retval = .Running
   case "finished": retval = .Finished
   case "cancelling": retval = .Cancelling
-  case "canceled": retval = .Canceled
   case "timing out": retval = .TimingOut
   case "timed out": retval = .TimedOut
-  case "canceled": retval = .Canceled
   case "skipped": retval = .Skipped
   case "passed": retval = .Passed
   case "cancelled": retval = .Cancelled
