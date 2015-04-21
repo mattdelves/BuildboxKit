@@ -19,9 +19,9 @@
 		8D8E50071A16F92A0049C5D5 /* single_build.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50061A16F92A0049C5D5 /* single_build.json */; };
 		8D8E50091A16FFB40049C5D5 /* agents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50081A16FFB40049C5D5 /* agents.json */; };
 		8D8E500B1A1700200049C5D5 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E500A1A1700200049C5D5 /* Agent.swift */; };
-		C9397BB81A6DEAAF00BF35EA /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9397BB71A6DEAAF00BF35EA /* DummySpit.framework */; };
-		C94AD0C11A6DE0C5003CDC2C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94AD0BF1A6DE0C5003CDC2C /* Quick.framework */; };
-		C94AD0D11A6DE941003CDC2C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94AD0D01A6DE941003CDC2C /* Nimble.framework */; };
+		C916B7F81AE65A1500784F4D /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916B7F51AE65A1500784F4D /* DummySpit.framework */; };
+		C916B7F91AE65A1500784F4D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916B7F61AE65A1500784F4D /* Nimble.framework */; };
+		C916B7FA1AE65A1500784F4D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916B7F71AE65A1500784F4D /* Quick.framework */; };
 		C95557391AB965B000E3CFA8 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557381AB965B000E3CFA8 /* HTTPStatusCodes.swift */; };
 		C970A50E1A942F3F00234CAF /* log.txt in Resources */ = {isa = PBXBuildFile; fileRef = C970A50D1A942F3F00234CAF /* log.txt */; };
 		C973EA7B19BA88130076B3B8 /* BuildkiteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C973EA7A19BA88130076B3B8 /* BuildkiteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,9 +53,9 @@
 		8D8E50061A16F92A0049C5D5 /* single_build.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = single_build.json; sourceTree = "<group>"; };
 		8D8E50081A16FFB40049C5D5 /* agents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = agents.json; sourceTree = "<group>"; };
 		8D8E500A1A1700200049C5D5 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
-		C9397BB71A6DEAAF00BF35EA /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = "../dummyspit/build/Debug-iphoneos/DummySpit.framework"; sourceTree = "<group>"; };
-		C94AD0BF1A6DE0C5003CDC2C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../DerivedData/BuildkiteKit/Build/Products/Debug/Quick.framework; sourceTree = "<group>"; };
-		C94AD0D01A6DE941003CDC2C /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../DerivedData/BuildkiteKit/Build/Products/Debug/Nimble.framework; sourceTree = "<group>"; };
+		C916B7F51AE65A1500784F4D /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = "DerivedData/BuildkiteKit/Build/Products/Debug-iphonesimulator/DummySpit.framework"; sourceTree = "<group>"; };
+		C916B7F61AE65A1500784F4D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "DerivedData/BuildkiteKit/Build/Products/Debug-iphonesimulator/Nimble.framework"; sourceTree = "<group>"; };
+		C916B7F71AE65A1500784F4D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "DerivedData/BuildkiteKit/Build/Products/Debug-iphonesimulator/Quick.framework"; sourceTree = "<group>"; };
 		C95557381AB965B000E3CFA8 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 		C970A50D1A942F3F00234CAF /* log.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log.txt; sourceTree = "<group>"; };
 		C973EA7519BA88130076B3B8 /* BuildkiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildkiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,9 +91,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9397BB81A6DEAAF00BF35EA /* DummySpit.framework in Frameworks */,
-				C94AD0D11A6DE941003CDC2C /* Nimble.framework in Frameworks */,
-				C94AD0C11A6DE0C5003CDC2C /* Quick.framework in Frameworks */,
+				C916B7F81AE65A1500784F4D /* DummySpit.framework in Frameworks */,
+				C916B7F91AE65A1500784F4D /* Nimble.framework in Frameworks */,
+				C916B7FA1AE65A1500784F4D /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +111,9 @@
 		C973EA6B19BA88130076B3B8 = {
 			isa = PBXGroup;
 			children = (
+				C916B7F51AE65A1500784F4D /* DummySpit.framework */,
+				C916B7F61AE65A1500784F4D /* Nimble.framework */,
+				C916B7F71AE65A1500784F4D /* Quick.framework */,
 				C973EA7719BA88130076B3B8 /* BuildkiteKit */,
 				C973EA8119BA88130076B3B8 /* BuildkiteKitTests */,
 				C973EA7619BA88130076B3B8 /* Products */,
@@ -162,9 +165,6 @@
 				C90111351A81CFAE00460BD3 /* Log responses */,
 				C9FE5BFB19BB288B008B8746 /* JSON Responses */,
 				C973EA8319BA88130076B3B8 /* Info.plist */,
-				C9397BB71A6DEAAF00BF35EA /* DummySpit.framework */,
-				C94AD0D01A6DE941003CDC2C /* Nimble.framework */,
-				C94AD0BF1A6DE0C5003CDC2C /* Quick.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -496,6 +496,7 @@
 					"$(PROJECT_DIR)/nimble/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/quick/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/DerivedData/BuildkiteKit/Build/Products/Debug",
+					"$(PROJECT_DIR)/DerivedData/BuildkiteKit/Build/Products/Debug-iphoneos",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -517,6 +518,7 @@
 					"$(PROJECT_DIR)/nimble/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/quick/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/DerivedData/BuildkiteKit/Build/Products/Debug",
+					"$(PROJECT_DIR)/DerivedData/BuildkiteKit/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = BuildkiteKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
