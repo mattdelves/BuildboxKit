@@ -34,6 +34,11 @@ public struct Agent {
   public var user_agent: String? = nil
   public var ip_address: String? = nil
   public var created_at: String = ""
+  public var build: Build?
+  public var job: BuildJob?
+  public var last_job_finished_at: String?
+  public var priority: String?
+  public var meta_data: [[String: AnyObject]]?
   
   public init(_ jsonObject: [String: AnyObject]) {
     if let id = jsonObject["id"] as? String {
@@ -62,6 +67,21 @@ public struct Agent {
     }
     if let created_at = jsonObject["created_at"] as? String {
       self.created_at = created_at
+    }
+    if let build = jsonObject["build"] as? [String: AnyObject] {
+      self.build = Build(build)
+    }
+    if let job = jsonObject["job"] as? [String: AnyObject] {
+      self.job = BuildJob(job)
+    }
+    if let last_job_finished_at = jsonObject["last_job_finished_at"] as? String {
+      self.last_job_finished_at = last_job_finished_at
+    }
+    if let priority = jsonObject["priority"] as? String {
+      self.priority = priority
+    }
+    if let meta_data = jsonObject["meta_data"] as? [[String: AnyObject]] {
+      self.meta_data = meta_data
     }
   }
 }

@@ -512,6 +512,8 @@ class BuildkiteApiSpec: QuickSpec {
         api?.getAgents("foobar") { agents, body, response, error in
           called = true
           expect(agents.count).to(equal(1))
+          expect(agents[0].build).toNot(beNil())
+          expect(agents[0].job).toNot(beNil())
         }
         
         expect{called}.toEventually(beTruthy())

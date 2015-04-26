@@ -1,13 +1,296 @@
 [
   {
-    "id": "406ff7e8-efc5-4529-bfc9-d2943104cab5",
-    "url": "https://api.buildkite.com/v1/accounts/foobar/agents/406ff7e8-efc5-4529-bfc9-d2943104cab5",
-    "name": "osx-build-agent",
+    "id": "e2f57ab8-322a-4846-b62b-6360cda56b6a",
+    "url": "https://api.buildkite.com/v1/organizations/foobar/agents/e2f57ab8-322a-4846-b62b-6360cda56b6a",
+    "web_url": "https://buildkite.com/organizations/foobar/agents/e2f57ab8-322a-4846-b62b-6360cda56b6a",
+    "name": "laplace",
     "connection_state": "connected",
-    "ip_address": "1.126.48.251",
-    "access_token": "abcdefghijklmnopqrstuvwxyz",
-    "hostname": "somebox",
-    "user_agent": "buildbox-agent/0.2 (darwin; 386)",
-    "created_at": "2014-08-23 09:49:39 UTC"
+    "ip_address": "255.255.255.255",
+    "access_token": "123lkbkkjjj",
+    "hostname": "laplace",
+    "user_agent": "buildkite-agent/1.0-beta.22.438 (darwin; 386)",
+    "creator": null,
+    "created_at": "2015-04-20 19:55:55 UTC",
+    "build": {
+      "id": "8d82ca1a-d3f4-46dd-9327-f93a60d6bb5f",
+      "url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279",
+      "web_url": "https://buildkite.com/foobar/barbaz/builds/279",
+      "number": 279,
+      "state": "running",
+      "message": "Change navbar appearance to purple background with white text",
+      "commit": "f6b3ef3f646c2067643185da4ef79c271690b178",
+      "branch": "purple_navbar",
+      "env": {
+      },
+      "created_at": "2015-04-26 11:58:28 UTC",
+      "scheduled_at": "2015-04-26 11:58:28 UTC",
+      "started_at": "2015-04-26 11:58:34 UTC",
+      "finished_at": null,
+      "meta_data": {
+      },
+      "project": {
+        "id": "a6623783-8d0a-43a7-8cc9-1cb7cb04ee70",
+        "url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz",
+        "web_url": "https://buildkite.com/foobar/barbaz",
+        "name": "Barbaz",
+        "slug": "barbaz",
+        "repository": "git@github.com:foobar/barbaz.git",
+        "provider": {
+          "id": "github",
+          "webhook_url": "https://webhook.buildkite.com/deliver/7b3270ebf8814e6a4b032af8ec12e1cb500b1c6e6cbf5636e2"
+        },
+        "builds_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds",
+        "created_at": "2014-12-22 10:13:44 UTC",
+        "steps": [
+          {
+            "type": "script",
+            "name": "Clean and Build",
+            "command": "clean_and_build.sh",
+            "artifact_paths": "logs/clean.log; logs/buildkitekit_build.log; logs/barbaz_build.log",
+            "branch_configuration": "",
+            "env": {
+            },
+            "timeout_in_minutes": null,
+            "agent_query_rules": [
+              "*"
+            ]
+          },
+          {
+            "type": "script",
+            "name": "Barbaz",
+            "command": "barbaz_tests.sh",
+            "artifact_paths": "logs/barbaz_test.log",
+            "branch_configuration": "",
+            "env": {
+            },
+            "timeout_in_minutes": null,
+            "agent_query_rules": [
+              "*"
+            ]
+          },
+          {
+            "type": "script",
+            "name": "BarbazKit",
+            "command": "barbaz_kit_tests.sh",
+            "artifact_paths": "logs/barbaz_kit_tests.log",
+            "branch_configuration": "",
+            "env": {
+            },
+            "timeout_in_minutes": null,
+            "agent_query_rules": [
+              "*"
+            ]
+          },
+          {
+            "type": "manual"
+          },
+          {
+            "type": "script",
+            "name": "Deploy to Test Flight Beta",
+            "command": "deploy_beta.sh",
+            "artifact_paths": "",
+            "branch_configuration": "",
+            "env": {
+            },
+            "timeout_in_minutes": null,
+            "agent_query_rules": [
+              "*"
+            ]
+          },
+          {
+            "type": "manual"
+          },
+          {
+            "type": "script",
+            "name": "Deploy to App Store",
+            "command": "deploy_app_store.sh",
+            "artifact_paths": "",
+            "branch_configuration": "",
+            "env": {
+            },
+            "timeout_in_minutes": null,
+            "agent_query_rules": [
+              "*"
+            ]
+          }
+        ],
+        "env": {
+        },
+        "featured_build": {
+          "id": "8d82ca1a-d3f4-46dd-9327-f93a60d6bb5f",
+          "url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279",
+          "web_url": "https://buildkite.com/foobar/barbaz/builds/279",
+          "number": 279,
+          "state": "running",
+          "message": "Change navbar appearance to purple background with white text",
+          "commit": "f6b3ef3f646c2067643185da4ef79c271690b178",
+          "branch": "purple_navbar",
+          "env": {
+          },
+          "created_at": "2015-04-26 11:58:28 UTC",
+          "scheduled_at": "2015-04-26 11:58:28 UTC",
+          "started_at": "2015-04-26 11:58:34 UTC",
+          "finished_at": null,
+          "meta_data": {
+          }
+        },
+        "scheduled_builds_count": 0,
+        "running_builds_count": 1,
+        "scheduled_jobs_count": 2,
+        "running_jobs_count": 1
+      },
+      "jobs": [
+        {
+          "id": "a2462288-1e1a-4607-8a29-d58ca20a9c27",
+          "type": "script",
+          "name": "Clean and Build",
+          "state": "running",
+          "web_url": "https://buildkite.com/foobar/barbaz/builds/279#a2462288-1e1a-4607-8a29-d58ca20a9c27",
+          "log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/a2462288-1e1a-4607-8a29-d58ca20a9c27/log",
+          "raw_log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/a2462288-1e1a-4607-8a29-d58ca20a9c27/log.txt",
+          "script_path": "clean_and_build.sh",
+          "command": "clean_and_build.sh",
+          "exit_status": null,
+          "artifact_paths": "logs/clean.log; logs/buildkitekit_build.log; logs/barbaz_build.log",
+          "agent": {
+            "id": "e2f57ab8-322a-4846-b62b-6360cda56b6a",
+            "url": "https://api.buildkite.com/v1/organizations/foobar/agents/e2f57ab8-322a-4846-b62b-6360cda56b6a",
+            "web_url": "https://buildkite.com/organizations/foobar/agents/e2f57ab8-322a-4846-b62b-6360cda56b6a",
+            "name": "laplace",
+            "connection_state": "connected",
+            "ip_address": "110.22.213.63",
+            "access_token": "2fb1325c344b2f101bf7d08387db794f278390b3a66e57000e",
+            "hostname": "laplace",
+            "user_agent": "buildkite-agent/1.0-beta.22.438 (darwin; 386)",
+            "creator": null,
+            "created_at": "2015-04-20 19:55:55 UTC",
+            "build": null,
+            "job": null,
+            "last_job_finished_at": "2015-04-26 00:19:26 UTC",
+            "priority": 0,
+            "meta_data": [
+
+            ]
+          },
+          "created_at": "2015-04-26 11:58:28 UTC",
+          "scheduled_at": "2015-04-26 11:58:28 UTC",
+          "started_at": "2015-04-26 11:58:34 UTC",
+          "finished_at": null
+        },
+        {
+          "id": "efd05f75-6cd0-4d0d-8aaf-0200ed04b461",
+          "type": "script",
+          "name": "Barbaz",
+          "state": "scheduled",
+          "web_url": "https://buildkite.com/foobar/barbaz/builds/279#efd05f75-6cd0-4d0d-8aaf-0200ed04b461",
+          "log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/efd05f75-6cd0-4d0d-8aaf-0200ed04b461/log",
+          "raw_log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/efd05f75-6cd0-4d0d-8aaf-0200ed04b461/log.txt",
+          "script_path": "barbaz_tests.sh",
+          "command": "barbaz_tests.sh",
+          "exit_status": null,
+          "artifact_paths": "logs/barbaz_test.log",
+          "agent": null,
+          "created_at": "2015-04-26 11:58:28 UTC",
+          "scheduled_at": "2015-04-26 11:58:28 UTC",
+          "started_at": null,
+          "finished_at": null
+        },
+        {
+          "id": "a74c7c3a-f130-42b2-812a-c9024590c67b",
+          "type": "script",
+          "name": "BarbazKit",
+          "state": "scheduled",
+          "web_url": "https://buildkite.com/foobar/barbaz/builds/279#a74c7c3a-f130-42b2-812a-c9024590c67b",
+          "log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/a74c7c3a-f130-42b2-812a-c9024590c67b/log",
+          "raw_log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/a74c7c3a-f130-42b2-812a-c9024590c67b/log.txt",
+          "script_path": "barbaz_kit_tests.sh",
+          "command": "barbaz_kit_tests.sh",
+          "exit_status": null,
+          "artifact_paths": "logs/barbaz_kit_tests.log",
+          "agent": null,
+          "created_at": "2015-04-26 11:58:28 UTC",
+          "scheduled_at": "2015-04-26 11:58:28 UTC",
+          "started_at": null,
+          "finished_at": null
+        },
+        {
+          "id": "da480c53-f4c6-429d-8ef9-4738fb2e10c2",
+          "type": "manual",
+          "state": "blocked",
+          "web_url": null,
+          "unblocked_by": null,
+          "unblockable": true,
+          "unblock_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/da480c53-f4c6-429d-8ef9-4738fb2e10c2/unblock"
+        },
+        {
+          "id": "36836d6e-bbba-4bbe-8bd9-8864c6aa626c",
+          "type": "script",
+          "name": "Deploy to Test Flight Beta",
+          "state": "blocked",
+          "web_url": "https://buildkite.com/foobar/barbaz/builds/279#36836d6e-bbba-4bbe-8bd9-8864c6aa626c",
+          "log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/36836d6e-bbba-4bbe-8bd9-8864c6aa626c/log",
+          "raw_log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/36836d6e-bbba-4bbe-8bd9-8864c6aa626c/log.txt",
+          "script_path": "deploy_beta.sh",
+          "command": "deploy_beta.sh",
+          "exit_status": null,
+          "artifact_paths": "",
+          "agent": null,
+          "created_at": "2015-04-26 11:58:28 UTC",
+          "scheduled_at": "2015-04-26 11:58:28 UTC",
+          "started_at": null,
+          "finished_at": null
+        },
+        {
+          "id": "824b3ce1-6eed-423d-83b4-43acf9a4a0b4",
+          "type": "manual",
+          "state": "blocked",
+          "web_url": null,
+          "unblocked_by": null,
+          "unblockable": true,
+          "unblock_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/824b3ce1-6eed-423d-83b4-43acf9a4a0b4/unblock"
+        },
+        {
+          "id": "99659a0e-1297-4a0b-82e4-5a5b2a745e55",
+          "type": "script",
+          "name": "Deploy to App Store",
+          "state": "blocked",
+          "web_url": "https://buildkite.com/foobar/barbaz/builds/279#99659a0e-1297-4a0b-82e4-5a5b2a745e55",
+          "log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/99659a0e-1297-4a0b-82e4-5a5b2a745e55/log",
+          "raw_log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/99659a0e-1297-4a0b-82e4-5a5b2a745e55/log.txt",
+          "script_path": "deploy_app_store.sh",
+          "command": "deploy_app_store.sh",
+          "exit_status": null,
+          "artifact_paths": "",
+          "agent": null,
+          "created_at": "2015-04-26 11:58:28 UTC",
+          "scheduled_at": "2015-04-26 11:58:28 UTC",
+          "started_at": null,
+          "finished_at": null
+        }
+      ]
+    },
+    "job": {
+      "id": "a2462288-1e1a-4607-8a29-d58ca20a9c27",
+      "type": "script",
+      "name": "Clean and Build",
+      "state": "running",
+      "web_url": "https://buildkite.com/foobar/barbaz/builds/279#a2462288-1e1a-4607-8a29-d58ca20a9c27",
+      "log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/a2462288-1e1a-4607-8a29-d58ca20a9c27/log",
+      "raw_log_url": "https://api.buildkite.com/v1/organizations/foobar/projects/barbaz/builds/279/jobs/a2462288-1e1a-4607-8a29-d58ca20a9c27/log.txt",
+      "script_path": "clean_and_build.sh",
+      "command": "clean_and_build.sh",
+      "exit_status": null,
+      "artifact_paths": "logs/clean.log; logs/buildkitekit_build.log; logs/barbaz_build.log",
+      "agent": null,
+      "created_at": "2015-04-26 11:58:28 UTC",
+      "scheduled_at": "2015-04-26 11:58:28 UTC",
+      "started_at": "2015-04-26 11:58:34 UTC",
+      "finished_at": null
+    },
+    "last_job_finished_at": "2015-04-26 00:19:26 UTC",
+    "priority": 0,
+    "meta_data": [
+
+    ]
   }
 ]
