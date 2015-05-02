@@ -1,0 +1,10 @@
+framework module DummySpit {
+  umbrella header "DummySpit.h"
+
+  export *
+  module * { export * }
+}
+
+module DummySpit.Swift {
+    header "DummySpit-Swift.h"
+}

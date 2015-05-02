@@ -4,13 +4,4 @@
    <FileRef
       location = "container:BuildkiteKit.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:nimble/Nimble.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:dummyspit/DummySpit.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:quick/Quick.xcodeproj">
-   </FileRef>
 </Workspace>
