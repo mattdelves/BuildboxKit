@@ -38,7 +38,68 @@
 		C9FE5BF919BB2575008B8746 /* BuildkiteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */; };
 		C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = C9FE5BFC19BB28A7008B8746 /* accounts.json */; };
 		C9FE5BFF19BB2938008B8746 /* BuildkiteApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */; };
+		DDC816691AFA1705004D99DD /* BuildkiteOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC816681AFA1705004D99DD /* BuildkiteOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDC8166F1AFA1705004D99DD /* BuildkiteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC816641AFA1705004D99DD /* BuildkiteKit.framework */; };
+		DDC816761AFA1705004D99DD /* BuildkiteOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC816751AFA1705004D99DD /* BuildkiteOSXTests.swift */; };
+		DDC8167D1AFA175A004D99DD /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97738051A65A2E900472DCA /* AccessToken.swift */; };
+		DDC8167E1AFA175D004D99DD /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E500A1A1700200049C5D5 /* Agent.swift */; };
+		DDC8167F1AFA1760004D99DD /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E50041A16F2760049C5D5 /* Build.swift */; };
+		DDC816801AFA1763004D99DD /* BuildJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7406F1AC809C5009E7E0B /* BuildJob.swift */; };
+		DDC816811AFA1766004D99DD /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E4FFE1A16D7A40049C5D5 /* Project.swift */; };
+		DDC816821AFA1769004D99DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E9F461A176B1800FB77AE /* User.swift */; };
+		DDC816831AFA176C004D99DD /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98696D319C40D3D00164926 /* Organization.swift */; };
+		DDC816841AFA1770004D99DD /* BuildkiteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */; };
+		DDC816851AFA1773004D99DD /* BuildkiteURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987360F19BAC69000980237 /* BuildkiteURL.swift */; };
+		DDC816861AFA1777004D99DD /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557381AB965B000E3CFA8 /* HTTPStatusCodes.swift */; };
+		DDC816871AFA188F004D99DD /* BuildkiteApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */; };
+		DDC816881AFA1892004D99DD /* BuildkiteURLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987361319BAD23300980237 /* BuildkiteURLSpec.swift */; };
+		DDC816891AFA1899004D99DD /* log.txt in Resources */ = {isa = PBXBuildFile; fileRef = C970A50D1A942F3F00234CAF /* log.txt */; };
+		DDC8168A1AFA18A0004D99DD /* access_token.json in Resources */ = {isa = PBXBuildFile; fileRef = C97738071A65B41800472DCA /* access_token.json */; };
+		DDC8168B1AFA18A6004D99DD /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D146A331A1783BF0061AD0A /* unauthorized.json */; };
+		DDC8168C1AFA18AB004D99DD /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D5E9F481A176C4B00FB77AE /* user.json */; };
+		DDC8168D1AFA18AF004D99DD /* all_builds.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D5E9F2A1A1753FE00FB77AE /* all_builds.json */; };
+		DDC8168E1AFA18B1004D99DD /* agents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50081A16FFB40049C5D5 /* agents.json */; };
+		DDC8168F1AFA18B5004D99DD /* builds.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50021A16E7860049C5D5 /* builds.json */; };
+		DDC816901AFA18B5004D99DD /* projects.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E4FFC1A16D5A00049C5D5 /* projects.json */; };
+		DDC816911AFA18B5004D99DD /* foobar_account.json in Resources */ = {isa = PBXBuildFile; fileRef = C98696D619C4152400164926 /* foobar_account.json */; };
+		DDC816921AFA18B5004D99DD /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = C9FE5BFC19BB28A7008B8746 /* accounts.json */; };
+		DDC816931AFA18B5004D99DD /* foobar_project.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50001A16E5330049C5D5 /* foobar_project.json */; };
+		DDC816941AFA18B5004D99DD /* single_build.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50061A16F92A0049C5D5 /* single_build.json */; };
+		DDC816951AFA18B5004D99DD /* job_unblock.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B951AA08C4C00F85854 /* job_unblock.json */; };
+		DDC816961AFA18B5004D99DD /* unblock_bad_request.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B971AA08DE700F85854 /* unblock_bad_request.json */; };
+		DDC816971AFA18B5004D99DD /* unblock_unprocessable.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F63B991AA08DF900F85854 /* unblock_unprocessable.json */; };
+		DDC8169B1AFA18D7004D99DD /* DummySpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC816981AFA18D7004D99DD /* DummySpit.framework */; };
+		DDC8169C1AFA18D7004D99DD /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC816991AFA18D7004D99DD /* Nimble.framework */; };
+		DDC8169D1AFA18D7004D99DD /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC8169A1AFA18D7004D99DD /* Quick.framework */; };
+		DDC8169F1AFA18F1004D99DD /* DummySpit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DDC816981AFA18D7004D99DD /* DummySpit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DDC816A01AFA18F1004D99DD /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DDC816991AFA18D7004D99DD /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DDC816A11AFA18F1004D99DD /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DDC8169A1AFA18D7004D99DD /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDC816701AFA1705004D99DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C973EA6C19BA88130076B3B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDC816631AFA1705004D99DD;
+			remoteInfo = BuildkiteOSX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DDC8169E1AFA18E4004D99DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DDC8169F1AFA18F1004D99DD /* DummySpit.framework in CopyFiles */,
+				DDC816A01AFA18F1004D99DD /* Nimble.framework in CopyFiles */,
+				DDC816A11AFA18F1004D99DD /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8D146A331A1783BF0061AD0A /* unauthorized.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unauthorized.json; sourceTree = "<group>"; };
@@ -77,6 +138,15 @@
 		C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BuildkiteApi.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C9FE5BFC19BB28A7008B8746 /* accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = accounts.json; sourceTree = "<group>"; };
 		C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BuildkiteApiSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DDC816641AFA1705004D99DD /* BuildkiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildkiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDC816671AFA1705004D99DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDC816681AFA1705004D99DD /* BuildkiteOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildkiteOSX.h; sourceTree = "<group>"; };
+		DDC8166E1AFA1705004D99DD /* BuildkiteOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildkiteOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDC816741AFA1705004D99DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDC816751AFA1705004D99DD /* BuildkiteOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildkiteOSXTests.swift; sourceTree = "<group>"; };
+		DDC816981AFA18D7004D99DD /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = ../Carthage/Build/Mac/DummySpit.framework; sourceTree = "<group>"; };
+		DDC816991AFA18D7004D99DD /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		DDC8169A1AFA18D7004D99DD /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +167,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDC816601AFA1705004D99DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDC8166B1AFA1705004D99DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC8169B1AFA18D7004D99DD /* DummySpit.framework in Frameworks */,
+				DDC8169C1AFA18D7004D99DD /* Nimble.framework in Frameworks */,
+				DDC8169D1AFA18D7004D99DD /* Quick.framework in Frameworks */,
+				DDC8166F1AFA1705004D99DD /* BuildkiteKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -113,6 +201,8 @@
 			children = (
 				C973EA7719BA88130076B3B8 /* BuildkiteKit */,
 				C973EA8119BA88130076B3B8 /* BuildkiteKitTests */,
+				DDC816651AFA1705004D99DD /* BuildkiteOSX */,
+				DDC816721AFA1705004D99DD /* BuildkiteOSXTests */,
 				C973EA7619BA88130076B3B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +212,8 @@
 			children = (
 				C973EA7519BA88130076B3B8 /* BuildkiteKit.framework */,
 				C973EA8019BA88130076B3B8 /* BuildkiteKitTests.xctest */,
+				DDC816641AFA1705004D99DD /* BuildkiteKit.framework */,
+				DDC8166E1AFA1705004D99DD /* BuildkiteOSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +314,43 @@
 			name = "JSON Responses";
 			sourceTree = "<group>";
 		};
+		DDC816651AFA1705004D99DD /* BuildkiteOSX */ = {
+			isa = PBXGroup;
+			children = (
+				DDC816681AFA1705004D99DD /* BuildkiteOSX.h */,
+				DDC816661AFA1705004D99DD /* Supporting Files */,
+			);
+			path = BuildkiteOSX;
+			sourceTree = "<group>";
+		};
+		DDC816661AFA1705004D99DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDC816671AFA1705004D99DD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDC816721AFA1705004D99DD /* BuildkiteOSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDC816751AFA1705004D99DD /* BuildkiteOSXTests.swift */,
+				DDC816731AFA1705004D99DD /* Supporting Files */,
+			);
+			path = BuildkiteOSXTests;
+			sourceTree = "<group>";
+		};
+		DDC816731AFA1705004D99DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDC816981AFA18D7004D99DD /* DummySpit.framework */,
+				DDC816991AFA18D7004D99DD /* Nimble.framework */,
+				DDC8169A1AFA18D7004D99DD /* Quick.framework */,
+				DDC816741AFA1705004D99DD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -230,6 +359,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C973EA7B19BA88130076B3B8 /* BuildkiteKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDC816611AFA1705004D99DD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC816691AFA1705004D99DD /* BuildkiteOSX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +409,43 @@
 			productReference = C973EA8019BA88130076B3B8 /* BuildkiteKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DDC816631AFA1705004D99DD /* BuildkiteKitOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDC8167B1AFA1705004D99DD /* Build configuration list for PBXNativeTarget "BuildkiteKitOSX" */;
+			buildPhases = (
+				DDC8165F1AFA1705004D99DD /* Sources */,
+				DDC816601AFA1705004D99DD /* Frameworks */,
+				DDC816611AFA1705004D99DD /* Headers */,
+				DDC816621AFA1705004D99DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuildkiteKitOSX;
+			productName = BuildkiteOSX;
+			productReference = DDC816641AFA1705004D99DD /* BuildkiteKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DDC8166D1AFA1705004D99DD /* BuildkiteKitOSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDC8167C1AFA1705004D99DD /* Build configuration list for PBXNativeTarget "BuildkiteKitOSXTests" */;
+			buildPhases = (
+				DDC8166A1AFA1705004D99DD /* Sources */,
+				DDC8166B1AFA1705004D99DD /* Frameworks */,
+				DDC8166C1AFA1705004D99DD /* Resources */,
+				DDC8169E1AFA18E4004D99DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDC816711AFA1705004D99DD /* PBXTargetDependency */,
+			);
+			name = BuildkiteKitOSXTests;
+			productName = BuildkiteOSXTests;
+			productReference = DDC8166E1AFA1705004D99DD /* BuildkiteOSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -287,6 +461,12 @@
 					};
 					C973EA7F19BA88130076B3B8 = {
 						CreatedOnToolsVersion = 6.0;
+					};
+					DDC816631AFA1705004D99DD = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					DDC8166D1AFA1705004D99DD = {
+						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
@@ -304,6 +484,8 @@
 			targets = (
 				C973EA7419BA88130076B3B8 /* BuildkiteKit */,
 				C973EA7F19BA88130076B3B8 /* BuildkiteKitTests */,
+				DDC816631AFA1705004D99DD /* BuildkiteKitOSX */,
+				DDC8166D1AFA1705004D99DD /* BuildkiteKitOSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -335,6 +517,35 @@
 				8D5E9F491A176C4B00FB77AE /* user.json in Resources */,
 				8D8E50071A16F92A0049C5D5 /* single_build.json in Resources */,
 				C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDC816621AFA1705004D99DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDC8166C1AFA1705004D99DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC816931AFA18B5004D99DD /* foobar_project.json in Resources */,
+				DDC8168C1AFA18AB004D99DD /* user.json in Resources */,
+				DDC816891AFA1899004D99DD /* log.txt in Resources */,
+				DDC8168A1AFA18A0004D99DD /* access_token.json in Resources */,
+				DDC816961AFA18B5004D99DD /* unblock_bad_request.json in Resources */,
+				DDC816971AFA18B5004D99DD /* unblock_unprocessable.json in Resources */,
+				DDC8168F1AFA18B5004D99DD /* builds.json in Resources */,
+				DDC8168E1AFA18B1004D99DD /* agents.json in Resources */,
+				DDC816911AFA18B5004D99DD /* foobar_account.json in Resources */,
+				DDC8168D1AFA18AF004D99DD /* all_builds.json in Resources */,
+				DDC8168B1AFA18A6004D99DD /* unauthorized.json in Resources */,
+				DDC816901AFA18B5004D99DD /* projects.json in Resources */,
+				DDC816941AFA18B5004D99DD /* single_build.json in Resources */,
+				DDC816951AFA18B5004D99DD /* job_unblock.json in Resources */,
+				DDC816921AFA18B5004D99DD /* accounts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +597,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDC8165F1AFA1705004D99DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC816861AFA1777004D99DD /* HTTPStatusCodes.swift in Sources */,
+				DDC816801AFA1763004D99DD /* BuildJob.swift in Sources */,
+				DDC816851AFA1773004D99DD /* BuildkiteURL.swift in Sources */,
+				DDC8167D1AFA175A004D99DD /* AccessToken.swift in Sources */,
+				DDC816821AFA1769004D99DD /* User.swift in Sources */,
+				DDC8167E1AFA175D004D99DD /* Agent.swift in Sources */,
+				DDC816841AFA1770004D99DD /* BuildkiteApi.swift in Sources */,
+				DDC816831AFA176C004D99DD /* Organization.swift in Sources */,
+				DDC816811AFA1766004D99DD /* Project.swift in Sources */,
+				DDC8167F1AFA1760004D99DD /* Build.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDC8166A1AFA1705004D99DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC816761AFA1705004D99DD /* BuildkiteOSXTests.swift in Sources */,
+				DDC816871AFA188F004D99DD /* BuildkiteApiSpec.swift in Sources */,
+				DDC816881AFA1892004D99DD /* BuildkiteURLSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDC816711AFA1705004D99DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDC816631AFA1705004D99DD /* BuildkiteKitOSX */;
+			targetProxy = DDC816701AFA1705004D99DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C973EA8619BA88130076B3B8 /* Debug */ = {
@@ -551,6 +797,96 @@
 			};
 			name = Release;
 		};
+		DDC816771AFA1705004D99DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BuildkiteOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = BuildkiteKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DDC816781AFA1705004D99DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BuildkiteOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = BuildkiteKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DDC816791AFA1705004D99DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BuildkiteOSXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DDC8167A1AFA1705004D99DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BuildkiteOSXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -580,6 +916,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		DDC8167B1AFA1705004D99DD /* Build configuration list for PBXNativeTarget "BuildkiteKitOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDC816771AFA1705004D99DD /* Debug */,
+				DDC816781AFA1705004D99DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DDC8167C1AFA1705004D99DD /* Build configuration list for PBXNativeTarget "BuildkiteKitOSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDC816791AFA1705004D99DD /* Debug */,
+				DDC8167A1AFA1705004D99DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
