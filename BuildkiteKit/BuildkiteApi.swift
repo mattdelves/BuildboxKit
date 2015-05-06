@@ -209,14 +209,14 @@ public class BuildkiteApi {
     }
   }
 
-  public func getJobLog(organization: String, project: String, build: String, job: String, completion: (NSAttributedString?, BuildkiteApiError?) -> Void) {
+  public func getJobLog(organization: String, project: String, build: String, job: String, completion: (NSString?, BuildkiteApiError?) -> Void) {
     let endpoint = BuildkiteURL.BuildJobLog(organization: organization, project: project, build: build, job: job)
     let url = buildkiteEndpoint(endpoint, apiKey, scheme: scheme)
     let task = session.dataTaskWithURL(url) { data, response, error in
-      var logString: NSAttributedString?
+      var logString: NSString?
       var error: BuildkiteApiError?
       if let response: NSHTTPURLResponse = response as? NSHTTPURLResponse {
-        if let log = NSAttributedString(data: data, options: nil, documentAttributes: nil, error: nil) {
+        if let log = NSString(data: data, encoding: NSUTF8StringEncoding) {
           logString = log
         } else {
           error = BuildkiteApiError(code: response.statusCode, reason: "Unable to pass log to attributed string")
