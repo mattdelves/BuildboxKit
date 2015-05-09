@@ -230,6 +230,30 @@ public class BuildkiteApi {
     task.resume()
   }
 
+  public func getJobLogHtml(organization: String, project: String, build: String, job: String, completion: (NSString?, BuildkiteApiError?) -> Void) {
+    let endpoint = BuildkiteURL.BuildJobLog(organization: organization, project: project, build: build, job: job)
+    let url = buildkiteEndpoint(endpoint, apiKey, scheme: scheme)
+    let request = NSMutableURLRequest(URL: url)
+    request.addValue("text/html", forHTTPHeaderField: "Accept")
+
+    let task = session.dataTaskWithRequest(request) { data, response, error in
+      var logString: NSString?
+      var error: BuildkiteApiError?
+      if let response: NSHTTPURLResponse = response as? NSHTTPURLResponse {
+        if let log = NSString(data: data, encoding: NSUTF8StringEncoding) {
+          logString = log
+        } else {
+          error = BuildkiteApiError(code: response.statusCode, reason: "Unable to pass log to attributed string")
+        }
+      } else {
+        error = BuildkiteApiError(code: -1, reason: "Bad response from server")
+      }
+      completion(logString, error)
+    }
+
+    task.resume()
+  }
+
   func JSONDataForRequest(request: NSURLRequest, validResponseCodes: [Int], completion: (AnyObject?, NSData?, NSHTTPURLResponse?, BuildkiteApiError?) -> Void) {
     let task = session.dataTaskWithRequest(request) { data, response, error in
       if let theResponse: NSHTTPURLResponse = response as? NSHTTPURLResponse {

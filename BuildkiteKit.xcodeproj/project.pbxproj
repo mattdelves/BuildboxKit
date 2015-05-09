@@ -38,6 +38,8 @@
 		C9FE5BF919BB2575008B8746 /* BuildkiteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */; };
 		C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = C9FE5BFC19BB28A7008B8746 /* accounts.json */; };
 		C9FE5BFF19BB2938008B8746 /* BuildkiteApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */; };
+		DD3EA01C1AFDD56400C592AE /* log.html in Resources */ = {isa = PBXBuildFile; fileRef = DD3EA01B1AFDD56400C592AE /* log.html */; };
+		DD3EA01D1AFDD56400C592AE /* log.html in Resources */ = {isa = PBXBuildFile; fileRef = DD3EA01B1AFDD56400C592AE /* log.html */; };
 		DDC816691AFA1705004D99DD /* BuildkiteOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC816681AFA1705004D99DD /* BuildkiteOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDC8166F1AFA1705004D99DD /* BuildkiteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC816641AFA1705004D99DD /* BuildkiteKit.framework */; };
 		DDC816761AFA1705004D99DD /* BuildkiteOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC816751AFA1705004D99DD /* BuildkiteOSXTests.swift */; };
@@ -138,10 +140,11 @@
 		C9FE5BF819BB2575008B8746 /* BuildkiteApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BuildkiteApi.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C9FE5BFC19BB28A7008B8746 /* accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = accounts.json; sourceTree = "<group>"; };
 		C9FE5BFE19BB2938008B8746 /* BuildkiteApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BuildkiteApiSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DD3EA01B1AFDD56400C592AE /* log.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = log.html; sourceTree = "<group>"; };
 		DDC816641AFA1705004D99DD /* BuildkiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildkiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC816671AFA1705004D99DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDC816681AFA1705004D99DD /* BuildkiteOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildkiteOSX.h; sourceTree = "<group>"; };
-		DDC8166E1AFA1705004D99DD /* BuildkiteOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildkiteOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDC8166E1AFA1705004D99DD /* BuildkiteOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BuildkiteOSXTests.xctest; path = BuildkiteKitOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC816741AFA1705004D99DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDC816751AFA1705004D99DD /* BuildkiteOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildkiteOSXTests.swift; sourceTree = "<group>"; };
 		DDC816981AFA18D7004D99DD /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = ../Carthage/Build/Mac/DummySpit.framework; sourceTree = "<group>"; };
@@ -191,6 +194,7 @@
 		C90111351A81CFAE00460BD3 /* Log responses */ = {
 			isa = PBXGroup;
 			children = (
+				DD3EA01B1AFDD56400C592AE /* log.html */,
 				C970A50D1A942F3F00234CAF /* log.txt */,
 			);
 			name = "Log responses";
@@ -515,6 +519,7 @@
 				C9F63B961AA08C4C00F85854 /* job_unblock.json in Resources */,
 				8D8E50011A16E5330049C5D5 /* foobar_project.json in Resources */,
 				8D5E9F491A176C4B00FB77AE /* user.json in Resources */,
+				DD3EA01C1AFDD56400C592AE /* log.html in Resources */,
 				8D8E50071A16F92A0049C5D5 /* single_build.json in Resources */,
 				C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */,
 			);
@@ -544,6 +549,7 @@
 				DDC8168B1AFA18A6004D99DD /* unauthorized.json in Resources */,
 				DDC816901AFA18B5004D99DD /* projects.json in Resources */,
 				DDC816941AFA18B5004D99DD /* single_build.json in Resources */,
+				DD3EA01D1AFDD56400C592AE /* log.html in Resources */,
 				DDC816951AFA18B5004D99DD /* job_unblock.json in Resources */,
 				DDC816921AFA18B5004D99DD /* accounts.json in Resources */,
 			);
@@ -924,6 +930,7 @@
 				DDC816781AFA1705004D99DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDC8167C1AFA1705004D99DD /* Build configuration list for PBXNativeTarget "BuildkiteKitOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -932,6 +939,7 @@
 				DDC8167A1AFA1705004D99DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -603,7 +603,7 @@ class BuildkiteApiSpec: QuickSpec {
         api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
       }
 
-      it("can be retrieved") {
+      it("txt") {
         let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("log", ofType: "txt")
         let result:NSString = NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)!
         var dataResponse: NSData?
@@ -615,6 +615,25 @@ class BuildkiteApiSpec: QuickSpec {
         var called = false
 
         api?.getJobLog("foo", project: "bar", build: "1", job: "123abc") { log, error in
+          called = true
+          expect(log).notTo(beNil())
+        }
+
+        expect{called}.toEventually(beTruthy())
+      }
+
+      it("html") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("log", ofType: "html")
+        let result:NSString = NSString(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)!
+        var dataResponse: NSData?
+        if let resultData = result.dataUsingEncoding(NSUTF8StringEncoding) {
+          dataResponse = resultData
+        }
+        let response = DummySpitServiceResponse(data: dataResponse!, header: ["Content-type": "plain/txt"], urlComponentToMatch: "log")
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        api?.getJobLogHtml("foo", project: "bar", build: "1", job: "123abc") { log, error in
           called = true
           expect(log).notTo(beNil())
         }
