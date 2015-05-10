@@ -468,6 +468,7 @@
 					};
 					DDC816631AFA1705004D99DD = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 74D9UBS5CF;
 					};
 					DDC8166D1AFA1705004D99DD = {
 						CreatedOnToolsVersion = 6.4;
@@ -808,7 +809,6 @@
 		DDC816771AFA1705004D99DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -834,7 +834,6 @@
 		DDC816781AFA1705004D99DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
