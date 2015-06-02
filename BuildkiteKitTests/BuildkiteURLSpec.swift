@@ -67,6 +67,11 @@ class BuildkiteURLSpec: QuickSpec {
         var endpoint = BuildkiteURL.User
         expect(endpoint.path).to(equal("/v1/user"))
       }
+
+      it("for emojis") {
+        var endpoint = BuildkiteURL.Emoji(organization: "foo")
+        expect(endpoint.path).to(equal("/v1/organizations/foo/emojis"))
+      }
     }
     
     describe("constructs an URL") {

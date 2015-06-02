@@ -254,6 +254,23 @@ public class BuildkiteApi {
     task.resume()
   }
 
+  public func getEmojis(organization: String, completion: (emojis: [Emoji]?, body: NSData?, response: NSHTTPURLResponse?, error: BuildkiteApiError?) -> Void) {
+    let endpoint = BuildkiteURL.Emoji(organization: organization)
+    let url = buildkiteEndpoint(endpoint, apiKey, scheme: scheme)
+
+    JSONDataForEndpoint(url, validResponseCodes: [HTTPResponseCodes.Success]) { json, data, response, error in
+      var emojis: [Emoji] = [Emoji]()
+      if let json = json as? [[String: AnyObject]] {
+        if error == nil {
+          emojis = json.map { emoji in
+            Emoji(emoji)
+          }
+        }
+      }
+      completion(emojis: emojis, body: data, response: response, error: error)
+    }
+  }
+
   func JSONDataForRequest(request: NSURLRequest, validResponseCodes: [Int], completion: (AnyObject?, NSData?, NSHTTPURLResponse?, BuildkiteApiError?) -> Void) {
     let task = session.dataTaskWithRequest(request) { data, response, error in
       if let theResponse: NSHTTPURLResponse = response as? NSHTTPURLResponse {
