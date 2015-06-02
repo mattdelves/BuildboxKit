@@ -20,6 +20,10 @@
 		8D8E50091A16FFB40049C5D5 /* agents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E50081A16FFB40049C5D5 /* agents.json */; };
 		8D8E500B1A1700200049C5D5 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E500A1A1700200049C5D5 /* Agent.swift */; };
 		C95557391AB965B000E3CFA8 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557381AB965B000E3CFA8 /* HTTPStatusCodes.swift */; };
+		C96C048C1B1D93BA0070F801 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C048B1B1D93BA0070F801 /* Emoji.swift */; };
+		C96C048D1B1D93BA0070F801 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C048B1B1D93BA0070F801 /* Emoji.swift */; };
+		C96C048F1B1D97C80070F801 /* emojis.json in Resources */ = {isa = PBXBuildFile; fileRef = C96C048E1B1D97C80070F801 /* emojis.json */; };
+		C96C04901B1D97C80070F801 /* emojis.json in Resources */ = {isa = PBXBuildFile; fileRef = C96C048E1B1D97C80070F801 /* emojis.json */; };
 		C970A50E1A942F3F00234CAF /* log.txt in Resources */ = {isa = PBXBuildFile; fileRef = C970A50D1A942F3F00234CAF /* log.txt */; };
 		C973EA7B19BA88130076B3B8 /* BuildkiteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C973EA7A19BA88130076B3B8 /* BuildkiteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C97738061A65A2E900472DCA /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97738051A65A2E900472DCA /* AccessToken.swift */; };
@@ -117,6 +121,8 @@
 		8D8E50081A16FFB40049C5D5 /* agents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = agents.json; sourceTree = "<group>"; };
 		8D8E500A1A1700200049C5D5 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		C95557381AB965B000E3CFA8 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
+		C96C048B1B1D93BA0070F801 /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		C96C048E1B1D97C80070F801 /* emojis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emojis.json; sourceTree = "<group>"; };
 		C970A50D1A942F3F00234CAF /* log.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log.txt; sourceTree = "<group>"; };
 		C973EA7519BA88130076B3B8 /* BuildkiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildkiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C973EA7919BA88130076B3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,7 +150,7 @@
 		DDC816641AFA1705004D99DD /* BuildkiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuildkiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC816671AFA1705004D99DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDC816681AFA1705004D99DD /* BuildkiteOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildkiteOSX.h; sourceTree = "<group>"; };
-		DDC8166E1AFA1705004D99DD /* BuildkiteOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BuildkiteOSXTests.xctest; path = BuildkiteKitOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDC8166E1AFA1705004D99DD /* BuildkiteKitOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildkiteKitOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC816741AFA1705004D99DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDC816751AFA1705004D99DD /* BuildkiteOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildkiteOSXTests.swift; sourceTree = "<group>"; };
 		DDC816981AFA18D7004D99DD /* DummySpit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DummySpit.framework; path = ../Carthage/Build/Mac/DummySpit.framework; sourceTree = "<group>"; };
@@ -217,7 +223,7 @@
 				C973EA7519BA88130076B3B8 /* BuildkiteKit.framework */,
 				C973EA8019BA88130076B3B8 /* BuildkiteKitTests.xctest */,
 				DDC816641AFA1705004D99DD /* BuildkiteKit.framework */,
-				DDC8166E1AFA1705004D99DD /* BuildkiteOSXTests.xctest */,
+				DDC8166E1AFA1705004D99DD /* BuildkiteKitOSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 				8D8E4FFE1A16D7A40049C5D5 /* Project.swift */,
 				8D5E9F461A176B1800FB77AE /* User.swift */,
 				C98696D319C40D3D00164926 /* Organization.swift */,
+				C96C048B1B1D93BA0070F801 /* Emoji.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -300,6 +307,7 @@
 		C9FE5BFB19BB288B008B8746 /* JSON Responses */ = {
 			isa = PBXGroup;
 			children = (
+				C96C048E1B1D97C80070F801 /* emojis.json */,
 				C97738071A65B41800472DCA /* access_token.json */,
 				8D146A331A1783BF0061AD0A /* unauthorized.json */,
 				8D5E9F481A176C4B00FB77AE /* user.json */,
@@ -447,7 +455,7 @@
 			);
 			name = BuildkiteKitOSXTests;
 			productName = BuildkiteOSXTests;
-			productReference = DDC8166E1AFA1705004D99DD /* BuildkiteOSXTests.xctest */;
+			productReference = DDC8166E1AFA1705004D99DD /* BuildkiteKitOSXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -520,6 +528,7 @@
 				C9F63B961AA08C4C00F85854 /* job_unblock.json in Resources */,
 				8D8E50011A16E5330049C5D5 /* foobar_project.json in Resources */,
 				8D5E9F491A176C4B00FB77AE /* user.json in Resources */,
+				C96C048F1B1D97C80070F801 /* emojis.json in Resources */,
 				DD3EA01C1AFDD56400C592AE /* log.html in Resources */,
 				8D8E50071A16F92A0049C5D5 /* single_build.json in Resources */,
 				C9FE5BFD19BB28A7008B8746 /* accounts.json in Resources */,
@@ -550,6 +559,7 @@
 				DDC8168B1AFA18A6004D99DD /* unauthorized.json in Resources */,
 				DDC816901AFA18B5004D99DD /* projects.json in Resources */,
 				DDC816941AFA18B5004D99DD /* single_build.json in Resources */,
+				C96C04901B1D97C80070F801 /* emojis.json in Resources */,
 				DD3EA01D1AFDD56400C592AE /* log.html in Resources */,
 				DDC816951AFA18B5004D99DD /* job_unblock.json in Resources */,
 				DDC816921AFA18B5004D99DD /* accounts.json in Resources */,
@@ -582,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96C048C1B1D93BA0070F801 /* Emoji.swift in Sources */,
 				C9B740701AC809C5009E7E0B /* BuildJob.swift in Sources */,
 				C987361019BAC69000980237 /* BuildkiteURL.swift in Sources */,
 				C9FE5BF919BB2575008B8746 /* BuildkiteApi.swift in Sources */,
@@ -608,6 +619,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96C048D1B1D93BA0070F801 /* Emoji.swift in Sources */,
 				DDC816861AFA1777004D99DD /* HTTPStatusCodes.swift in Sources */,
 				DDC816801AFA1763004D99DD /* BuildJob.swift in Sources */,
 				DDC816851AFA1773004D99DD /* BuildkiteURL.swift in Sources */,

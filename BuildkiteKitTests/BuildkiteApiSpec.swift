@@ -641,5 +641,28 @@ class BuildkiteApiSpec: QuickSpec {
         expect{called}.toEventually(beTruthy())
       }
     }
+
+    describe("emoji") {
+      beforeEach {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let urlProtocolClass: AnyObject = ClassUtility.classFromType(DummySpitURLProtocol.self)
+        configuration.protocolClasses = [urlProtocolClass]
+        api = BuildkiteApi("123abc", scheme: "mock", configuration: configuration)
+      }
+
+      it("fetches") {
+        let filePath = NSBundle(forClass: BuildkiteApiSpec.self).pathForResource("emojis", ofType: "json")
+        let response = DummySpitServiceResponse(filePath: filePath!, header: ["Content-type": "application/json"], urlComponentToMatch: "emojis", statusCode: 200, error: nil)
+        DummySpitURLProtocol.cannedResponse(response)
+        var called = false
+
+        api?.getEmojis("foo") { emojis, data, response, error in
+          called = true
+          expect(emojis?.count).to(equal(888))
+        }
+
+        expect(called).toEventually(beTrue())
+      }
+    }
   }
 }

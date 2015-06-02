@@ -21,6 +21,7 @@ public enum BuildkiteURL {
   case Agents(organization:String)
   case AccessTokens
   case User
+  case Emoji(organization: String)
 }
 
 public protocol Path {
@@ -50,6 +51,7 @@ extension BuildkiteURL:Path {
     case .Agents(let organization): return "/\(apiVersion)/organizations/\(organization)/agents"
     case .AccessTokens: return "/\(apiVersion)/access_tokens"
     case .User: return "/\(apiVersion)/user"
+    case .Emoji(let organization): return "/\(apiVersion)/organizations/\(organization)/emojis"
       }
   }
 }
