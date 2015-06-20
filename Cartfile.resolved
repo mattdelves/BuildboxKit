@@ -1,3 +1,4 @@
-github "mattdelves/DummySpit" "ce8e359b03b7afdbb0504144f490a982c5ed1d81"
+github "mattdelves/DummySpit" "e199154af59182061d89e3ca8f41bfe232c539f0"
 github "quick/nimble" "v0.4.2"
 github "quick/quick" "v0.3.1"
+github "realm/realm-cocoa" "v0.93.2"
