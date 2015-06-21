@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/DummySpit-Swift.h</key>
 		<data>
-		kdalc5eI1B0LHCNGl6gQ/RJBIho=
+		apAtgu1cBBepExDEStbvzzwbsB0=
 		</data>
 		<key>Headers/DummySpit.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qocs9spWUd4qFLmRnUYg5MYy+MU=
+		uIUm9HqF29K0tvl8e2HPERy+Gjw=
 		</data>
 		<key>Modules/DummySpit.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/DummySpit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		xmsrh14Xj2N6HjM3oevfNgPfDSs=
+		UAV/gFskpYgs1BTAbPi5DFVN08w=
 		</data>
 		<key>Modules/DummySpit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/DummySpit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		cTiM7KIUIZFVhpjArE+W0dUVf7s=
+		qfUP+XTeG15e8wVkuSAYLgtDh3w=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -41,7 +41,7 @@
 	<dict>
 		<key>Headers/DummySpit-Swift.h</key>
 		<data>
-		kdalc5eI1B0LHCNGl6gQ/RJBIho=
+		apAtgu1cBBepExDEStbvzzwbsB0=
 		</data>
 		<key>Headers/DummySpit.h</key>
 		<data>
@@ -53,7 +53,7 @@
 		</data>
 		<key>Modules/DummySpit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		xmsrh14Xj2N6HjM3oevfNgPfDSs=
+		UAV/gFskpYgs1BTAbPi5DFVN08w=
 		</data>
 		<key>Modules/DummySpit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -61,7 +61,7 @@
 		</data>
 		<key>Modules/DummySpit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		cTiM7KIUIZFVhpjArE+W0dUVf7s=
+		qfUP+XTeG15e8wVkuSAYLgtDh3w=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
