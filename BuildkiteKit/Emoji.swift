@@ -7,27 +7,31 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
-public struct Emoji {
-  public var name: String
-  public var url: String
-  public var aliases: [String]?
+public class Emoji: Object {
+  public dynamic var name: String = ""
+  public dynamic var url: String = ""
+
+  public required init() {
+    // do stuff
+    super.init()
+  }
+
+  public override init(realm: RLMRealm, schema: RLMObjectSchema) {
+    super.init(realm: realm, schema: schema)
+  }
 
   public init(_ jsonObject: [String: AnyObject]) {
+    super.init()
+
     if let name = jsonObject["name"] as? String {
       self.name = name
-    } else {
-      self.name = ""
     }
 
     if let url = jsonObject["url"] as? String {
       self.url = url
-    } else {
-      self.url = ""
-    }
-
-    if let aliases = jsonObject["aliases"] as? [String] {
-      self.aliases = aliases
     }
   }
 }
